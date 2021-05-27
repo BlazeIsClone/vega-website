@@ -12,6 +12,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
         }),
+        new ImageminWebpWebpackPlugin({
+            config: [
+                {
+                    test: /\.(jpe?g|png)/,
+                    options: {
+                        quality: 100,
+                    },
+                },
+            ],
+            overrideExtension: true,
+            detailedLogs: false,
+            silent: false,
+            strict: true,
+        }),
     ],
     resolve: {
         modules: [__dirname, "src", "node_modules"],
@@ -34,20 +48,4 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new ImageminWebpWebpackPlugin({
-            config: [
-                {
-                    test: /\.(jpe?g|png)/,
-                    options: {
-                        quality: 100,
-                    },
-                },
-            ],
-            overrideExtension: true,
-            detailedLogs: false,
-            silent: false,
-            strict: true,
-        }),
-    ],
 };

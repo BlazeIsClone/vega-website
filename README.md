@@ -1,3 +1,5 @@
+## Technical Architecture
+![Architecture Map](https://cdn.discordapp.com/attachments/743697611810406471/847424859683422228/technicalArchitecture_3.png)
 ## Available Scripts
 
 In the project directory, you can run:

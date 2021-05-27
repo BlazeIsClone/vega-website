@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -33,4 +34,20 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new ImageminWebpWebpackPlugin({
+            config: [
+                {
+                    test: /\.(jpe?g|png)/,
+                    options: {
+                        quality: 100,
+                    },
+                },
+            ],
+            overrideExtension: true,
+            detailedLogs: false,
+            silent: false,
+            strict: true,
+        }),
+    ],
 };

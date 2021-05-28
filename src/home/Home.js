@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import HeroMain from "../common/HeroMain.js";
 
 class Home extends Component {
     render() {
-        return (
-            <h1>this is index</h1>
-        );
+        return <div>
+            <HeroMain/>
+            </div>;
     }
 }
 

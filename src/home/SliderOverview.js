@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import HeroMainBanner from "./assets/homeHeroMainBanner.png";
 import styled from "styled-components";
+import HeroMainBanner from "./assets/sliderImageHomepagoverview.png";
 
-class HeroMain extends Component {
+class SliderOverview extends Component {
   render() {
     const Box = styled.div`
-      height: 100vh;
+      height: 92vh;
       width: 100%;
       background-image: url(${HeroMainBanner});
       background-attachment: fixed;
@@ -13,8 +13,9 @@ class HeroMain extends Component {
       background-repeat: no-repeat;
       background-size: cover;
     `;
-    return <Box alt="This img"></Box>;
+
+    return <Box></Box>;
   }
 }
 
-export default HeroMain;
+export default SliderOverview;

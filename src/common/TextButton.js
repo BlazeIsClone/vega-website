@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-class SimpleButton extends Component {
+class TextButton extends Component {
     render() {
         const Button = styled.button`
             width: 200px;
@@ -13,4 +13,4 @@ class SimpleButton extends Component {
     }
 }
 
-export default SimpleButton;
+export default TextButton;

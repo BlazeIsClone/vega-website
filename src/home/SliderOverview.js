@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HeroMainBanner from "./assets/sliderImageHomepagoverview.png";
+import Headline from "../common/Headline.js";
+import Subtitle from "../common/Subtitle.js";
+import Body from "../common/Body.js";
 
 class SliderOverview extends Component {
   render() {
@@ -15,16 +18,6 @@ class SliderOverview extends Component {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
     `;
-    const HeroText = styled.h1`
-      font-family: sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 48px;
-      text-transform: uppercase;
-      padding: 188px 0 0 40px;
-      color: white;
-    `;
-
     const TitleText = styled.h2`
       width: 832px;
       color: white;
@@ -47,13 +40,13 @@ class SliderOverview extends Component {
       font-size: 36px;
       list-style: none;
       grid-column: 3/4;
-      grid-row: 3/4
+      grid-row: 3/4;
     `;
 
     return (
       <div>
         <Box alt="Image of the car">
-          <HeroText>OVERVIEW</HeroText>
+          <Headline content="OVERVIEW" color="white"></Headline>
           <StatBars>
             <li>3.1s 0-100Km/hA</li>
             <li>+300km/h Top Speed</li>

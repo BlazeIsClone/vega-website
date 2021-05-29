@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Headline from "../common/Headline.js";
+import Subtitle from "../common/Subtitle.js";
+import Body from "../common/Body.js";
 
 class BlogAndNews extends Component {
     render() {
@@ -23,22 +26,17 @@ class BlogAndNews extends Component {
             height: 590px;
             background-color: grey;
         `;
-    const TitleText = styled.h2`
-      grid-column: 2/5;
-      color: black;
-      padding: auto 0 0 40px;
-      font-family: Ruda, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 46px;
-      text-transform: uppercase;
-    `;
-
-
+        const TextContainer = styled.div`
+            grid-column: 2/5;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        `;
         return (
             <GridLayout>
-                    <TitleText>BLOG AND NEWS</TitleText>
+                <TextContainer>
+                    <Headline content="BLOG AND NEWS"></Headline>
+                </TextContainer>
                 <Cardcontainer>
                     <Card></Card>
                     <Card></Card>

@@ -1,1 +1,1 @@
-worker: ./dist && node app.js
+web: ./dist && node app.js

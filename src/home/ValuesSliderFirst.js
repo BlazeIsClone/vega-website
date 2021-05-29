@@ -8,13 +8,15 @@ class ValuesSliderFirst extends Component {
     const GridTemplate = styled.div`
       height: 100vh;
       width: auto;
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
       display: grid;
-      grid-template-columns: repeat(12, 135px);
+      grid-template-columns: repeat(12, 141px);
       gap: 20px;
     `;
 
     const GridLayout = styled(GridTemplate)`
-      justify-content:center;
       align-items: center;
     `
     const ImgContainer = styled.img`

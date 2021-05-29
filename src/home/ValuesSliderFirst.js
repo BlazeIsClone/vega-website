@@ -18,18 +18,25 @@ class ValuesSliderFirst extends Component {
 
     const GridLayout = styled(GridTemplate)`
       align-items: center;
-    `
-    const ImgContainer = styled.img`
-      grid-column: 2/3;
+      justify-content: center;
+    `;
+    const Img = styled.img`
       height: 70vh;
       width: auto;
     `;
+const ImgContainer = styled.div`
+      grid-column: 2/8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `;
+
+
     const Container = styled.div`
-      grid-column: 3/4;
-      margin-left: 5vw;
+      grid-column: 8/11;
     `;
     const SubjectText = styled.h4`
-      color: black;
+      color: red;
       font-family: Ruda, sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -48,7 +55,9 @@ class ValuesSliderFirst extends Component {
     const BodyText = styled.p``;
     return (
       <GridLayout>
-        <ImgContainer src={img} alt="Car spray painting" />
+        <ImgContainer>
+        <Img src={img} alt="Car spray painting" />
+          </ImgContainer>
         <Container>
           <SubjectText>VALUES</SubjectText>
           <TitleText>Redefining Tomorrow's World</TitleText>

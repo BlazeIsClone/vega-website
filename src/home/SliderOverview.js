@@ -8,7 +8,6 @@ class SliderOverview extends Component {
       height: 92vh;
       width: 100%;
       background-image: url(${HeroMainBanner});
-      background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;

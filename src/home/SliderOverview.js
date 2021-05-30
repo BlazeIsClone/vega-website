@@ -18,20 +18,7 @@ class SliderOverview extends Component {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
     `;
-    const TitleText = styled.h2`
-      width: 832px;
-      color: white;
-      padding: auto 0 0 40px;
-      font-family: Ruda, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 46px;
-      display: flex;
-      text-transform: uppercase;
-      gird-column: 1/2;
-      grid-row: 3/4;
-    `;
+
     const StatBars = styled.ul`
       display: flex;
       justify-content: space-around;
@@ -52,10 +39,11 @@ class SliderOverview extends Component {
             <li>+300km/h Top Speed</li>
             <li>+300km/h Range</li>
           </StatBars>
-          <TitleText>
+          <Headline
+            content="
             The Vega evx pushes the boundaries of time. Race audaciously into a
-            brave new future.
-          </TitleText>
+            brave new future."
+          color="white"></Headline>
         </Box>
       </div>
     );

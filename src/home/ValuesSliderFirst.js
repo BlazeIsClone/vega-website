@@ -11,9 +11,6 @@ class ValuesSliderFirst extends Component {
     const GridTemplate = styled.div`
       height: 100vh;
       width: auto;
-      margin: 0px;
-      padding: 0px;
-      box-sizing: border-box;
       display: grid;
       grid-template-columns: repeat(12, 141px);
       gap: 20px;
@@ -37,24 +34,6 @@ class ValuesSliderFirst extends Component {
     const Container = styled.div`
       grid-column: 8/11;
     `;
-    const SubjectText = styled.h4`
-      color: red;
-      font-family: Ruda, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-    `;
-    const TitleText = styled.h2`
-      color: black;
-      padding: auto 0 0 40px;
-      font-family: Ruda, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 46px;
-      text-transform: uppercase;
-    `;
-
-    const BodyText = styled.p``;
     return (
       <GridLayout>
         <ImgContainer>

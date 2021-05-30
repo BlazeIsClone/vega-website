@@ -1,7 +1,7 @@
-import React, { Components } from "react";
-import Styled from "styled-component";
+import React, { Component } from "react";
+import styled from "styled-components";
 
-class NormalCards extends Compoents {
+class NormalCards extends Component {
     render() {
         return <></>;
     }

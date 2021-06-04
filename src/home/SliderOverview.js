@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HeroMainBanner from "./assets/sliderImageHomepagoverview.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
+import TextButton from "../common/TextButton.js";
 
 class SliderOverview extends Component {
   render() {
@@ -16,6 +17,7 @@ class SliderOverview extends Component {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+      cursor: pointer;
     `;
 
     const StatBars = styled.ul`
@@ -27,11 +29,32 @@ class SliderOverview extends Component {
       list-style: none;
       grid-column: 2/3;
       grid-row: 2/3;
+      margin-top: 130px;
+      li {
+        font-family: Ruda;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 64px;
+        line-height: 78px;
+        text-align: center;
+        color: #ffffff;
+      }
+      ul {
+        font-family: Ruda;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+
+        color: #ffffff;
+      }
     `;
     const TypeBlock = styled.div`
       grid-column: 1/2;
       align-self: center;
       padding-left: 40px;
+      margin-top: 60px;
     `;
 
     return (
@@ -45,17 +68,24 @@ class SliderOverview extends Component {
           ></Headline>
           <TypeBlock>
             <Typeset
+              subtitle="capabilities"
               headline="The Vega evx pushes the boundaries of time. Race audaciously into a
             brave new future."
-              subtitle="capabilities"
               body=" The Vega evx pushes the boundaries of time. Race audaciously into a
             brave new future."
             />
+            <TextButton content="Read More" color="white" />
           </TypeBlock>
           <StatBars>
-            <li>3.1s 0-100Km/hA</li>
-            <li>+300km/h Top Speed</li>
-            <li>+300km/h Range</li>
+            <li>
+              3.1s <ul>0-100Km/hA</ul>
+            </li>
+            <li>
+              +300km/h <ul>Top Speed</ul>
+            </li>
+            <li>
+              +300km/h <ul>Range</ul>
+            </li>
           </StatBars>
         </Container>
       </div>

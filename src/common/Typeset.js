@@ -9,8 +9,8 @@ class Typeset extends Component {
   render() {
     return (
       <>
-        <Headline content={this.props.headline} color="white" />
         <Subtitle content={this.props.subtitle} />
+        <Headline content={this.props.headline} color="white" />
         <Body content={this.props.body} color="white" />
       </>
     );

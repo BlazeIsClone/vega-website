@@ -20,6 +20,7 @@ class ContainedButton extends Component {
       font-size: 14px;
       line-height: 16px;
       min-width: 143.02px;
+      cursor: pointer;
       height: ${(props) => (this.props.height === "nav" ? "37.9px" : "44px")};
       background-color: ${(props) =>
         this.props.body === "white" ? "white" : "black"};

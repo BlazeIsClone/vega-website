@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import HeroMainBanner from "./assets/sliderImageHomepagoverview.png";
+import HeroMainBanner from "./assets/sliderImageSpecs.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
 
-class SliderOverview extends Component {
+class SliderSpecs extends Component {
   render() {
     const Container = styled.div`
       height: 94vh;
@@ -99,4 +99,4 @@ class SliderOverview extends Component {
   }
 }
 
-export default SliderOverview;
+export default SliderSpecs;

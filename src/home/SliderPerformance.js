@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import HeroMainBanner from "./assets/sliderImageHomepagoverview.png";
+import HeroMainBanner from "./assets/sliderImgPerformance.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";

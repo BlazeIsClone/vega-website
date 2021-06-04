@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SliderOverview from "./SliderOverview.js";
 import SliderDesign from "./SliderDesign.js";
-import SliderPerformance from "./SliderPerformance.js";
+import SliderPerformance from "./SliderPerformance";
 import SliderInnovation from "./SliderInnovation.js";
-import SliderSpecs from "./SliderSpecs";
+import SliderSpecs from "./SliderSpecs.js";
 
 class NavBar extends Component {
   render() {
@@ -38,6 +38,7 @@ class NavBar extends Component {
       outline: none;
       &:hover {
         color: white;
+        background-color: red;
       }
     `;
     return (
@@ -45,7 +46,7 @@ class NavBar extends Component {
         <List>
           <ListItem>
             <Link
-              to="/SliderOverview"
+              to="/"
               exact
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -63,7 +64,7 @@ class NavBar extends Component {
           </ListItem>
           <ListItem>
             <Link
-              to="/SliderPerformace"
+              to="/SliderPerformance"
               exact
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -89,6 +90,20 @@ class NavBar extends Component {
             </Link>
           </ListItem>
         </List>
+        <Switch></Switch>
+        <Route exact path="/"></Route>
+        <Route path="/SliderDesign">
+          <SliderDesign />
+        </Route>
+        <Route path="/SliderPerformance">
+          <SliderPerformance />
+        </Route>
+        <Route path="/SliderInnovation">
+          <SliderInnovation />
+        </Route>
+        <Route path="/SliderSpecs">
+          <SliderSpecs />
+        </Route>
       </Router>
     );
   }

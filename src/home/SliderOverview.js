@@ -8,16 +8,22 @@ import TextButton from "../common/TextButton.js";
 class SliderOverview extends Component {
   render() {
     const Container = styled.div`
-      height: 92vh;
+      height: 94vh;
       width: 100%;
-      background-image: url(${HeroMainBanner});
+      background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          rgba(255, 255, 255, 0) 0.01%,
+          rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(${HeroMainBanner});
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      cursor: pointer;
+      position: relative;
     `;
 
     const StatBars = styled.ul`
@@ -34,7 +40,7 @@ class SliderOverview extends Component {
         font-family: Ruda;
         font-style: normal;
         font-weight: normal;
-        font-size: 64px;
+        font-size: 56px;
         line-height: 78px;
         text-align: center;
         color: #ffffff;
@@ -68,7 +74,7 @@ class SliderOverview extends Component {
           ></Headline>
           <TypeBlock>
             <Typeset
-              subtitle="capabilities"
+              subtitle="vega evx"
               headline="The Vega evx pushes the boundaries of time. Race audaciously into a
             brave new future."
               body=" The Vega evx pushes the boundaries of time. Race audaciously into a

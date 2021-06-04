@@ -6,7 +6,8 @@ import Container from "../common/HeroContainer.js";
 class HeroSection extends Component {
   render() {
     const Player = styled.video`
-      position: absolute;
+      position: fixed;
+      z-index: -99;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);

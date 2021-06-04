@@ -31,6 +31,7 @@ class TopNav extends Component {
     const HamburgerIcon = styled(NavHamburgerIcon)`
       width: 40px;
       height: 60px;
+      cursor: pointer;
     `;
     const Logo = styled(NavLogoIcon)`
       margin: 20px 0 0 20px;

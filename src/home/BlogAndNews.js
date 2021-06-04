@@ -8,16 +8,20 @@ import Card from "../common/Card.js";
 
 class BlogAndNews extends Component {
   render() {
+    const Container = styled.div`
+      background-color: white;
+    `;
     const Block = styled.div`
       height: 85vh;
       display: flex;
       flex-direction: row;
       align-items: center;
       padding-left: 162px;
+      background-color: white;
       gap: 20px;
     `;
     return (
-      <>
+      <Container>
         <Headline paddingLeft="card" content="BLOG AND NEWS" />
         <Block>
           <Card
@@ -39,7 +43,7 @@ class BlogAndNews extends Component {
             Body="Body"
           />
         </Block>
-      </>
+      </Container>
     );
   }
 }

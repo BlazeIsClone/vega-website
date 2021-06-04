@@ -14,6 +14,7 @@ class ValuesSliderFirst extends Component {
       display: grid;
       grid-template-columns: repeat(12, 141px);
       gap: 20px;
+      background-color: white;
     `;
 
     const GridLayout = styled(GridTemplate)`
@@ -46,7 +47,7 @@ class ValuesSliderFirst extends Component {
             content="Inspired by a hyper creative generation of multidisciplinary innovators, our passion brought us here.
 We are now ready to revolutionise the world we live in with cutting-edge technology, to enhance lives, to bring people closer to nature and to each other in extraordinary ways.
 "
-          ></Body>
+          />
           <TextButton content="About Us"></TextButton>
         </Container>
       </GridLayout>

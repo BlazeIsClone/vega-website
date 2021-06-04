@@ -20,21 +20,17 @@ class SliderOverview extends Component {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       position: relative;
     `;
 
     const StatBars = styled.ul`
       display: flex;
       justify-content: space-around;
-      align-items: center;
       color: white;
       font-size: 36px;
       list-style: none;
-      grid-column: 2/3;
-      grid-row: 2/3;
       margin-top: 130px;
       li {
         font-family: Ruda;
@@ -57,7 +53,6 @@ class SliderOverview extends Component {
       }
     `;
     const TypeBlock = styled.div`
-      grid-column: 1/2;
       align-self: center;
       padding-left: 40px;
       margin-top: 60px;
@@ -69,7 +64,7 @@ class SliderOverview extends Component {
           <Headline
             paddingLeft="slider"
             paddingTop="slider"
-            content="Performance"
+            content="Innovation"
             color="white"
           ></Headline>
           <TypeBlock>

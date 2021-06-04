@@ -14,6 +14,7 @@ class Newsletter extends Component {
       justify-content: center;
       align-items: center;
       row-gap: 15px;
+      background-color: white;
     `;
 
     const FormBlock = styled.div`
@@ -25,6 +26,8 @@ class Newsletter extends Component {
     `;
 
     const FormElement = styled.form`
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       margin: 10px;
       display: flex;
       flex-direction: column;
@@ -37,6 +40,8 @@ class Newsletter extends Component {
       width: 570px;
       display: block;
       background-color: #f9f9f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       height: 44px;
       outline-style: none;
       border-color: white;
@@ -67,7 +72,7 @@ class Newsletter extends Component {
         <FormBlock>
           <FormElement action="#">
             <InputLabel>Your email address</InputLabel>
-            <InputElement type="email" value="john@email.com" />
+            <InputElement type="email" placeholder="john@email.com" />
           </FormElement>
           <ContainedButton text="white" content="Subscribe" />
         </FormBlock>

@@ -8,10 +8,11 @@ class TextButton extends Component {
     const Gridlayout = styled.div`
       display: flex;
       flex-direction: row;
+      align-items: center;
       margin-top: 20px;
     `;
     const Button = styled.button`
-      width: 200px;
+      width: 150px;
       display: inline-block;
       font-family: Ruda;
       font-style: normal;
@@ -27,6 +28,7 @@ class TextButton extends Component {
     `;
     const Icon = styled.div`
       align-self: center;
+      padding-top: 3px;
     `;
     const Svg = styled(IconSvg)`
       fill: ${(props) => (this.props.color === "white" ? "white" : "black")};

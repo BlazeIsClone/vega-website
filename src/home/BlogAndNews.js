@@ -9,19 +9,19 @@ import Card from "../common/Card.js";
 class BlogAndNews extends Component {
   render() {
     const Container = styled.div`
+      margin-top: 100px;
       background-color: white;
     `;
     const Block = styled.div`
       height: 85vh;
       display: flex;
       flex-direction: row;
-      align-items: center;
-      padding-left: 162px;
       background-color: white;
       gap: 20px;
+      padding: 90px 0 0 162px;
     `;
     return (
-      <Container>
+      <Container data-scroll data-scroll-speed="2">
         <Headline paddingLeft="card" content="BLOG AND NEWS" />
         <Block>
           <Card

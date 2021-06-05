@@ -18,7 +18,7 @@ class Home extends Component {
   render() {
     const Layout = styled.div``;
     return (
-      <Layout>
+      <Layout data-scroll-section>
         <TopNav />
         <HeroSection />
         <NavBar />

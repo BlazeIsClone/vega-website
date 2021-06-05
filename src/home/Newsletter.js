@@ -57,7 +57,7 @@ class Newsletter extends Component {
       top: -10px;
     `;
     return (
-      <Block>
+      <Block data-scroll data-scroll-speed="1">
         <Headline
           content="Subscribe to Vega Newsletter"
           color="black"

@@ -6,6 +6,12 @@ import imgValue from "./assets/homepagelocation.png";
 
 class ChargeNetInfo extends Component {
   render() {
+    const Img = styled.img`
+      position: absolute;
+      height: 35vh;
+      width: 100vw;
+      z-index: -99;
+    `;
     const Layout = styled.div`
       display: block;
       height: 35vh;
@@ -20,13 +26,14 @@ class ChargeNetInfo extends Component {
     `;
     return (
       <Layout>
-        <Content>
+        <Img src={imgValue} />
+        <Content data-scroll data-scroll-speed="1">
           <Headline
             content="FIND THE NEAREST AVAILABLE CHARGING LOCATION"
-            color="black"
+            color="white"
             width="clamp"
           />
-          <ContainedButton text="white" body="black" content="chargenet" />
+          <ContainedButton text="black" body="white" content="chargenet" />
         </Content>
       </Layout>
     );

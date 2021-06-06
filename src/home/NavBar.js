@@ -14,7 +14,7 @@ class NavBar extends Component {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 8vh;
+      height: 6vh;
       background-image: linear-gradient(261deg, #181c20, #363f44);
     `;
     const ListItem = styled.button`

@@ -14,7 +14,7 @@ class HeroSection extends Component {
     return (
       <Container
         content={
-          <Player autoPlay loop muted>
+          <Player autoPlay loop muted data-keepplaying>
             <source src={videoSrc} type="video/mp4" />
           </Player>
         }

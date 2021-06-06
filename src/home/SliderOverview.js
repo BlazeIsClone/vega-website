@@ -8,7 +8,7 @@ import TextButton from "../common/TextButton.js";
 class SliderOverview extends Component {
   render() {
     const Container = styled.div`
-      height: 96vh;
+      height: 94vh;
       width: 100%;
       background: linear-gradient(
           180deg,

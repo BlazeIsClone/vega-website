@@ -4,15 +4,16 @@ import Home from "./home/Home.js";
 import LocomotiveScroll from "locomotive-scroll";
 
 class App extends Component {
-  componentDidMount() {
+  /*componentDidMount() {
     const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
     });
   }
+  */
   render() {
     return (
-      <div data-scroll-container>
+      <div>
         <Home />
       </div>
     );

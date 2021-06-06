@@ -4,12 +4,19 @@ import HeroMainBanner from "./assets/sliderImgOverview.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
+import SliderInnerNav from "../common/SliderInnerNav.js";
 
 class SliderOverview extends Component {
   render() {
     const Container = styled.div`
-      height: 94vh;
-      width: 100%;
+      max-height: 100vh;
+      min-height: 1060px;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
       background: linear-gradient(
           180deg,
           #ffffff 0%,
@@ -17,61 +24,59 @@ class SliderOverview extends Component {
           rgba(0, 0, 0, 0.2) 100%
         ),
         url(${HeroMainBanner});
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      position: relative;
     `;
 
     const StatBars = styled.ul`
       display: flex;
+      grid-column: 2/3;
       justify-content: space-around;
       align-items: center;
       color: white;
       font-size: 36px;
       list-style: none;
-      grid-column: 2/3;
-      grid-row: 2/3;
-      margin-top: 130px;
-      li {
-        font-family: Ruda;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 56px;
-        line-height: 78px;
-        text-align: center;
-        color: #ffffff;
-      }
+      width: 900px;
+
+      li,
       ul {
         font-family: Ruda;
         font-style: normal;
         font-weight: normal;
+        color: #ffffff;
+        text-align: center;
+      }
+      li {
+        font-size: 56px;
+        line-height: 78px;
+      }
+      ul {
         font-size: 24px;
         line-height: 29px;
-        text-align: center;
-
-        color: #ffffff;
       }
     `;
     const TypeBlock = styled.div`
-      grid-column: 1/2;
       align-self: center;
-      padding-left: 40px;
-      margin-top: 60px;
+      grid-column: 2/3;
+      width: 900px;
+    `;
+
+    const NavBlock = styled.div`
+      justify-content: center;
+      align-self: center;
+      width: 80vw;
+      margin-top: 100px;
+    `;
+    const ContentBlock = styled.div`
+      display: flex;
+      align-self: center;
+      padding: 550px 0 0 0;
     `;
 
     return (
-      <div>
-        <Container alt="Image of the car">
-          <Headline
-            paddingLeft="slider"
-            paddingTop="slider"
-            content="OVERVIEW"
-            color="white"
-          ></Headline>
+      <Container>
+        <NavBlock>
+          <SliderInnerNav />
+        </NavBlock>
+        <ContentBlock>
           <TypeBlock>
             <Typeset
               subtitle="vega evx"
@@ -79,22 +84,26 @@ class SliderOverview extends Component {
             brave new future."
               body=" The Vega evx pushes the boundaries of time. Race audaciously into a
             brave new future."
+              color="white"
             />
             <TextButton content="Read More" color="white" />
           </TypeBlock>
           <StatBars>
             <li>
-              3.1s <ul>0-100Km/hA</ul>
+              3.1s
+              <ul>0-100Km/hA</ul>
             </li>
             <li>
-              +300km/h <ul>Top Speed</ul>
+              +300km/h
+              <ul>Top Speed</ul>
             </li>
             <li>
-              +300km/h <ul>Range</ul>
+              +300km/h
+              <ul>Range</ul>
             </li>
           </StatBars>
-        </Container>
-      </div>
+        </ContentBlock>
+      </Container>
     );
   }
 }

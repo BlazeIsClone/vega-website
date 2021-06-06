@@ -11,7 +11,8 @@ import { ReactComponent as RightArrowIcon } from "../common/svg/chevron_right_bl
 class ValuesSliderFirst extends Component {
   render() {
     const GridTemplate = styled.div`
-      height: 100vh;
+      max-height: 100vh;
+      min-height: 980px;
       width: auto;
       display: grid;
       grid-template-columns: repeat(12, 141px);
@@ -25,14 +26,12 @@ class ValuesSliderFirst extends Component {
       justify-content: center;
     `;
     const Img = styled.img`
-      height: 70vh;
-      width: auto;
+      height: 695px;
+      width: 802px;
     `;
     const ImgContainer = styled.div`
       grid-column: 2/8;
       display: flex;
-      align-items: center;
-      justify-content: center;
       grid-row: 1/2;
     `;
 
@@ -61,7 +60,7 @@ class ValuesSliderFirst extends Component {
           <RightArrowIcon />
         </RightArrow>
         <ImgContainer>
-          <Img src={img} alt="Car spray painting" />
+          <Img src={img} />
         </ImgContainer>
         <Container>
           <div data-scroll data-scroll-speed="1">

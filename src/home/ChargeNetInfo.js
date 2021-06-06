@@ -6,15 +6,11 @@ import imgValue from "./assets/homepagelocation.png";
 
 class ChargeNetInfo extends Component {
   render() {
-    const Img = styled.img`
-      position: absolute;
-      height: 35vh;
-      width: 100vw;
-      z-index: -99;
-    `;
     const Layout = styled.div`
-      display: block;
-      height: 35vh;
+      display: flex;
+      flex-direction: column;
+      height: 336px;
+      background-image: url(${imgValue});
     `;
     const Content = styled.div`
       display: flex;
@@ -22,11 +18,10 @@ class ChargeNetInfo extends Component {
       align-items: center;
       justify-content: space-around;
       flex-wrap: nowrap;
-      padding-top: calc(30vh / 2);
+      padding-top: 126px;
     `;
     return (
       <Layout>
-        <Img src={imgValue} />
         <Content data-scroll data-scroll-speed="1">
           <Headline
             content="FIND THE NEAREST AVAILABLE CHARGING LOCATION"

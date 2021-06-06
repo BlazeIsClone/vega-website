@@ -13,7 +13,7 @@ class BlogAndNews extends Component {
       background-color: white;
     `;
     const Block = styled.div`
-      height: 85vh;
+      height: 800px;
       display: flex;
       flex-direction: row;
       background-color: white;

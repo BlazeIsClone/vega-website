@@ -4,92 +4,64 @@ import HeroMainBanner from "./assets/sliderImageInnoveation.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
+import SliderInnerNav from "../common/SliderInnerNav.js";
 
 class SliderOverview extends Component {
   render() {
     const Container = styled.div`
-      height: 94vh;
-      width: 100%;
-      background: linear-gradient(
-          180deg,
-          #ffffff 0%,
-          rgba(255, 255, 255, 0) 0.01%,
-          rgba(0, 0, 0, 0.2) 100%
-        ),
-        url(${HeroMainBanner});
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      max-height: 100vh;
+      min-height: 1060px;
+      width: auto;
       display: flex;
       flex-direction: column;
-      position: relative;
+    `;
+    const AutoPlayVideo = styled.img`
+      height: 705px;
+      width: auto;
     `;
 
-    const StatBars = styled.ul`
-      display: flex;
-      justify-content: space-around;
-      color: white;
-      font-size: 36px;
-      list-style: none;
-      margin-top: 130px;
-      li {
-        font-family: Ruda;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 56px;
-        line-height: 78px;
-        text-align: center;
-        color: #ffffff;
-      }
-      ul {
-        font-family: Ruda;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 29px;
-        text-align: center;
-
-        color: #ffffff;
-      }
-    `;
     const TypeBlock = styled.div`
       align-self: center;
-      padding-left: 40px;
-      margin-top: 60px;
+      grid-column: 2/3;
+      width: 900px;
     `;
 
+    const NavBlock = styled.div`
+      justify-content: center;
+      align-self: center;
+      width: 80vw;
+      margin-top: 100px;
+    `;
+    const ContentBlock = styled.div`
+      position: absolute;
+      z-index: -99;
+    `;
+    const TextBox = styled.div`
+      height: 373px;
+      background-color: #0f0f0f;
+      width: 100%;
+      padding: 60px 0 0 60px;
+    `;
     return (
-      <div>
-        <Container alt="Image of the car">
-          <Headline
-            paddingLeft="slider"
-            paddingTop="slider"
-            content="Innovation"
-            color="white"
-          ></Headline>
-          <TypeBlock>
-            <Typeset
-              subtitle="vega evx"
-              headline="The Vega evx pushes the boundaries of time. Race audaciously into a
-            brave new future."
-              body=" The Vega evx pushes the boundaries of time. Race audaciously into a
-            brave new future."
-            />
-            <TextButton content="Read More" color="white" />
-          </TypeBlock>
-          <StatBars>
-            <li>
-              3.1s <ul>0-100Km/hA</ul>
-            </li>
-            <li>
-              +300km/h <ul>Top Speed</ul>
-            </li>
-            <li>
-              +300km/h <ul>Range</ul>
-            </li>
-          </StatBars>
-        </Container>
-      </div>
+      <Container>
+        <NavBlock>
+          <SliderInnerNav />
+        </NavBlock>
+        <ContentBlock>
+          <AutoPlayVideo src={HeroMainBanner}></AutoPlayVideo>
+          <TextBox>
+            <TypeBlock>
+              <Typeset
+                subtitle="vega evx"
+                headline="The Vega evx pushes the boundaries of time."
+                body=" The Vega evx pushes the boundaries of time. Race audaciously into a brave new future."
+                color="white"
+              />
+              <TextButton content="Read More" color="white" />
+            </TypeBlock>
+          </TextBox>
+        </ContentBlock>
+      </Container>
     );
   }
 }

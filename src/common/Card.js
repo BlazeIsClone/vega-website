@@ -9,13 +9,14 @@ class Card extends Component {
     const Card = styled.div`
       width: 465px;
       height: 590px;
-      background-color: white;
+      min-width: 300px;
+      background-color: none;
       align-items: center;
       justify-content: center;
       gap: 20px;
       img {
         width: 100%;
-        height: 380px;
+        height: auto;
         margin-bottom: 10px;
       }
     `;

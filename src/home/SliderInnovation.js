@@ -52,9 +52,9 @@ class SliderOverview extends Component {
           <TextBox>
             <TypeBlock>
               <Typeset
-                subtitle="vega evx"
-                headline="The Vega evx pushes the boundaries of time."
-                body=" The Vega evx pushes the boundaries of time. Race audaciously into a brave new future."
+                subtitle="autonomous driving"
+                headline="Redefining the Future of Driving"
+                body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
                 color="white"
               />
               <TextButton content="Read More" color="white" />

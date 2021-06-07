@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import HeroSection from "./HeroSection.js";
 import SliderOverview from "./SliderOverview.js";
-import SliderDesign from "./SliderDesign.js";
-import SliderPerformance from "./SliderPerformance";
-import SliderInnovation from "./SliderInnovation.js";
-import SliderSpecs from "./SliderSpecs.js";
-import ValuesSliderFirst from "./ValuesSliderFirst.js";
+import ValuesHome from "./ValuesHome.js";
 import BlogAndNews from "./BlogAndNews.js";
 import ChargeNetInfo from "./ChargeNetInfo.js";
 import Newsletter from "./Newsletter.js";
@@ -21,12 +17,7 @@ class Home extends Component {
         <TopNav />
         <HeroSection />
         <SliderOverview />
-        {/*
-        <SliderDesign />
-        <SliderPerformance />
-        <SliderInnovation />
-        <SliderSpecs /> */}
-        <ValuesSliderFirst />
+        <ValuesHome />
         <BlogAndNews />
         <ChargeNetInfo />
         <Newsletter />

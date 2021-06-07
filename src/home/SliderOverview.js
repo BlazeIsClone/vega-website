@@ -82,8 +82,7 @@ class SliderOverview extends Component {
               subtitle="vega evx"
               headline="The Vega evx pushes the boundaries of time. Race audaciously into a
             brave new future."
-              body=" The Vega evx pushes the boundaries of time. Race audaciously into a
-            brave new future."
+              body="Race-inspired refinement. Every detail heightens the connection between you and your Vega EVX."
               color="white"
             />
             <TextButton content="Read More" color="white" />

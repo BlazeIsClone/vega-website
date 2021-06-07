@@ -43,7 +43,7 @@ class SliderOverview extends Component {
         text-align: center;
       }
       li {
-        font-size: 42px;
+        font-size: 56px;
         line-height: 78px;
       }
       ul {
@@ -76,25 +76,24 @@ class SliderOverview extends Component {
         <ContentBlock>
           <StatBars>
             <li>
-              3.1s
-              <ul>0-100Km/hA</ul>
+              453ᶜᵐ
+              <ul>Length</ul>
             </li>
             <li>
-              +300km/h
-              <ul>Top Speed</ul>
+              197ᶜᵐ
+              <ul>Width</ul>
             </li>
             <li>
-              +300km/h
-              <ul>Range</ul>
+              122ᶜᵐ
+              <ul>Height</ul>
             </li>
           </StatBars>
           <TypeBlock>
             <Typeset
-              subtitle="vega evx"
-              headline="The Vega evx pushes the boundaries of time. Race audaciously into a
-            brave new future."
-              body=" The Vega evx pushes the boundaries of time. Race audaciously into a
-            brave new future."
+              subtitle="Design"
+              headline="LEADING-EDGE
+              Aerodynamics for increased downforce"
+              body="As an all-electric supercar, Vega EVX maximizes the potential of aerodynamic engineering—with record-setting performance and efficiency."
               color="white"
             />
             <TextButton content="Read More" color="white" />

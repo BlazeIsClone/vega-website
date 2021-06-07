@@ -5,10 +5,8 @@ import img from "./assets/homeValuesImg.png";
 import Headline from "../common/Headline.js";
 import Subtitle from "../common/Subtitle.js";
 import Body from "../common/Body.js";
-import { ReactComponent as LeftArrowIcon } from "../common/svg/chevron_left_black_24dp.svg";
-import { ReactComponent as RightArrowIcon } from "../common/svg/chevron_right_black_24dp.svg";
 
-class ValuesSliderFirst extends Component {
+class ValuesHome extends Component {
   render() {
     const GridTemplate = styled.div`
       max-height: 100vh;
@@ -39,26 +37,8 @@ class ValuesSliderFirst extends Component {
       grid-column: 8/11;
       grid-row: 1/2;
     `;
-    const LeftArrow = styled.svg`
-      grid-column: 2/3;
-      grid-row: 1/2;
-      margin-top: 80px;
-      cursor: pointer;
-    `;
-    const RightArrow = styled.svg`
-      grid-column: 11/12;
-      grid-row: 1/2;
-      margin-top: 80px;
-      cursor: pointer;
-    `;
     return (
       <GridLayout>
-        <LeftArrow>
-          <LeftArrowIcon />
-        </LeftArrow>
-        <RightArrow>
-          <RightArrowIcon />
-        </RightArrow>
         <ImgContainer>
           <Img src={img} />
         </ImgContainer>
@@ -79,4 +59,4 @@ We are now ready to revolutionise the world we live in with cutting-edge technol
   }
 }
 
-export default ValuesSliderFirst;
+export default ValuesHome;

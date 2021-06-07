@@ -15,58 +15,82 @@ class SliderSpecs extends Component {
       flex-direction: column;
       background-color: #0f0f0f;
     `;
-
-    const StatBars = styled.ul`
-      display: flex;
-      grid-column: 2/3;
-      justify-content: space-around;
-      align-items: center;
-      color: white;
-      font-size: 36px;
-      list-style: none;
-      width: 900px;
-
-      li,
-      ul {
-        font-family: Ruda;
-        font-style: normal;
-        font-weight: normal;
-        color: #ffffff;
-        text-align: center;
-      }
-      li {
-        font-size: 56px;
-        line-height: 78px;
-      }
-      ul {
-        font-size: 24px;
-        line-height: 29px;
-      }
-    `;
-    const TypeBlock = styled.div`
-      align-self: center;
-      grid-column: 2/3;
-      width: 900px;
-    `;
-
     const NavBlock = styled.div`
       justify-content: center;
       align-self: center;
       width: 80vw;
       margin-top: 100px;
     `;
-    const ContentBlock = styled.div`
-      display: grid;
+    const Table = styled.div`
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: right;
+      color: #ffffff;
+      width: 1455px;
+      height: 622px;
+      margin-top: 70px;
     `;
 
+    const TableItems = styled.table`
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      th,
+      td {
+        border-bottom: 0.01em solid white;
+      }
+      th {
+        text-align: right;
+      }
+      td {
+        text-align: left;
+        height: 60px;
+        vertical-align: center;
+      }
+    `;
     return (
       <Container>
         <NavBlock>
           <SliderInnerNav />
         </NavBlock>
-        <ContentBlock>
-          <TypeBlock></TypeBlock>
-        </ContentBlock>
+        <Table>
+          <TableItems>
+            <tr>
+              <td>Max Power</td>
+              <th>804HP</th>
+            </tr>
+            <tr>
+              <td>Torque</td>
+              <th>760Nm</th>
+            </tr>
+            <tr>
+              <td>Acceleration 0-100km/h</td>
+              <th>3.1seconds</th>
+            </tr>
+            <tr>
+              <td>Motor</td>
+              <th>Liquid cooled Dual Motor AWD</th>
+            </tr>
+            <tr>
+              <td>Weight</td>
+              <th>1,900KG</th>
+            </tr>
+            <tr>
+              <td>Battery Capacity</td>
+              <th>55kWh NMC Gen 2 Battery Pack</th>
+            </tr>
+            <tr>
+              <td>Range</td>
+              <th>300Km</th>
+            </tr>
+          </TableItems>
+        </Table>
       </Container>
     );
   }

@@ -4,49 +4,33 @@ import HeroMainBanner from "./assets/sliderImageInnoveation.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
-import SliderInnerNav from "../common/SliderInnerNav.js";
 
-class SliderOverview extends Component {
+class SliderInnovation extends Component {
   render() {
     const Container = styled.div`
       max-height: 100vh;
       min-height: 1060px;
-      width: auto;
+      width: 100%;
       display: flex;
       flex-direction: column;
     `;
     const AutoPlayVideo = styled.img`
-      height: 705px;
-      width: auto;
+      height: 100%;
+      width: 100%;
     `;
 
     const TypeBlock = styled.div`
-      align-self: center;
-      grid-column: 2/3;
       width: 900px;
     `;
 
-    const NavBlock = styled.div`
-      justify-content: center;
-      align-self: center;
-      width: 80vw;
-      margin-top: 100px;
-    `;
-    const ContentBlock = styled.div`
-      position: absolute;
-      z-index: -99;
-    `;
+    const ContentBlock = styled.div``;
     const TextBox = styled.div`
       height: 373px;
       background-color: #0f0f0f;
-      width: 100%;
       padding: 60px 0 0 60px;
     `;
     return (
       <Container>
-        <NavBlock>
-          <SliderInnerNav />
-        </NavBlock>
         <ContentBlock>
           <AutoPlayVideo src={HeroMainBanner}></AutoPlayVideo>
           <TextBox>
@@ -66,4 +50,4 @@ class SliderOverview extends Component {
   }
 }
 
-export default SliderOverview;
+export default SliderInnovation;

@@ -4,7 +4,6 @@ import HeroMainBanner from "./assets/sliderImgOverview.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
-import SliderInnerNav from "../common/SliderInnerNav.js";
 
 class SliderOverview extends Component {
   render() {
@@ -45,7 +44,7 @@ class SliderOverview extends Component {
         text-align: center;
       }
       li {
-        font-size: 56px;
+        font-size: 42px;
         line-height: 78px;
       }
       ul {
@@ -55,27 +54,17 @@ class SliderOverview extends Component {
     `;
     const TypeBlock = styled.div`
       align-self: center;
-      grid-column: 2/3;
-      width: 900px;
+      width: 800px;
     `;
 
-    const NavBlock = styled.div`
-      justify-content: center;
-      align-self: center;
-      width: 80vw;
-      margin-top: 100px;
-    `;
     const ContentBlock = styled.div`
       display: flex;
       align-self: center;
-      padding: 550px 0 0 0;
+      padding: 700px 60px 0 60px;
     `;
 
     return (
       <Container>
-        <NavBlock>
-          <SliderInnerNav />
-        </NavBlock>
         <ContentBlock>
           <TypeBlock>
             <Typeset

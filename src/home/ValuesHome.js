@@ -51,8 +51,8 @@ class ValuesHome extends Component {
 We are now ready to revolutionise the world we live in with cutting-edge technology, to enhance lives, to bring people closer to nature and to each other in extraordinary ways.
 "
             />
+            <TextButton content="About Us"></TextButton>
           </div>
-          <TextButton content="About Us"></TextButton>
         </Container>
       </GridLayout>
     );

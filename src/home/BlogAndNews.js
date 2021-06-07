@@ -21,7 +21,7 @@ class BlogAndNews extends Component {
       padding: 90px 0 0 162px;
     `;
     return (
-      <Container data-scroll data-scroll-speed="2">
+      <Container data-scroll data-scroll-speed="4">
         <Headline paddingLeft="card" content="BLOG AND NEWS" />
         <Block>
           <Card

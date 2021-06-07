@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import HeroMainBanner from "./assets/sliderImageSpecs.png";
-import Headline from "../common/Headline.js";
-import Typeset from "../common/Typeset.js";
-import TextButton from "../common/TextButton.js";
-import SliderInnerNav from "../common/SliderInnerNav.js";
 
 class SliderSpecs extends Component {
   render() {
@@ -14,12 +9,6 @@ class SliderSpecs extends Component {
       display: flex;
       flex-direction: column;
       background-color: #0f0f0f;
-    `;
-    const NavBlock = styled.div`
-      justify-content: center;
-      align-self: center;
-      width: 80vw;
-      margin-top: 100px;
     `;
     const Table = styled.div`
       display: flex;
@@ -32,14 +21,14 @@ class SliderSpecs extends Component {
       line-height: 28px;
       text-align: right;
       color: #ffffff;
-      width: 1455px;
-      height: 622px;
-      margin-top: 70px;
+      width: 100%;
+      height: 100%;
+      margin-top: 270px;
     `;
 
     const TableItems = styled.table`
-      width: 100%;
-      height: 100%;
+      width: 1455px;
+      height: 622px;
       border-collapse: collapse;
       th,
       td {
@@ -56,9 +45,6 @@ class SliderSpecs extends Component {
     `;
     return (
       <Container>
-        <NavBlock>
-          <SliderInnerNav />
-        </NavBlock>
         <Table>
           <TableItems>
             <tr>

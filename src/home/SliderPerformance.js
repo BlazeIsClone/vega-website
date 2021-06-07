@@ -4,9 +4,8 @@ import HeroMainBanner from "./assets/sliderImgPerformance.png";
 import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
-import SliderInnerNav from "../common/SliderInnerNav.js";
 
-class SliderOverview extends Component {
+class SliderPerformance extends Component {
   render() {
     const Container = styled.div`
       max-height: 100vh;
@@ -59,24 +58,14 @@ class SliderOverview extends Component {
       width: 900px;
     `;
 
-    const NavBlock = styled.div`
-      justify-content: center;
-      align-self: center;
-      width: 80vw;
-      margin-top: 100px;
-    `;
-
     const ContentBlock = styled.div`
       display: flex;
       flex-direction: column;
-      padding: 400px 0 0 60px;
+      padding: 550px 60px 0 60px;
     `;
 
     return (
       <Container>
-        <NavBlock>
-          <SliderInnerNav />
-        </NavBlock>
         <ContentBlock>
           <StatBars>
             <li>
@@ -103,4 +92,4 @@ class SliderOverview extends Component {
   }
 }
 
-export default SliderOverview;
+export default SliderPerformance;

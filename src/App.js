@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Home from "./home/Home.js";
 import LocomotiveScroll from "locomotive-scroll";
+import Home from "./home/Home.js";
+import VegaEvx from "./vegaEvx/VegaEvx.js";
 
 class App extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div data-scroll-container>
-        <Home />
+        <VegaEvx />
       </div>
     );
   }

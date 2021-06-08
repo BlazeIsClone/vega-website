@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div data-scroll-container>
-        <VegaEvx />
+        <Home />
       </div>
     );
   }

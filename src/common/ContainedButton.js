@@ -26,7 +26,11 @@ class ContainedButton extends Component {
         this.props.body === "white" ? "white" : "black"};
       color: ${(props) => (this.props.text === "white" ? "white" : "black")};
     `;
-    return <Button>{this.props.content}</Button>;
+    return (
+      <Button type="button" onClick={this.props.clickEvent}>
+        {this.props.content}
+      </Button>
+    );
   }
 }
 

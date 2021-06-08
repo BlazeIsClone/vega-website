@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HeroMainBanner from "./assets/sliderImgOverview.png";
-import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
 
@@ -27,7 +26,6 @@ class SliderOverview extends Component {
 
     const StatBars = styled.ul`
       display: flex;
-      grid-column: 2/3;
       justify-content: space-around;
       align-items: center;
       color: white;
@@ -66,7 +64,7 @@ class SliderOverview extends Component {
     return (
       <Container>
         <ContentBlock>
-          <TypeBlock>
+          <TypeBlock data-scroll data-scroll-speed="1">
             <Typeset
               subtitle="vega evx"
               headline="The Vega evx pushes the boundaries of time. Race audaciously into a

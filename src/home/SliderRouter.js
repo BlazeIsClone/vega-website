@@ -1,4 +1,4 @@
-import React, { useCallback, Component } from "react";
+import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,8 +11,9 @@ import SliderDesign from "./SliderDesign.js";
 import SliderPerformance from "./SliderPerformance.js";
 import SliderInnovation from "./SliderInnovation.js";
 import SliderSpecs from "./SliderSpecs.js";
+import NotFound from "../NotFound.js";
 
-class SliderContainer extends Component {
+class SliderRouter extends Component {
   render() {
     const Container = styled.div`
       max-height: 100vh;
@@ -72,6 +73,7 @@ class SliderContainer extends Component {
             <Route path="/performance-overview" component={SliderPerformance} />
             <Route path="/innovation-overview" component={SliderInnovation} />
             <Route path="/specs-overview" component={SliderSpecs} />
+            <Route component={NotFound} />
           </Switch>
           <NavBlock>
             <NavLinked
@@ -120,11 +122,10 @@ class SliderContainer extends Component {
               <NavItem>specs</NavItem>
             </NavLinked>
           </NavBlock>
-          <div>{this.props.children}</div>
         </Container>
       </Router>
     );
   }
 }
 
-export default SliderContainer;
+export default SliderRouter;

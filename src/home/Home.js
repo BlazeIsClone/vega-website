@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HeroSection from "./HeroSection.js";
-import SliderContainer from "./SliderContainer.js";
+import SliderRouter from "./SliderRouter.js";
 import ValuesHome from "./ValuesHome.js";
 import BlogAndNews from "./BlogAndNews.js";
 import ChargeNetInfo from "./ChargeNetInfo.js";
@@ -16,7 +16,7 @@ class Home extends Component {
       <Home data-scroll-section>
         <TopNav />
         <HeroSection />
-        <SliderContainer />
+        <SliderRouter />
         <ValuesHome />
         <BlogAndNews />
         <ChargeNetInfo />

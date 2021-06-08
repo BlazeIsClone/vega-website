@@ -44,6 +44,7 @@ class TopNav extends Component {
             content="reserve"
             text="white"
             height="nav"
+            clickEvent={() => console.log("onClickFire!")}
           ></ContainedButton>
         </NavItem>
         <NavItemHamburger>

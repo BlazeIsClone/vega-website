@@ -10,11 +10,12 @@ class ValuesHome extends Component {
   render() {
     const GridTemplate = styled.div`
       max-height: 100vh;
-      min-height: 980px;
+      min-height: 780px;
       width: auto;
       display: grid;
       grid-template-columns: repeat(12, 141px);
       grid-template-rows: 1fr;
+      padding-top: 100px;
       gap: 20px;
       background-color: white;
     `;

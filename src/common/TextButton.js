@@ -1,4 +1,3 @@
-import { findByLabelText } from "@testing-library/dom";
 import React, { Component } from "react";
 import styled from "styled-components";
 import { ReactComponent as IconSvg } from "./svg/chevron_left_black_24dp.svg";

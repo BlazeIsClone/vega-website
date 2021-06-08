@@ -57,7 +57,7 @@ class SliderDesign extends Component {
     const ContentBlock = styled.div`
       display: flex;
       flex-direction: column;
-      padding: 550px 60px 0 60px;
+      padding: 550px 60px 0 80px;
     `;
 
     return (
@@ -77,7 +77,7 @@ class SliderDesign extends Component {
               <ul>Height</ul>
             </li>
           </StatBars>
-          <TypeBlock>
+          <TypeBlock data-scroll data-scroll-speed="1">
             <Typeset
               subtitle="Design"
               headline="LEADING-EDGE

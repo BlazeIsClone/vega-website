@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HeroMainBanner from "./assets/sliderImageInnoveation.png";
-import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
 
@@ -33,7 +32,7 @@ class SliderInnovation extends Component {
       <Container>
         <ContentBlock>
           <AutoPlayVideo src={HeroMainBanner}></AutoPlayVideo>
-          <TextBox>
+          <TextBox data-scroll data-scroll-speed="1">
             <TypeBlock>
               <Typeset
                 subtitle="autonomous driving"

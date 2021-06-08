@@ -74,7 +74,7 @@ class Newsletter extends Component {
             <InputLabel>Your email address</InputLabel>
             <InputElement type="email" placeholder="john@email.com" />
           </FormElement>
-          <ContainedButton text="white" content="Subscribe" />
+          <ContainedButton text="white" content="Subscribe" onClick={null} />
         </FormBlock>
       </Block>
     );

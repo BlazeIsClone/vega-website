@@ -13,7 +13,7 @@ class BlogAndNews extends Component {
       background-color: white;
     `;
     const Block = styled.div`
-      height: 800px;
+      height: 700px;
       display: flex;
       flex-direction: row;
       background-color: white;
@@ -26,21 +26,21 @@ class BlogAndNews extends Component {
         <Block>
           <Card
             Img={img001}
-            Subtilte="Subtitle"
-            Headline="Headline"
-            Body="Body"
+            Subtilte="news"
+            Headline="Candy coated to perfection"
+            Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
           />
           <Card
             Img={img002}
-            Subtilte="Subtitle"
-            Headline="Headline"
-            Body="Body"
+            Subtilte="news"
+            Headline="camber defined"
+            Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
           />
           <Card
             Img={img003}
-            Subtilte="Subtitle"
-            Headline="Headline"
-            Body="Body"
+            Subtilte="races"
+            Headline="LIVING ON THE TRACK"
+            Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
           />
         </Block>
       </Container>

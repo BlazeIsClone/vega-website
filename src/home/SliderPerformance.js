@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HeroMainBanner from "./assets/sliderImgPerformance.png";
-import Headline from "../common/Headline.js";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton.js";
 
@@ -77,7 +76,7 @@ class SliderPerformance extends Component {
               <ul>Top Speed</ul>
             </li>
           </StatBars>
-          <TypeBlock>
+          <TypeBlock data-scroll data-scroll-speed="1">
             <Typeset
               subtitle="chassis/ motor"
               headline="Astonishingly light for supreme performance"

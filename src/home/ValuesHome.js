@@ -6,58 +6,52 @@ import Headline from "../common/Headline.js";
 import Subtitle from "../common/Subtitle.js";
 import Body from "../common/Body.js";
 
-class ValuesHome extends Component {
-  render() {
-    const GridTemplate = styled.div`
-      max-height: 100vh;
-      min-height: 780px;
-      width: auto;
-      display: grid;
-      grid-template-columns: repeat(12, 141px);
-      grid-template-rows: 1fr;
-      padding-top: 100px;
-      gap: 20px;
-      background-color: white;
-    `;
-
-    const GridLayout = styled(GridTemplate)`
-      align-items: center;
-      justify-content: center;
-    `;
-    const Img = styled.img`
-      height: 695px;
-      width: 802px;
-    `;
-    const ImgContainer = styled.div`
-      grid-column: 2/8;
-      display: flex;
-      grid-row: 1/2;
-    `;
-
-    const Container = styled.div`
-      grid-column: 8/11;
-      grid-row: 1/2;
-    `;
-    return (
-      <GridLayout>
-        <ImgContainer>
-          <Img src={img} />
-        </ImgContainer>
-        <Container>
-          <div data-scroll data-scroll-speed="1">
-            <Subtitle content="values"></Subtitle>
-            <Headline content="Redefining Tomorrow's World"></Headline>
-            <Body
-              content="Inspired by a hyper creative generation of multidisciplinary innovators, our passion brought us here.
+function ValuesHome() {
+  return (
+    <GridLayout>
+      <ImgContainer>
+        <Img src={img} />
+      </ImgContainer>
+      <Container>
+        <div data-scroll data-scroll-speed="1">
+          <Subtitle content="values"></Subtitle>
+          <Headline content="Redefining Tomorrow's World"></Headline>
+          <Body
+            content="Inspired by a hyper creative generation of multidisciplinary innovators, our passion brought us here.
 We are now ready to revolutionise the world we live in with cutting-edge technology, to enhance lives, to bring people closer to nature and to each other in extraordinary ways.
 "
-            />
-            <TextButton content="About Us"></TextButton>
-          </div>
-        </Container>
-      </GridLayout>
-    );
-  }
+          />
+          <TextButton content="About Us"></TextButton>
+        </div>
+      </Container>
+    </GridLayout>
+  );
 }
 
 export default ValuesHome;
+
+const GridTemplate = styled.div`
+  max-height: 100vh;
+  min-height: 780px;
+  width: auto;
+  display: flex;
+  column-gap: 60px;
+  background-color: white;
+  align-items: center;
+  justify-self: center;
+  padding: 100px 60px 0 160px;
+`;
+
+const GridLayout = styled(GridTemplate)`
+  align-items: center;
+  justify-content: center;
+`;
+const Img = styled.img`
+  max-height: 605px;
+  width: auto;
+`;
+const ImgContainer = styled.div`
+  display: flex;
+`;
+
+const Container = styled.div``;

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect, Children } from "react";
+import React, { Component, useState, useEffect } from "react";
 import styled, { withTheme } from "styled-components";
 import {
   BrowserRouter as Router,
@@ -6,13 +6,27 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import { ReactComponent as VegaLogo } from "./svg/Vega_Nav_Logo.svg";
+import { ReactComponent as LogoEmblem } from "./svg/logoEmblem.svg";
 import { ReactComponent as AboutIcon } from "./svg/about.svg";
 import { ReactComponent as HomeIcon } from "./svg/home.svg";
 import { ReactComponent as SupportIcon } from "./svg/support.svg";
 import { ReactComponent as VegaEvxIcon } from "./svg/vegaEvx.svg";
+import { ReactComponent as HeaderHamburgerIcon } from "./svg/menu_black_24dp.svg";
+import ContainedButton from "./ContainedButton.js";
+import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
 
 function NavMain() {
+  useEffect(() => {
+    const navBurger = document.querySelector(".navbar-hamburger");
+    const navBar = document.querySelector(".navbar-wrapper");
+
+    navBurger.addEventListener("click", function () {
+      navBar.style.visibility = `visible`;
+      if (navBar.style.visibility === `visible`) {
+        navBurger.style.visibility = `hidden`;
+      }
+    });
+  });
   const [staticStatus, setStaticStatus] = useState(true);
   const [activeStatus, setActiveStatus] = useState(false);
 
@@ -22,51 +36,107 @@ function NavMain() {
 
   return (
     <>
-      <NavStatic
-        onMouseEnter={() => setActiveStatus(true)}
-        showStatic={staticStatus}
-      >
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
-        <IconWrapper>
-          <a href="#">
-            <HomeIcon style={IconStyles} />
-          </a>
-          <a href="#">
-            <VegaEvxIcon style={IconStyles} />
-          </a>
-          <a href="#">
-            <AboutIcon style={IconStyles} />
-          </a>
-          <a href="#">
-            <SupportIcon style={IconStyles} />
-          </a>
-        </IconWrapper>
-      </NavStatic>
-      <NavActive
-        onMouseLeave={() => setActiveStatus(false) && setStaticStatus(true)}
-        showActive={activeStatus}
-      >
-        <NavElements>
-          <NavMainItems>Home</NavMainItems>
-          <NavItems>Vega Evx Overview</NavItems>
-          <NavItems>Values</NavItems>
-          <NavItems>Blog and News</NavItems>
-          <NavItems>Newsletter</NavItems>
-          <NavMainItems>Vega Evx</NavMainItems>
-          <NavMainItems>Investors</NavMainItems>
-          <NavMainItems>Vega Evx</NavMainItems>
-          <NavMainItems>Blog</NavMainItems>
-          <NavMainItems>About Us</NavMainItems>
-          <NavMainItems>Support</NavMainItems>
-        </NavElements>
-      </NavActive>
+      <HeaderNav className="navbar-header">
+        <a href="/">
+          <HeaderLogo />
+        </a>
+        <HeaderNavItem>
+          <ContainedButton
+            content="reserve"
+            text="white"
+            height="nav"
+          ></ContainedButton>
+        </HeaderNavItem>
+        <HeaderItemHamburger className="navbar-hamburger">
+          <HamburgerIcon />
+        </HeaderItemHamburger>
+      </HeaderNav>
+
+      <NavWrapper className="navbar-wrapper">
+        <NavStatic
+          onMouseEnter={() => setActiveStatus(true)}
+          showStatic={staticStatus}
+        >
+          <LogoWrapper>
+            <a href="/">
+              <Emblem />
+            </a>
+          </LogoWrapper>
+          <ScrollContainer>
+            <ScrollBar>
+              <ScrollElement className="scroll-element" />
+            </ScrollBar>
+          </ScrollContainer>
+          <IconWrapper>
+            <a href="#">
+              <HomeIcon style={IconStyles} />
+            </a>
+            <a href="#">
+              <VegaEvxIcon style={IconStyles} />
+            </a>
+            <a href="#">
+              <AboutIcon style={IconStyles} />
+            </a>
+            <a href="#">
+              <SupportIcon style={IconStyles} />
+            </a>
+          </IconWrapper>
+        </NavStatic>
+        <NavActive
+          onMouseLeave={() => setActiveStatus(false) && setStaticStatus(true)}
+          showActive={activeStatus}
+        >
+          <NavElements>
+            <NavMainItems>Home</NavMainItems>
+            <NavItems>Vega Evx Overview</NavItems>
+            <NavItems>Values</NavItems>
+            <NavItems>Blog and News</NavItems>
+            <NavItems>Newsletter</NavItems>
+            <NavMainItems>Vega Evx</NavMainItems>
+            <NavMainItems>Investors</NavMainItems>
+            <NavMainItems>Vega Evx</NavMainItems>
+            <NavMainItems>Blog</NavMainItems>
+            <NavMainItems>About Us</NavMainItems>
+            <NavMainItems>Support</NavMainItems>
+          </NavElements>
+        </NavActive>
+      </NavWrapper>
     </>
   );
 }
 
 export default NavMain;
+
+const HeaderNav = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 10vw 70vw 10vw 10vw;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: inherit;
+`;
+const HeaderNavItem = styled.div`
+  grid-column: 3/4;
+  padding: 14px 16px;
+`;
+const HeaderItemHamburger = styled.div`
+  justify-content: center;
+  align-items: center;
+`;
+const HamburgerIcon = styled(HeaderHamburgerIcon)`
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+  padding: 5px;
+`;
+const HeaderLogo = styled(NavLogoIcon)`
+  margin: 20px 0 0 20px;
+  cursor: pointer;
+`;
 
 const NavActive = styled.div`
   display: flex;
@@ -79,7 +149,9 @@ const NavActive = styled.div`
   color: white;
   background-color: #111111;
   width: 300px;
-  transition: all 0.5s ease-in;
+  transition: all 0.4s ease-in-out;
+  transition-timing-function: cubic-bezier(0.01, 5, 1.03);
+
   transform: ${(props) =>
     props.showActive ? "translateX(0%)" : "translateX(100%)"};
 
@@ -122,17 +194,16 @@ const NavItems = styled.ul`
     color: red;
   }
 `;
-const Logo = styled(VegaLogo)`
-  position: relative;
-  margin: 40px 0 20px 0;
-  height: 200px;
+
+const Emblem = styled(LogoEmblem)`
+  cursor: pointer;
+  margin-top: 40px;
 `;
 const NavStatic = styled.div`
   position: fixed;
   width: 100px;
   flex-direction: column;
   position: fixed;
-  justify-self: flex-end;
   height: 100vh;
   top: 0;
   right: 0;
@@ -144,9 +215,11 @@ const NavStatic = styled.div`
 
 const LogoWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
+
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -155,4 +228,34 @@ const IconWrapper = styled.div`
   row-gap: 60px;
   margin-top: auto;
   padding-bottom: 50px;
+`;
+const ScrollContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+const ScrollBar = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #606060;
+  width: 3px;
+  height: 100%;
+  justify-self: center;
+  align-items: center;
+  margin: 45px 45px;
+  border-radius: 100px;
+`;
+
+const ScrollElement = styled.div`
+  box-sizing: border-box;
+  background: white;
+  border-radius: 100px;
+  width: 100%;
+  height: 40%;
+`;
+
+const NavWrapper = styled.div`
+  visibility: hidden;
 `;

@@ -38,6 +38,7 @@ function SliderOverview() {
 }
 
 export default SliderOverview;
+
 const Container = styled.div`
   max-height: 100vh;
   min-height: 1060px;

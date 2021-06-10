@@ -7,7 +7,6 @@ class HeroContainer extends Component {
       position: relative;
       height: 100vh;
       display: block;
-      overflow: hidden;
     `;
     return <Container>{this.props.content}</Container>;
   }

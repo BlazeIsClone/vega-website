@@ -77,7 +77,6 @@ const FooterWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 50px;
-  cursor: pointer;
   li:hover {
     color: white;
   }

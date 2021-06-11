@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,8 +21,9 @@ function NavMain() {
     const navBar = document.querySelector(".navbar-wrapper");
 
     navBurger.addEventListener("click", function () {
-      navBar.style.visibility = `visible`;
-      if (navBar.style.visibility === `visible`) {
+      navBar.style.transform = `none`;
+      navBurger.style.visibility = `visible`;
+      if (navBar.style.transform === `none`) {
         navBurger.style.visibility = `hidden`;
       }
     });
@@ -68,16 +69,16 @@ function NavMain() {
             </ScrollBar>
           </ScrollContainer>
           <IconWrapper>
-            <a href="#">
+            <a href="/home">
               <HomeIcon style={IconStyles} />
             </a>
-            <a href="#">
+            <a href="/vega-evx">
               <VegaEvxIcon style={IconStyles} />
             </a>
-            <a href="#">
+            <a href="/about">
               <AboutIcon style={IconStyles} />
             </a>
-            <a href="#">
+            <a href="/support">
               <SupportIcon style={IconStyles} />
             </a>
           </IconWrapper>
@@ -121,17 +122,20 @@ const HeaderNav = styled.div`
 `;
 const HeaderNavItem = styled.div`
   grid-column: 3/4;
-  padding: 14px 16px;
+  justify-self: flex-end;
 `;
 const HeaderItemHamburger = styled.div`
   justify-content: center;
   align-items: center;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 `;
 const HamburgerIcon = styled(HeaderHamburgerIcon)`
-  width: 40px;
-  height: 60px;
+  width: 50px;
+  height: 70px;
   cursor: pointer;
-  padding: 5px;
+  padding-top: 5px;
 `;
 const HeaderLogo = styled(NavLogoIcon)`
   margin: 20px 0 0 20px;
@@ -147,7 +151,7 @@ const NavActive = styled.div`
   top: 0;
   right: 0;
   color: white;
-  background-color: #111111;
+  background-color: ${(props) => props.theme.secondaryColor};
   width: 300px;
   transition: all 0.4s ease-in-out;
   transition-timing-function: cubic-bezier(0.01, 5, 1.03);
@@ -177,7 +181,7 @@ const NavMainItems = styled.ul`
   color: white;
   &:hover {
     cursor: pointer;
-    color: red;
+    color: ${(props) => props.theme.accentColor};
   }
 `;
 const NavItems = styled.ul`
@@ -191,7 +195,7 @@ const NavItems = styled.ul`
   color: white;
   &:hover {
     cursor: pointer;
-    color: red;
+    color: ${(props) => props.theme.accentColor};
   }
 `;
 
@@ -208,7 +212,7 @@ const NavStatic = styled.div`
   top: 0;
   right: 0;
   color: white;
-  background-color: #111111;
+  background-color: ${(props) => props.theme.secondaryColor};
   z-index: 99;
   display: ${(props) => (props.showStatic ? "flex" : "none")};
 `;
@@ -228,6 +232,16 @@ const IconWrapper = styled.div`
   row-gap: 60px;
   margin-top: auto;
   padding-bottom: 50px;
+  a {
+    padding: 2px;
+  }
+  svg {
+    path {
+      :hover {
+        fill: ${(props) => props.theme.accentColor};
+      }
+    }
+  }
 `;
 const ScrollContainer = styled.div`
   display: flex;
@@ -257,5 +271,8 @@ const ScrollElement = styled.div`
 `;
 
 const NavWrapper = styled.div`
-  visibility: hidden;
+  transform: translateX(100%);
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 `;

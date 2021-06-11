@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-import HeroSection from "./HeroSection.js";
 import SliderRouter from "./SliderRouter.js";
 import ValuesHome from "./ValuesHome.js";
 import BlogAndNews from "./BlogAndNews.js";
@@ -13,7 +12,6 @@ class Home extends Component {
   render() {
     return (
       <div data-scroll-section>
-        <HeroSection />
         <SliderRouter />
         <ValuesHome />
         <BlogAndNews />

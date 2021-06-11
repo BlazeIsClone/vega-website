@@ -55,6 +55,7 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     ),
     url(${HeroMainBanner});
+  z-index: 10;
 `;
 
 const StatBars = styled.ul`

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Specs extends Component {
-  render() {
-    return (
+function Specs() {
+  return (
+    <div data-scroll data-scroll-speed="1">
       <table>
         <thead>
           <tr>
@@ -37,7 +37,8 @@ class Specs extends Component {
           </tr>
         </tbody>
       </table>
-    );
-  }
+    </div>
+  );
 }
+
 export default Specs;

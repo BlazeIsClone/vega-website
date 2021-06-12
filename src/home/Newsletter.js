@@ -17,6 +17,7 @@ function Newsletter() {
         color="black"
         content="By entering your email address you will always be up to date with the latest Vega news and promotions."
         align="center"
+        width="clamp"
       />
       <FormBlock>
         <FormElement action="#">

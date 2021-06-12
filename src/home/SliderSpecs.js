@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 function SliderSpecs() {
   return (
-    <Container>
+    <Container data-scroll data-scroll-speed="1">
       <Table>
         <TableItems>
           <tr>

@@ -22,7 +22,6 @@ function NavMain() {
 
     navBurger.addEventListener("click", function () {
       navBar.style.transform = `none`;
-      navBurger.style.visibility = `visible`;
       if (navBar.style.transform === `none`) {
         navBurger.style.visibility = `hidden`;
       }
@@ -88,17 +87,28 @@ function NavMain() {
           showActive={activeStatus}
         >
           <NavElements>
-            <NavMainItems>Home</NavMainItems>
+            <a href="/">
+              <NavMainItems>Home</NavMainItems>
+            </a>
             <NavItems>Vega Evx Overview</NavItems>
             <NavItems>Values</NavItems>
             <NavItems>Blog and News</NavItems>
             <NavItems>Newsletter</NavItems>
-            <NavMainItems>Vega Evx</NavMainItems>
-            <NavMainItems>Investors</NavMainItems>
-            <NavMainItems>Vega Evx</NavMainItems>
-            <NavMainItems>Blog</NavMainItems>
-            <NavMainItems>About Us</NavMainItems>
-            <NavMainItems>Support</NavMainItems>
+            <a href="/">
+              <NavMainItems>Vega Evx</NavMainItems>
+            </a>
+            <a href="/investors">
+              <NavMainItems>Investors</NavMainItems>
+            </a>
+            <a href="/blog-news">
+              <NavMainItems>Blog And News</NavMainItems>
+            </a>
+            <a href="/about">
+              <NavMainItems>About</NavMainItems>
+            </a>
+            <a href="/support">
+              <NavMainItems>Support</NavMainItems>
+            </a>
           </NavElements>
         </NavActive>
       </NavWrapper>
@@ -119,6 +129,9 @@ const HeaderNav = styled.div`
   align-items: center;
   text-align: center;
   background-color: inherit;
+  transition: all 0.5s ease-in-out;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  padding-top: 2px;
 `;
 const HeaderNavItem = styled.div`
   grid-column: 3/4;
@@ -140,6 +153,8 @@ const HamburgerIcon = styled(HeaderHamburgerIcon)`
 const HeaderLogo = styled(NavLogoIcon)`
   margin: 20px 0 0 20px;
   cursor: pointer;
+  height: 100%;
+  width: 500px;
 `;
 
 const NavActive = styled.div`
@@ -155,12 +170,24 @@ const NavActive = styled.div`
   width: 300px;
   transition: all 0.4s ease-in-out;
   transition-timing-function: cubic-bezier(0.01, 5, 1.03);
-
   transform: ${(props) =>
     props.showActive ? "translateX(0%)" : "translateX(100%)"};
 
   &:hover {
   }
+`;
+const NavStatic = styled.div`
+  position: relative;
+  width: 100px;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: ${(props) => props.theme.secondaryColor};
+  z-index: 99;
+  display: ${(props) => (props.showStatic ? "flex" : "none")};
 `;
 
 const NavElements = styled.div`
@@ -178,6 +205,7 @@ const NavMainItems = styled.ul`
   line-height: 21px;
   text-align: end;
   letter-spacing: -0.154px;
+  text-decoration: none;
   color: white;
   &:hover {
     cursor: pointer;
@@ -202,19 +230,6 @@ const NavItems = styled.ul`
 const Emblem = styled(LogoEmblem)`
   cursor: pointer;
   margin-top: 40px;
-`;
-const NavStatic = styled.div`
-  position: fixed;
-  width: 100px;
-  flex-direction: column;
-  position: fixed;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  color: white;
-  background-color: ${(props) => props.theme.secondaryColor};
-  z-index: 99;
-  display: ${(props) => (props.showStatic ? "flex" : "none")};
 `;
 
 const LogoWrapper = styled.div`
@@ -272,7 +287,5 @@ const ScrollElement = styled.div`
 
 const NavWrapper = styled.div`
   transform: translateX(100%);
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition: all 0.5s ease-in-out;
 `;

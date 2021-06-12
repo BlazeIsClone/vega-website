@@ -1,29 +1,59 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { Component, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+  withRouter,
+  useLocation,
+  useHistory,
+} from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
-import "./App.css";
 import LocomotiveScroll from "locomotive-scroll";
+import "./App.css";
 import Home from "./home/Home.js";
 import HeroSection from "./home/HeroSection.js";
 import VegaEvx from "./vegaEvx/VegaEvx.js";
 import NavMain from "./common/NavMain.js";
+import PropTypes from "prop-types";
 
 class App extends Component {
-  componentDidMount() {
-    //----------calling Locomotive Scroll
-    const pocoLoco = new LocomotiveScroll({
+  async componentDidMount() {
+    // ----------calling Locomotive Scroll
+
+    this.pocoLoco = await new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
     });
 
-    if (pocoLoco) {
+    if (this.pocoLoco) {
       console.log("%c P I X E L S ", "background: #222; color: #bada55");
     }
+    let navBar;
+    let navbarHeader;
+    let selectNavBurger;
+    let backgroundHero;
+    let blurContainer;
+    let pxCalc;
+    let heroText;
+    let scrollBar;
+    let textWrapper;
+    let overlayContainer;
 
-    const scrollBar = document.querySelector(".scroll-element");
+    scrollBar = document.querySelector(".scroll-element");
+    navBar = document.querySelector(".navbar-wrapper");
+    navbarHeader = document.querySelector(".navbar-header");
+    selectNavBurger = document.querySelector(".navbar-hamburger");
+    backgroundHero = document.querySelector(".hero-container");
+    blurContainer = document.querySelector(".hero-section-blur-container");
+    overlayContainer = document.querySelector(
+      ".hero-section-overlay-container"
+    );
+    heroText = document.querySelector(".hero-container-text");
+    textWrapper = document.querySelector(".hero-container-text");
 
     //----------ScrollY locomotive3D transform emulation
-    pocoLoco.on("scroll", ({ limit, scroll }) => {
+    this.pocoLoco.on("scroll", ({ limit, scroll }) => {
       const progress = (scroll.y / limit.y) * 100;
 
       //----------ScrollBar Slider Progress
@@ -31,49 +61,55 @@ class App extends Component {
       //console.log("scrollbar-function" + progress);
       //console.log("limit.y" + limit.y);
       //console.log("scroll.y" + scroll.y);
-      const navBar = document.querySelector(".navbar-wrapper");
-      const navbarHeader = document.querySelector(".navbar-header");
-      const selectNavBurger = document.querySelector(".navbar-hamburger");
-      const backgroundHero = document.querySelector(".hero-container");
 
       //----------NavBar onScroll state Logic
       if (scroll.y > 2880 || scroll.y < 1280) {
         navBar.style.transform = `translateX(100%)`;
-
-        //For Hame page y2880
       }
-
       selectNavBurger.style.visibility = `visible`;
 
       if (3360 > scroll.y && scroll.y > 1940) {
         navBar.style.transform = `none`;
       }
       //------------NavHeader onScroll Logic
-      if (scroll.y > 800) {
-        navbarHeader.style.display = `none`;
-      } else if (scroll.y < 800) {
-        navbarHeader.style.display = `grid`;
+      if (scroll.y > 250) {
+        navbarHeader.style.transform = `translateY(-100%)`;
+      } else if (scroll.y < 250) {
+        navbarHeader.style.transform = `none`;
       }
-      if (scroll.y > 1099) {
+      //-----------Hero Background Video Optimization
+      if (scroll.y > 935) {
         backgroundHero.style.visibility = `hidden`;
-      } else if (1099 > scroll.y) {
+      } else if (935 > scroll.y) {
         backgroundHero.style.visibility = `visible`;
       }
 
-      //----------Hero background onScroll effects
+      //----------Hero background onScroll Blur
 
-      const blurContainer = document.querySelector(".blur-container");
+      pxCalc = Math.floor((scroll.y / backgroundHero.offsetHeight) * 100);
 
       if (scroll.y < 900) {
-        let scrollCalc = Math.floor(scroll.y / 100);
-        let scrollThrow = `0.` + `${1 + scrollCalc}`;
-        blurContainer.style.opacity = scrollThrow;
-        //console.log(scrollCalc);
-        console.log(scrollThrow);
+        blurContainer.style.backdropFilter = `blur(${pxCalc}px)`;
+        overlayContainer.style.opacity = `0.1${pxCalc}`;
       }
-      //    background: rgba(22, 26, 33, 0.8);
-      // opacity: 0;
+
+      //----------Hero Container onScroll Text Animation
+
+      if (scroll.y > 300) {
+        heroText.style.opacity = "1";
+      }
+      if (scroll.y < 300) {
+        heroText.style.opacity = "0";
+      }
+      if (scroll.y > 640) {
+        heroText.style.opacity = "0";
+      }
     });
+  }
+  componentDidUpdate() {
+    if (window.location.pathname) {
+      console.log("ROUTE CHANGED");
+    }
   }
 
   render() {
@@ -82,6 +118,7 @@ class App extends Component {
       mainColor: "white",
       secondaryColor: "#0f0f0f",
       accentColor: "red",
+      heroType: "Ruda",
     };
 
     return (

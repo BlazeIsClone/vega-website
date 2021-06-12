@@ -1,3 +1,4 @@
+/* CSS Resets */
 html,
 body,
 div,
@@ -87,10 +88,24 @@ video {
   overflow-x: none;
 }
 
+/* CSS Set Root */
+
+:root {
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* Body Syles */
+
 ::-webkit-scrollbar {
   display: none;
 }
 
+/* Locomotive Scroll Global Styles */
 html.has-scroll-smooth {
   overflow: hidden;
 }

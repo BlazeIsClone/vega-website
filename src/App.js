@@ -11,29 +11,22 @@ import {
 import styled, { ThemeProvider } from "styled-components";
 import LocomotiveScroll from "locomotive-scroll";
 import "./App.css";
+import NavMain from "./common/NavMain.js";
 import Home from "./home/Home.js";
 import VegaEvx from "./vegaEvx/VegaEvx.js";
-import HeroSection from "./home/HeroSection.js";
-import NavMain from "./common/NavMain.js";
-
-class Comp extends React.Component {
-  componentDidUpdate() {
-    console.log("yes");
-    const locationChanged =
-      this.props.window.location.href !== "http://localhost:3000/";
-    if (locationChanged) {
-      console.log("yes");
-      this.pocoLoco.update();
-    }
-  }
-  render() {
-    return null;
-  }
-}
+import Investors from "./investors/Investors.js";
+import Reserve from "./reserve/Reserve.js";
+import Blog from "./blog/Blog.js";
+import About from "./about/About.js";
+import Careers from "./careers/Careers.js";
+import Support from "./support/Support.js";
+import { createBrowserHistory } from "history";
+import { render } from "@testing-library/react";
 
 class App extends Component {
   async componentDidMount() {
     // ----------calling Locomotive Scroll
+
     this.pocoLoco = await new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
@@ -42,6 +35,7 @@ class App extends Component {
     });
 
     if (this.pocoLoco) {
+      window.scrollTo(0, 0);
       console.log("%c P I X E L S ", "background: #222; color: #bada55");
     }
     let navBar;
@@ -120,10 +114,30 @@ class App extends Component {
         heroText.style.opacity = "0";
       }
     });
+
+    window.addEventListener("load", (event) => {
+      console.log(
+        "location: " +
+          document.location +
+          ", state: " +
+          JSON.stringify(event.state)
+      );
+    });
+  }
+
+  componentWillUnmount() {
+    this.pocoLoco.destory();
+  }
+
+  componentDidUpdate() {
+    console.log("error caught!");
+  }
+  shouldComponentUpdate() {
+    this.pocoLoco.stop();
+    console.log("should component update");
   }
 
   render() {
-    const NavContainer = styled.div``;
     const globalVars = {
       mainColor: "white",
       secondaryColor: "#0f0f0f",
@@ -135,14 +149,33 @@ class App extends Component {
       <Router>
         <ThemeProvider theme={globalVars}>
           <div data-scroll-container>
-            <div className="hero-container">
-              <Route component={Comp} />
-              <HeroSection />
-            </div>
-            <Home />
-            <NavContainer>
-              <NavMain />
-            </NavContainer>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/vega-evx">
+                <VegaEvx />
+              </Route>
+              <Route path="/investors">
+                <Investors />
+              </Route>
+              <Route path="/blog">
+                <Blog />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/careers">
+                <Careers />
+              </Route>
+              <Route path="/support">
+                <Support />
+              </Route>
+              <Route path="/reserve">
+                <Reserve />
+              </Route>
+            </Switch>
+            <NavMain />
           </div>
         </ThemeProvider>
       </Router>

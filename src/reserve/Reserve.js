@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import styled from "styled-components";
 
-class Reserve extends Component {
-    render() {
-        return (
-            <div>
-                <p>this is reserve</p>
-            </div>
-        );
-    }
+function VegaEvx() {
+  return (
+    <div data-scroll-section>
+      <div>
+        <h1>Reserve</h1>
+      </div>
+    </div>
+  );
 }
 
-export default Reserve;
+export default VegaEvx;

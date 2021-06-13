@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import SliderRouter from "./SliderRouter.js";
 import ValuesHome from "./ValuesHome.js";
@@ -7,10 +6,14 @@ import BlogAndNews from "./BlogAndNews.js";
 import ChargeNetInfo from "./ChargeNetInfo.js";
 import Newsletter from "./Newsletter.js";
 import Footer from "../common/Footer.js";
+import HeroSection from "./HeroSection.js";
 
-class Home extends Component {
-  render() {
-    return (
+function Home() {
+  return (
+    <>
+      <Hero className="hero-container">
+        <HeroSection />
+      </Hero>
       <div data-scroll-section className="scroll-optimize">
         <SliderRouter />
         <ValuesHome />
@@ -19,8 +22,10 @@ class Home extends Component {
         <Newsletter />
         <Footer />
       </div>
-    );
-  }
+    </>
+  );
 }
+
+const Hero = styled.div``;
 
 export default Home;

@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import styled from "styled-components";
+import HeroSection from "./HeroSection.js";
+import Footer from "../common/Footer.js";
 
-class About extends Component {
-    render() {
-        return (
-            <div>
-        <p>this is About</p>
-            </div>
-        );
-    }
+function VegaEvx() {
+  return (
+    <div data-scroll-section>
+      <HeroSection />
+      <div>
+        <h1>About</h1>
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
-export default About;
+export default VegaEvx;

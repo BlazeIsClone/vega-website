@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
   NavLink,
-  withRouter,
+  useHistory,
 } from "react-router-dom";
 import { ReactComponent as LogoEmblem } from "./svg/logoEmblem.svg";
 import { ReactComponent as AboutIcon } from "./svg/about.svg";
@@ -19,6 +19,7 @@ import VegaEvx from "../vegaEvx/VegaEvx.js";
 import Home from "../home/Home.js";
 
 function NavMain() {
+  const history = useHistory();
   useEffect(() => {
     const navBurger = document.querySelector(".navbar-hamburger");
     const navBar = document.querySelector(".navbar-wrapper");
@@ -39,6 +40,11 @@ function NavMain() {
 
   return (
     <Router>
+      <Switch>
+        <Route exact path="/vega-evx">
+          <VegaEvx />
+        </Route>
+      </Switch>
       <HeaderNav className="navbar-header">
         <a href="/">
           <HeaderLogo />
@@ -54,7 +60,6 @@ function NavMain() {
           <HamburgerIcon />
         </HeaderItemHamburger>
       </HeaderNav>
-
       <NavWrapper className="navbar-wrapper">
         <NavStatic
           onMouseEnter={() => setActiveStatus(true)}
@@ -71,18 +76,19 @@ function NavMain() {
             </ScrollBar>
           </ScrollContainer>
           <IconWrapper>
-            <NavLink to="/" activeStyle={{ color: "red" }}>
-              <HomeIcon style={IconStyles} />
-            </NavLink>
-            <NavLink to="/vega-evx">
-              <VegaEvxIcon style={IconStyles} />
-            </NavLink>
-            <a href="/about">
-              <AboutIcon style={IconStyles} />
-            </a>
-            <a href="/support">
-              <SupportIcon style={IconStyles} />
-            </a>
+            <HomeIcon style={IconStyles} onClick={() => history.push("/")} />
+            <VegaEvxIcon
+              style={IconStyles}
+              onClick={() => history.push("/vega-evx")}
+            />
+            <AboutIcon
+              style={IconStyles}
+              onClick={() => history.push("/about")}
+            />
+            <SupportIcon
+              style={IconStyles}
+              onClick={() => history.push("/support")}
+            />
           </IconWrapper>
         </NavStatic>
         <NavActive
@@ -90,40 +96,34 @@ function NavMain() {
           showActive={activeStatus}
         >
           <NavElements>
-            <a href="/">
-              <NavMainItems>Home</NavMainItems>
-            </a>
-            <NavItems>Vega Evx Overview</NavItems>
+            <NavMainItems onClick={() => history.push("/")}>Home</NavMainItems>
+            <NavItems>Vega Evx</NavItems>
             <NavItems>Values</NavItems>
             <NavItems>Blog and News</NavItems>
             <NavItems>Newsletter</NavItems>
-            <a href="/">
-              <NavMainItems>Vega Evx</NavMainItems>
-            </a>
-            <a href="/investors">
-              <NavMainItems>Investors</NavMainItems>
-            </a>
-            <a href="/blog-news">
-              <NavMainItems>Blog And News</NavMainItems>
-            </a>
-            <a href="/about">
-              <NavMainItems>About</NavMainItems>
-            </a>
-            <a href="/support">
-              <NavMainItems>Support</NavMainItems>
-            </a>
+            <NavMainItems onClick={() => history.push("/vega-evx")}>
+              Vega Evx
+            </NavMainItems>
+            <NavMainItems onClick={() => history.push("/investors")}>
+              Investors
+            </NavMainItems>
+            <NavMainItems onClick={() => history.push("/blog")}>
+              Blog And News
+            </NavMainItems>
+            <NavMainItems onClick={() => history.push("/about")}>
+              About
+            </NavMainItems>
+            <NavMainItems onClick={() => history.push("/support")}>
+              Support
+            </NavMainItems>
           </NavElements>
         </NavActive>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/vega-evx" component={VegaEvx} />
-        </Switch>
       </NavWrapper>
     </Router>
   );
 }
 
-export default withRouter(NavMain);
+export default NavMain;
 
 const HeaderNav = styled.div`
   position: absolute;
@@ -184,10 +184,9 @@ const NavActive = styled.div`
   }
 `;
 const NavStatic = styled.div`
-  position: relative;
+  position: fixed;
   width: 100px;
   flex-direction: column;
-  position: fixed;
   height: 100vh;
   top: 0;
   right: 0;

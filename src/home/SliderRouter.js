@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
+  MemoryRouter as Router,
   Switch,
   Route,
   NavLink,
   withRouter,
-  useLocation,
-  useHistory,
 } from "react-router-dom";
 import styled from "styled-components";
 import SliderOverview from "./SliderOverview.js";
@@ -14,7 +12,6 @@ import SliderDesign from "./SliderDesign.js";
 import SliderPerformance from "./SliderPerformance.js";
 import SliderInnovation from "./SliderInnovation.js";
 import SliderSpecs from "./SliderSpecs.js";
-import NotFound from "../NotFound.js";
 
 function SliderRouter() {
   const NavLinked = styled(NavLink)``;
@@ -23,11 +20,18 @@ function SliderRouter() {
       <Container>
         <Switch>
           <Route exact path="/" component={SliderOverview} />
-          <Route path="/design-overview" component={SliderDesign} />
-          <Route path="/performance-overview" component={SliderPerformance} />
-          <Route path="/innovation-overview" component={SliderInnovation} />
-          <Route path="/specs-overview" component={SliderSpecs} />
-          <Route component={NotFound} />
+          <Route exact path="/design-overview" component={SliderDesign} />
+          <Route
+            exact
+            path="/performance-overview"
+            component={SliderPerformance}
+          />
+          <Route
+            exact
+            path="/innovation-overview"
+            component={SliderInnovation}
+          />
+          <Route exact path="/specs-overview" component={SliderSpecs} />
         </Switch>
         <NavBlock>
           <NavLinked
@@ -37,7 +41,6 @@ function SliderRouter() {
               borderBottom: "solid red 5px",
               color: "white",
             }}
-            activeClassName="router-active"
           >
             <NavItem>overview</NavItem>
           </NavLinked>

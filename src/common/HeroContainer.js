@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 function HeroContainer(props) {
   return (
-    <>
+    <div>
       <OverlayWrapper>
-        <Text className="hero-container-text">light years ahead</Text>
+        <Text className={props.getClass}>{props.children}</Text>
       </OverlayWrapper>
       <Container>{props.content}</Container>
-    </>
+    </div>
   );
 }
 
@@ -41,4 +41,5 @@ const Text = styled.h1`
   color: white;
   transition: all 0.25s ease-in-out;
   transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  cursor: default;
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import img001 from "./assets/homepageblog_newsim01.png";
 import img002 from "./assets/homepageblog_newsim02.png";

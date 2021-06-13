@@ -10,10 +10,10 @@ function ValuesHome() {
   return (
     <GridLayout>
       <ImgContainer>
-        <Img src={img} />
+        <Img src={img} data-scroll-id="scroll-img" />
       </ImgContainer>
       <Container>
-        <div data-scroll data-scroll-speed="1">
+        <TextWrapper data-scroll data-scroll-speed="1">
           <Subtitle content="values"></Subtitle>
           <Headline content="Redefining Tomorrow's World"></Headline>
           <Body
@@ -23,7 +23,7 @@ We are now ready to revolutionise the world we live in with cutting-edge technol
             width="clamp"
           />
           <TextButton content="About Us"></TextButton>
-        </div>
+        </TextWrapper>
       </Container>
     </GridLayout>
   );
@@ -56,3 +56,4 @@ const ImgContainer = styled.div`
 `;
 
 const Container = styled.div``;
+const TextWrapper = styled.div``;

@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
   NavLink,
+  withRouter,
 } from "react-router-dom";
 import { ReactComponent as LogoEmblem } from "./svg/logoEmblem.svg";
 import { ReactComponent as AboutIcon } from "./svg/about.svg";
@@ -14,6 +15,8 @@ import { ReactComponent as VegaEvxIcon } from "./svg/vegaEvx.svg";
 import { ReactComponent as HeaderHamburgerIcon } from "./svg/menu_black_24dp.svg";
 import ContainedButton from "./ContainedButton.js";
 import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
+import VegaEvx from "../vegaEvx/VegaEvx.js";
+import Home from "../home/Home.js";
 
 function NavMain() {
   useEffect(() => {
@@ -35,7 +38,7 @@ function NavMain() {
   };
 
   return (
-    <>
+    <Router>
       <HeaderNav className="navbar-header">
         <a href="/">
           <HeaderLogo />
@@ -68,12 +71,12 @@ function NavMain() {
             </ScrollBar>
           </ScrollContainer>
           <IconWrapper>
-            <a href="/home">
+            <NavLink to="/" activeStyle={{ color: "red" }}>
               <HomeIcon style={IconStyles} />
-            </a>
-            <a href="/vega-evx">
+            </NavLink>
+            <NavLink to="/vega-evx">
               <VegaEvxIcon style={IconStyles} />
-            </a>
+            </NavLink>
             <a href="/about">
               <AboutIcon style={IconStyles} />
             </a>
@@ -111,12 +114,16 @@ function NavMain() {
             </a>
           </NavElements>
         </NavActive>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/vega-evx" component={VegaEvx} />
+        </Switch>
       </NavWrapper>
-    </>
+    </Router>
   );
 }
 
-export default NavMain;
+export default withRouter(NavMain);
 
 const HeaderNav = styled.div`
   position: absolute;

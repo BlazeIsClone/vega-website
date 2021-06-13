@@ -11,7 +11,7 @@ import Footer from "../common/Footer.js";
 class Home extends Component {
   render() {
     return (
-      <div data-scroll-section>
+      <div data-scroll-section className="scroll-optimize">
         <SliderRouter />
         <ValuesHome />
         <BlogAndNews />

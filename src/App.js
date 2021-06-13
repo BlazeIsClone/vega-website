@@ -12,18 +12,33 @@ import styled, { ThemeProvider } from "styled-components";
 import LocomotiveScroll from "locomotive-scroll";
 import "./App.css";
 import Home from "./home/Home.js";
-import HeroSection from "./home/HeroSection.js";
 import VegaEvx from "./vegaEvx/VegaEvx.js";
+import HeroSection from "./home/HeroSection.js";
 import NavMain from "./common/NavMain.js";
-import PropTypes from "prop-types";
+
+class Comp extends React.Component {
+  componentDidUpdate() {
+    console.log("yes");
+    const locationChanged =
+      this.props.window.location.href !== "http://localhost:3000/";
+    if (locationChanged) {
+      console.log("yes");
+      this.pocoLoco.update();
+    }
+  }
+  render() {
+    return null;
+  }
+}
 
 class App extends Component {
   async componentDidMount() {
     // ----------calling Locomotive Scroll
-
     this.pocoLoco = await new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
+      multiplier: 1,
+      lerp: 0.05,
     });
 
     if (this.pocoLoco) {
@@ -106,11 +121,6 @@ class App extends Component {
       }
     });
   }
-  componentDidUpdate() {
-    if (window.location.pathname) {
-      console.log("ROUTE CHANGED");
-    }
-  }
 
   render() {
     const NavContainer = styled.div``;
@@ -126,6 +136,7 @@ class App extends Component {
         <ThemeProvider theme={globalVars}>
           <div data-scroll-container>
             <div className="hero-container">
+              <Route component={Comp} />
               <HeroSection />
             </div>
             <Home />

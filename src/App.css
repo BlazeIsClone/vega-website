@@ -105,6 +105,11 @@ a {
   display: none;
 }
 
+/* Optimization For Smooth Scroll Behaviours*/
+
+.scroll-optimize {
+  will-change: transform, opacity;
+}
 /* Locomotive Scroll Global Styles */
 html.has-scroll-smooth {
   overflow: hidden;

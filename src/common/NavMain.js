@@ -16,21 +16,21 @@ import { ReactComponent as HeaderHamburgerIcon } from "./svg/menu_black_24dp.svg
 import ContainedButton from "./ContainedButton.js";
 import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
 import VegaEvx from "../vegaEvx/VegaEvx.js";
-import Home from "../home/Home.js";
 
 function NavMain() {
   const history = useHistory();
   useEffect(() => {
-    const navBurger = document.querySelector(".navbar-hamburger");
     const navBar = document.querySelector(".navbar-wrapper");
-
+    const navBurger = document.querySelector(".navbar-hamburger");
+    navBar.style.transform = `translateX(100px)`;
     navBurger.addEventListener("click", function () {
       navBar.style.transform = `none`;
       if (navBar.style.transform === `none`) {
         navBurger.style.visibility = `hidden`;
       }
     });
-  });
+  }, []);
+
   const [staticStatus, setStaticStatus] = useState(true);
   const [activeStatus, setActiveStatus] = useState(false);
 
@@ -54,14 +54,16 @@ function NavMain() {
             content="reserve"
             text="white"
             height="nav"
+            onClick={() => history.push("/reserve")}
           ></ContainedButton>
         </HeaderNavItem>
         <HeaderItemHamburger className="navbar-hamburger">
           <HamburgerIcon />
         </HeaderItemHamburger>
       </HeaderNav>
-      <NavWrapper className="navbar-wrapper">
+      <NavWrapper>
         <NavStatic
+          className="navbar-wrapper"
           onMouseEnter={() => setActiveStatus(true)}
           showStatic={staticStatus}
         >
@@ -164,36 +166,39 @@ const HeaderLogo = styled(NavLogoIcon)`
   width: 500px;
 `;
 
+const NavWrapper = styled.div``;
+
 const NavActive = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  justify-self: flex-end;
   height: 100vh;
   top: 0;
   right: 0;
   color: white;
+  z-index: 1;
   background-color: ${(props) => props.theme.secondaryColor};
   width: 300px;
   transition: all 0.4s ease-in-out;
   transition-timing-function: cubic-bezier(0.01, 5, 1.03);
   transform: ${(props) =>
-    props.showActive ? "translateX(0%)" : "translateX(100%)"};
-
-  &:hover {
-  }
+    props.showActive ? "translateX(0)" : "translateX(300px)"};
 `;
 const NavStatic = styled.div`
-  position: fixed;
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 100px;
   flex-direction: column;
   height: 100vh;
-  top: 0;
-  right: 0;
   color: white;
   background-color: ${(props) => props.theme.secondaryColor};
-  z-index: 99;
-  display: ${(props) => (props.showStatic ? "flex" : "none")};
+  z-index: 10;
+  display: flex;
+  transform: ${(props) =>
+    props.showStatic ? "translateX(0)" : "translateX(100px)"};
+  transition: all 0.2s ease-in;
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
 `;
 
 const NavElements = styled.div`
@@ -289,9 +294,4 @@ const ScrollElement = styled.div`
   border-radius: 100px;
   width: 100%;
   height: 40%;
-`;
-
-const NavWrapper = styled.div`
-  transform: translateX(100%);
-  transition: all 0.5s ease-in-out;
 `;

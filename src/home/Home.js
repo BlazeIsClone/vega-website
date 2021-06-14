@@ -13,9 +13,9 @@ function Home() {
   return (
     <>
       <Scroll />
-      <Hero className="hero-container">
+      <div className="hero-container">
         <HeroSection />
-      </Hero>
+      </div>
       <div data-scroll-section className="scroll-optimize">
         <SliderRouter />
         <ValuesHome />
@@ -27,7 +27,5 @@ function Home() {
     </>
   );
 }
-
-const Hero = styled.div``;
 
 export default Home;

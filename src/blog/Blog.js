@@ -8,9 +8,10 @@ function VegaEvx() {
   return (
     <div data-scroll-section>
       <Scroll />
-      <HeroSection />
+      <div className="hero-container">
+        <HeroSection />
+      </div>
       <div>
-        <h1>Blog</h1>
         <Footer />
       </div>
     </div>

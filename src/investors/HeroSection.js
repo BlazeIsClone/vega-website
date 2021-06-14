@@ -31,7 +31,7 @@ const ContainerWrapper = styled.div``;
 const Player = styled.video`
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 30%;
   transform: translate(-50%, -50%);
   z-index: -50;
 `;

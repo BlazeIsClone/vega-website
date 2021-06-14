@@ -12,10 +12,9 @@ import { ReactComponent as AboutIcon } from "./svg/about.svg";
 import { ReactComponent as HomeIcon } from "./svg/home.svg";
 import { ReactComponent as SupportIcon } from "./svg/support.svg";
 import { ReactComponent as VegaEvxIcon } from "./svg/vegaEvx.svg";
-import { ReactComponent as HeaderHamburgerIcon } from "./svg/menu_black_24dp.svg";
 import ContainedButton from "./ContainedButton.js";
 import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
-import VegaEvx from "../vegaEvx/VegaEvx.js";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function NavMain() {
   const history = useHistory();
@@ -40,11 +39,6 @@ function NavMain() {
 
   return (
     <Router>
-      <Switch>
-        <Route exact path="/vega-evx">
-          <VegaEvx />
-        </Route>
-      </Switch>
       <HeaderNav className="navbar-header">
         <a href="/">
           <HeaderLogo />
@@ -56,10 +50,15 @@ function NavMain() {
             height="nav"
             onClick={() => history.push("/reserve")}
           ></ContainedButton>
+          <HeaderItemHamburger className="navbar-hamburger">
+            <HamburgerIcon
+              hover
+              click
+              keepLastFrame
+              src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
+            ></HamburgerIcon>
+          </HeaderItemHamburger>
         </HeaderNavItem>
-        <HeaderItemHamburger className="navbar-hamburger">
-          <HamburgerIcon />
-        </HeaderItemHamburger>
       </HeaderNav>
       <NavWrapper>
         <NavStatic
@@ -132,7 +131,7 @@ const HeaderNav = styled.div`
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 10vw 70vw 10vw 10vw;
+  grid-template-columns: 10vw 70vw 20vw;
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
@@ -143,21 +142,22 @@ const HeaderNav = styled.div`
   padding-top: 2px;
 `;
 const HeaderNavItem = styled.div`
-  grid-column: 3/4;
-  justify-self: flex-end;
-`;
-const HeaderItemHamburger = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  flex-direction: row;
+  grid-column: 3/4;
+  margin-top: 10px;
+  margin-left: 40px;
 `;
-const HamburgerIcon = styled(HeaderHamburgerIcon)`
-  width: 50px;
-  height: 70px;
+const HeaderItemHamburger = styled.div`
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+`;
+const HamburgerIcon = styled(Player)`
+  height: 50px;
   cursor: pointer;
-  padding-top: 5px;
 `;
 const HeaderLogo = styled(NavLogoIcon)`
   margin: 20px 0 0 20px;
@@ -245,8 +245,6 @@ const Emblem = styled(LogoEmblem)`
 
 const LogoWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
 `;
 
@@ -261,7 +259,15 @@ const IconWrapper = styled.div`
   a {
     padding: 2px;
   }
+  :hover {
+    fill: ${(props) => props.theme.accentColor};
+  }
+
   svg {
+    :hover {
+      fill: ${(props) => props.theme.accentColor};
+    }
+
     path {
       :hover {
         fill: ${(props) => props.theme.accentColor};

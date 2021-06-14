@@ -100,8 +100,19 @@ const Scroll = (callbacks) => {
       //----------NavBar Page Independent Scroll logic----------//
 
       //----- HomePage onScroll Logic
-      const homeUrl = window.location.pathname;
-      if (homeUrl === "/") {
+      const locationUrl = window.location.pathname;
+      if (locationUrl === "/") {
+        //hidden
+        if (scroll.y > 2880 || scroll.y < 1280) {
+          navBar.style.transform = `translateX(100px)`;
+        }
+        //show
+        if (3360 > scroll.y && scroll.y > 1940) {
+          navBar.style.transform = `translateX(0)`;
+        }
+      }
+      //----- VegaEvx onScroll Logic
+      if (locationUrl === "/vega-evx") {
         //hidden
         if (scroll.y > 2880 || scroll.y < 1280) {
           navBar.style.transform = `translateX(100px)`;

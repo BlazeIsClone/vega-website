@@ -124,5 +124,6 @@ const FooterText = styled.p`
     text-align: center;
     color: #666666;
     width: 200px;
+    user-select: none;
   }
 `;

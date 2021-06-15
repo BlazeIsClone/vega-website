@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect, createRef } from "react";
 import styled from "styled-components";
 import {
   BrowserRouter as Router,
@@ -18,6 +18,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 function NavMain() {
   const history = useHistory();
+  const animationRef = createRef();
   useEffect(() => {
     const navBar = document.querySelector(".navbar-wrapper");
     const navBurger = document.querySelector(".navbar-hamburger");
@@ -53,8 +54,7 @@ function NavMain() {
           <HeaderItemHamburger className="navbar-hamburger">
             <HamburgerIcon
               hover
-              click
-              keepLastFrame
+              ref={animationRef}
               src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
             ></HamburgerIcon>
           </HeaderItemHamburger>

@@ -13,7 +13,11 @@ function ValuesHome() {
         <Img src={img} data-scroll-id="scroll-img" />
       </ImgContainer>
       <Container>
-        <TextWrapper data-scroll data-scroll-speed="1">
+        <TextWrapper
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-class="in-view"
+        >
           <Subtitle content="values"></Subtitle>
           <Headline content="Redefining Tomorrow's World"></Headline>
           <Body

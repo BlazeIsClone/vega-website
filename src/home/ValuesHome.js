@@ -1,23 +1,68 @@
-import React, { Component } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import TextButton from "../common/TextButton.js";
 import img from "./assets/homeValuesImg.png";
 import Headline from "../common/Headline.js";
 import Subtitle from "../common/Subtitle.js";
 import Body from "../common/Body.js";
+import gsap from "gsap";
+import { TweenMax, TimelineLite, Power3 } from "gsap";
+
+// or get other plugins:
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { Timeline } from "gsap/gsap-core";
+// Gsap Plugins plugins:
+gsap.registerPlugin(ScrollTrigger);
 
 function ValuesHome() {
+  let animationWrapper = useRef(null);
+  let images = useRef(null);
+  let text = useRef(null);
+  let tl = new Timeline();
+
+  useEffect(() => {
+    const firstImage = images;
+    let textElement = text;
+    //Image Animations
+    tl = gsap.from(firstImage, {
+      scrollTrigger: {
+        trigger: animationWrapper,
+        scroller: "[data-scroll-container]",
+        start: "top center",
+      },
+      y: 200,
+      duration: 0.8,
+    });
+
+    tl = gsap.from(firstImage.firstElementChild, {
+      scrollTrigger: {
+        trigger: firstImage.firstElementChild,
+        scroller: "[data-scroll-container]",
+      },
+      scale: 1.5,
+      duration: 0.8,
+    });
+    // Text Animations
+    tl = gsap.from(textElement, {
+      scrollTrigger: {
+        trigger: textElement,
+        scroller: "[data-scroll-container]",
+      },
+      y: 200,
+      duration: 1.2,
+    });
+  });
   return (
-    <GridLayout>
-      <ImgContainer>
-        <Img src={img} data-scroll-id="scroll-img" />
+    <ContainerWrapper
+      ref={(el) => (animationWrapper = el)}
+      data-scroll
+      data-scroll-speed="2"
+    >
+      <ImgContainer ref={(el) => (images = el)}>
+        <Img src={img} />
       </ImgContainer>
-      <Container>
-        <TextWrapper
-          data-scroll
-          data-scroll-speed="1"
-          data-scroll-class="in-view"
-        >
+      <Container ref={(el) => (text = el)}>
+        <TextWrapper value>
           <Subtitle content="values"></Subtitle>
           <Headline content="Redefining Tomorrow's World"></Headline>
           <Body
@@ -29,7 +74,7 @@ We are now ready to revolutionise the world we live in with cutting-edge technol
           <TextButton content="About Us"></TextButton>
         </TextWrapper>
       </Container>
-    </GridLayout>
+    </ContainerWrapper>
   );
 }
 
@@ -47,16 +92,23 @@ const GridTemplate = styled.div`
   padding: 100px 60px 0 160px;
 `;
 
-const GridLayout = styled(GridTemplate)`
+const ContainerWrapper = styled(GridTemplate)`
   align-items: center;
   justify-content: center;
 `;
-const Img = styled.img`
-  max-height: 605px;
-  width: auto;
-`;
 const ImgContainer = styled.div`
+  height: 605px;
+  width: 1300px;
   display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+`;
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  user-drag: none;
 `;
 
 const Container = styled.div``;

@@ -1,16 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import img001 from "./assets/homepageblog_newsim01.png";
 import img002 from "./assets/homepageblog_newsim02.png";
 import img003 from "./assets/homepageblog_newsim03.png";
 import Headline from "../common/Headline.js";
 import Card from "../common/Card.js";
+import gsap from "gsap";
+
+// Gsap Plugins plugins:
+import { Timeline } from "gsap/gsap-core";
+
+// GSAP animations
 
 function BlogAndNews() {
+  let cardsRef = useRef(null);
+
+  useEffect(() => {
+    let tl = new Timeline();
+    let cardsRig = cardsRef;
+
+    tl = gsap.fromTo(
+      cardsRig.children,
+      {
+        opacity: 0,
+        y: "8em",
+        stagger: 0.5,
+        duration: 0.2,
+        ease: "power2.easeOut",
+      },
+      {
+        opacity: 1,
+        y: "0",
+        stagger: 0.5,
+        duration: 0.2,
+        ease: "power3.easeOut",
+
+        scrollTrigger: {
+          trigger: cardsRig.children,
+          scroller: "[data-scroll-container]",
+          start: "top bottom",
+        },
+      }
+    );
+
+    console.log(cardsRig.children);
+  });
   return (
-    <Container data-scroll data-scroll-speed="4">
+    <Container data-scroll data-scroll-speed="2">
       <Headline paddingLeft="card" content="BLOG AND NEWS" />
-      <Block>
+      <Block ref={(el) => (cardsRef = el)}>
         <Card
           Img={img001}
           Subtilte="news"
@@ -37,7 +75,6 @@ function BlogAndNews() {
 export default BlogAndNews;
 
 const Container = styled.div`
-  margin-top: 100px;
   background-color: white;
 `;
 const Block = styled.div`

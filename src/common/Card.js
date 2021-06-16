@@ -14,15 +14,17 @@ class Card extends Component {
       align-items: center;
       justify-content: center;
       gap: 20px;
-      img {
+      picture {
         width: 100%;
         height: auto;
         margin-bottom: 10px;
+        user-select: none;
+        user-drag: none;
       }
     `;
     return (
       <Card>
-        <img src={this.props.Img}></img>
+        <picture src={this.props.Img}></picture>
         <Subtitle content={this.props.Subtilte} />
         <Headline size="card" content={this.props.Headline} />
         <Body content={this.props.Body} />

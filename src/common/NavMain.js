@@ -1,24 +1,35 @@
-import React, { Component, useState, useEffect, createRef } from "react";
+import React, { useState, useEffect, createRef, useRef } from "react";
 import styled from "styled-components";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
+import ContainedButton from "./ContainedButton.js";
+
+// Importing SVGs as React Components
+import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
 import { ReactComponent as LogoEmblem } from "./svg/logoEmblem.svg";
 import { ReactComponent as AboutIcon } from "./svg/about.svg";
 import { ReactComponent as HomeIcon } from "./svg/home.svg";
 import { ReactComponent as SupportIcon } from "./svg/support.svg";
 import { ReactComponent as VegaEvxIcon } from "./svg/vegaEvx.svg";
-import ContainedButton from "./ContainedButton.js";
-import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
+
+// Dev Optional imports
+import { ReactComponent as InvestorsIcon } from "./svg/request_page_black_24dp.svg";
+import { ReactComponent as CareersIcon } from "./svg/careers_fill.svg";
+import { ReactComponent as BlogAndNewsIcon } from "./svg/blog_news.svg";
+
+//Lottie Animator Player
 import { Player } from "@lottiefiles/react-lottie-player";
+// GSAP Animations
+import gsap from "gsap";
+// Gsap Plugins plugins:
+import { Timeline } from "gsap/gsap-core";
 
 function NavMain() {
+  //React router dom uri push
   const history = useHistory();
+  //Lottie animator
   const animationRef = createRef();
+
+  // Nav logic
   useEffect(() => {
     const navBar = document.querySelector(".navbar-wrapper");
     const navBurger = document.querySelector(".navbar-hamburger");
@@ -30,6 +41,31 @@ function NavMain() {
       }
     });
   }, []);
+
+  // GSAP animations
+  var navItemsRef = useRef(null);
+  var tl = new Timeline();
+
+  useEffect(() => {
+    let navItemsRig = navItemsRef;
+    tl = gsap.fromTo(
+      navItemsRig.children,
+      {
+        opacity: 0,
+        y: "0.5em",
+        stagger: 0.1,
+        duration: 0.2,
+        ease: "power3.easeIn",
+      },
+      {
+        opacity: 1,
+        y: "0em",
+        stagger: 0.1,
+        duration: 0.2,
+        ease: "power3.easeOut",
+      }
+    );
+  });
 
   const [staticStatus, setStaticStatus] = useState(true);
   const [activeStatus, setActiveStatus] = useState(false);
@@ -96,27 +132,32 @@ function NavMain() {
           onMouseLeave={() => setActiveStatus(false) && setStaticStatus(true)}
           showActive={activeStatus}
         >
-          <NavElements>
+          <NavElements ref={(el) => (navItemsRef = el)}>
             <NavMainItems onClick={() => history.push("/")}>Home</NavMainItems>
             <NavItems>Vega Evx</NavItems>
             <NavItems>Values</NavItems>
             <NavItems>Blog and News</NavItems>
             <NavItems>Newsletter</NavItems>
-            <NavMainItems onClick={() => history.push("/vega-evx")}>
-              Vega Evx
-            </NavMainItems>
-            <NavMainItems onClick={() => history.push("/investors")}>
-              Investors
-            </NavMainItems>
-            <NavMainItems onClick={() => history.push("/blog")}>
-              Blog And News
-            </NavMainItems>
-            <NavMainItems onClick={() => history.push("/about")}>
-              About
-            </NavMainItems>
-            <NavMainItems onClick={() => history.push("/support")}>
-              Support
-            </NavMainItems>
+            <NavMainItemsWrapper>
+              <NavMainItems onClick={() => history.push("/vega-evx")}>
+                Vega Evx
+              </NavMainItems>
+              <NavMainItems onClick={() => history.push("/investors")}>
+                Investors
+              </NavMainItems>
+              <NavMainItems onClick={() => history.push("/blog")}>
+                Blog And News
+              </NavMainItems>
+              <NavMainItems onClick={() => history.push("/about")}>
+                About
+              </NavMainItems>
+              <NavMainItems onClick={() => history.push("/careers")}>
+                Careers
+              </NavMainItems>
+              <NavMainItems onClick={() => history.push("/support")}>
+                Support
+              </NavMainItems>
+            </NavMainItemsWrapper>
           </NavElements>
         </NavActive>
       </NavWrapper>
@@ -176,7 +217,7 @@ const NavActive = styled.div`
   top: 0;
   right: 0;
   color: white;
-  z-index: 1;
+  z-index: 0;
   background-color: ${(props) => props.theme.secondaryColor};
   width: 300px;
   transition: all 0.4s ease-in-out;
@@ -193,7 +234,7 @@ const NavStatic = styled.div`
   height: 100vh;
   color: white;
   background-color: ${(props) => props.theme.secondaryColor};
-  z-index: 10;
+  z-index: 1;
   display: flex;
   transform: ${(props) =>
     props.showStatic ? "translateX(0)" : "translateX(100px)"};
@@ -205,10 +246,18 @@ const NavElements = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  margin-top: 300px;
+  margin-top: 185px;
   padding: 20px 110px 20px 10px;
+  height: 100%;
+`;
+
+const NavMainItemsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 auto 0;
 `;
 const NavMainItems = styled.ul`
+  padding-top: 25px;
   font-family: Roboto;
   font-style: italic;
   font-weight: bold;
@@ -232,6 +281,7 @@ const NavItems = styled.ul`
   text-align: end;
   letter-spacing: -0.154px;
   color: white;
+  padding: 5px 0 0 0;
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.accentColor};
@@ -256,6 +306,7 @@ const IconWrapper = styled.div`
   row-gap: 60px;
   margin-top: auto;
   padding-bottom: 50px;
+  fill: white;
   a {
     padding: 2px;
   }
@@ -269,6 +320,7 @@ const IconWrapper = styled.div`
     }
 
     path {
+      fill: white;
       :hover {
         fill: ${(props) => props.theme.accentColor};
       }

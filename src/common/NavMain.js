@@ -217,7 +217,7 @@ const NavActive = styled.div`
   top: 0;
   right: 0;
   color: white;
-  z-index: 0;
+  z-index: 10;
   background-color: ${(props) => props.theme.secondaryColor};
   width: 300px;
   transition: all 0.4s ease-in-out;
@@ -234,7 +234,7 @@ const NavStatic = styled.div`
   height: 100vh;
   color: white;
   background-color: ${(props) => props.theme.secondaryColor};
-  z-index: 1;
+  z-index: 20;
   display: flex;
   transform: ${(props) =>
     props.showStatic ? "translateX(0)" : "translateX(100px)"};

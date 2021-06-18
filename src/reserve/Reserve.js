@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Scroll from "../common/locomotiveScroll.js";
+import Scroll from "../common/libraryStack.js";
 
 function VegaEvx() {
   return (

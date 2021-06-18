@@ -12,10 +12,13 @@ import barba from "@barba/core";
 import barbaCss from "@barba/css";
 import { fadeIn, fadeOut } from "./animations";
 
-// ----------Initiating GSAP
+// -----Initiating GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-// ----------Initiating Locomotive Scroll
+// -----Initiating Barba to use the css plugin
+barba.use(barbaCss);
+
+// -----Initiating Locomotive Scroll
 
 let scrollContainer = "[data-scroll-container]";
 
@@ -64,13 +67,15 @@ const Scroll = (callbacks) => {
       document.documentElement.setAttribute("data-direction", func.direction);
     });
 
-    // each time the window updates, refresh ScrollTrigger and then update LocomotiveScroll.
+    const body = document.querySelector("body");
 
     // Barba css pre initiation
     barba.hooks.before((data) => {
       const background = data.current.container.dataset.background;
       body.style.setProperty("--page-background", background);
     });
+
+    // each time the window updates, hookBarba and refresh ScrollTrigger and then update LocomotiveScroll.
 
     // Syncing Barba Initiation with LocomotiveScroll and GSAP
     barba.hooks.after(() => {
@@ -83,23 +88,16 @@ const Scroll = (callbacks) => {
     ScrollTrigger.refresh();
 
     // Initializing Barba JS (hooks between native route changes)
-
-    // tell Barba to use the css plugin
-    barba.use(barbaCss);
-
-    const body = document.querySelector("body");
-
     barba.init({
-      debug: true,
       transitions: [
         {
-          name: "with-cover",
           to: { namespace: ["with-cover"] },
           leave() {},
           enter() {},
         },
       ],
     });
+
     console.log(barba);
 
     // Checking for status

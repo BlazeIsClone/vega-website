@@ -106,67 +106,61 @@ a {
   display: none;
 }
 
-/* BarbarJS Transition with cover screen */
-.with-cover-leave,
-.with-cover-enter {
-  transition: transform 0.5s var(--easing);
-}
+/* Page load animation */
 
-.with-cover-leave .transition {
+.transition {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #c8cc98;
+  display: none;
+  align-items: center;
+  justify-content: center;
   transform: translateY(-100%);
+  z-index: 1;
+}
+.barba-leave,
+.barba-enter .transition {
+  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
 }
 
-.with-cover-leave-active .transition {
-  transition: transform 0.5s var(--easing);
+.barba-leave .transition {
+  transform: cubic-bezier(0.5, 0.7, 0.4, 1);
 }
 
-.with-cover-leave-to .transition {
+.barba-leave-active .transition {
+  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
+}
+
+.barba-leave-to .transition {
   transform: translateY(0);
 }
 
-.with-cover-leave .content {
-  transform: translateY(0);
-}
-
-.with-cover-leave-active .content {
-  transition: transform 0.5s var(--easing);
-}
-
-.with-cover-leave-to .content {
-  transform: translateY(80px);
-}
-
-/* Cover back to top */
-.with-cover-enter .transition {
-  transform: translateY(0);
-}
-.with-cover-enter-active .transition {
-  transition: transform 0.5s var(--easing);
-}
-.with-cover-enter-to .transition {
-  transform: translateY(-100%);
+.barba-leave-active {
+  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
 }
 
 /* Cover down */
-.with-cover-enter .transition {
+.barba-enter .transition {
   transform: translateY(0);
 }
 
-.with-cover-enter .content {
-  transform: translateY(-80px);
+.barba-enter-active .transition {
+  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
+  display: flex;
 }
 
-.with-cover-enter-active .transition,
-.with-cover-enter-active .content {
-  transition: transform 0.5s var(--easing);
-}
-
-.with-cover-enter-to .transition {
+.barba-enter-to .transition {
   transform: translateY(100%);
 }
 
-.with-cover-enter-to .content {
+.barba-enter-to .transition {
   transform: translateY(0);
+}
+.barba-once-to .transition {
+  display: none;
 }
 
 /* Optimization For Smooth Scroll Behaviours*/

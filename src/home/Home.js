@@ -11,7 +11,7 @@ import Scroll from "../common/locomotiveScroll.js";
 
 function Home() {
   return (
-    <>
+    <main data-barba="container" data-barba-namespace="with-cover">
       <Scroll />
       <div className="hero-container">
         <HeroSection />
@@ -24,7 +24,7 @@ function Home() {
         <Newsletter />
         <Footer />
       </div>
-    </>
+    </main>
   );
 }
 

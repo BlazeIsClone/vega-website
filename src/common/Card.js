@@ -14,7 +14,7 @@ class Card extends Component {
       align-items: center;
       justify-content: center;
       gap: 20px;
-      picture {
+      img {
         width: 100%;
         height: auto;
         margin-bottom: 10px;
@@ -24,7 +24,7 @@ class Card extends Component {
     `;
     return (
       <Card>
-        <picture src={this.props.Img}></picture>
+        <img src={this.props.Img}></img>
         <Subtitle content={this.props.Subtilte} />
         <Headline size="card" content={this.props.Headline} />
         <Body content={this.props.Body} />

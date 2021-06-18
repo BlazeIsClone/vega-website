@@ -40,7 +40,7 @@ function ValuesHome() {
         scroller: "[data-scroll-container]",
       },
       scale: 1.5,
-      duration: 0.8,
+      duration: 0.7,
     });
     // Text Animations
     tl = gsap.from(textElement, {

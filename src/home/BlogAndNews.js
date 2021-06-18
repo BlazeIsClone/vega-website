@@ -25,25 +25,22 @@ function BlogAndNews() {
         opacity: 0,
         y: "8em",
         stagger: 0.5,
-        duration: 0.2,
+        duration: 0.8,
         ease: "power2.easeOut",
       },
       {
         opacity: 1,
         y: "0",
         stagger: 0.5,
-        duration: 0.2,
+        duration: 0.8,
         ease: "power3.easeOut",
 
         scrollTrigger: {
-          trigger: cardsRig.children,
+          trigger: cardsRig,
           scroller: "[data-scroll-container]",
-          start: "top bottom",
         },
       }
     );
-
-    console.log(cardsRig.children);
   });
   return (
     <Container data-scroll data-scroll-speed="2">

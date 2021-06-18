@@ -9,6 +9,8 @@ import LocomotiveScroll from "locomotive-scroll";
 
 // Barba page transitions
 import barba from "@barba/core";
+import barbaCss from "@barba/css";
+import { fadeIn, fadeOut } from "./animations";
 
 // ----------Initiating GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -63,15 +65,45 @@ const Scroll = (callbacks) => {
     });
 
     // each time the window updates, refresh ScrollTrigger and then update LocomotiveScroll.
-    ScrollTrigger.addEventListener("refresh", () => {
-      locomotiveScroll.update();
+
+    // Barba css pre initiation
+    barba.hooks.before((data) => {
+      const background = data.current.container.dataset.background;
+      body.style.setProperty("--page-background", background);
+    });
+
+    // Syncing Barba Initiation with LocomotiveScroll and GSAP
+    barba.hooks.after(() => {
+      ScrollTrigger.addEventListener("refresh", () => {
+        locomotiveScroll.update();
+      });
     });
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
 
+    // Initializing Barba JS (hooks between native route changes)
+
+    // tell Barba to use the css plugin
+    barba.use(barbaCss);
+
+    const body = document.querySelector("body");
+
+    barba.init({
+      debug: true,
+      transitions: [
+        {
+          name: "with-cover",
+          to: { namespace: ["with-cover"] },
+          leave() {},
+          enter() {},
+        },
+      ],
+    });
+    console.log(barba);
+
     // Checking for status
-    if (locomotiveScroll && ScrollTrigger) {
+    if (locomotiveScroll && ScrollTrigger && barba) {
       console.log("%c P I X E L S ", "background: #222; color: #bada55");
     }
 

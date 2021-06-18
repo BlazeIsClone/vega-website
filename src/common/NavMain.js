@@ -180,7 +180,7 @@ const HeaderNav = styled.div`
   background-color: inherit;
   transition: all 0.5s ease-in-out;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  padding-top: 2px;
+  padding: 5px 5px 0 5px;
 `;
 const HeaderNavItem = styled.div`
   display: flex;
@@ -194,7 +194,7 @@ const HeaderNavItem = styled.div`
 const HeaderItemHamburger = styled.div`
   justify-content: space-between;
   align-items: center;
-  margin-right: 40px;
+  margin-right: 25px;
 `;
 const HamburgerIcon = styled(Player)`
   height: 50px;

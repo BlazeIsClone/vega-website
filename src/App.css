@@ -92,6 +92,7 @@ video {
 
 :root {
   font-size: 16px;
+  --easing: cubic-bezier(0.5, 0.7, 0.4, 1);
 }
 
 a {
@@ -103,6 +104,69 @@ a {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* BarbarJS Transition with cover screen */
+.with-cover-leave,
+.with-cover-enter {
+  transition: transform 0.5s var(--easing);
+}
+
+.with-cover-leave .transition {
+  transform: translateY(-100%);
+}
+
+.with-cover-leave-active .transition {
+  transition: transform 0.5s var(--easing);
+}
+
+.with-cover-leave-to .transition {
+  transform: translateY(0);
+}
+
+.with-cover-leave .content {
+  transform: translateY(0);
+}
+
+.with-cover-leave-active .content {
+  transition: transform 0.5s var(--easing);
+}
+
+.with-cover-leave-to .content {
+  transform: translateY(80px);
+}
+
+/* Cover back to top */
+.with-cover-enter .transition {
+  transform: translateY(0);
+}
+.with-cover-enter-active .transition {
+  transition: transform 0.5s var(--easing);
+}
+.with-cover-enter-to .transition {
+  transform: translateY(-100%);
+}
+
+/* Cover down */
+.with-cover-enter .transition {
+  transform: translateY(0);
+}
+
+.with-cover-enter .content {
+  transform: translateY(-80px);
+}
+
+.with-cover-enter-active .transition,
+.with-cover-enter-active .content {
+  transition: transform 0.5s var(--easing);
+}
+
+.with-cover-enter-to .transition {
+  transform: translateY(100%);
+}
+
+.with-cover-enter-to .content {
+  transform: translateY(0);
 }
 
 /* Optimization For Smooth Scroll Behaviours*/

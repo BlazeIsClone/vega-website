@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  MemoryRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
@@ -16,7 +16,7 @@ import SliderSpecs from "./SliderSpecs.js";
 function SliderRouter() {
   const NavLinked = styled(NavLink)``;
   return (
-    <Router>
+    <Router keyLength={6}>
       <Container>
         <Switch>
           <Route exact path="/" component={SliderOverview} />

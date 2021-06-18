@@ -22,37 +22,39 @@ function App() {
 
   return (
     <Router>
-      <ThemeProvider theme={globalVars}>
-        <div data-scroll-container>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/vega-evx">
-              <VegaEvx />
-            </Route>
-            <Route path="/investors">
-              <Investors />
-            </Route>
-            <Route path="/blog">
-              <Blog />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/careers">
-              <Careers />
-            </Route>
-            <Route path="/support">
-              <Support />
-            </Route>
-            <Route path="/reserve">
-              <Reserve />
-            </Route>
-          </Switch>
-          <NavMain />
-        </div>
-      </ThemeProvider>
+      <body data-barba="wrapper">
+        <ThemeProvider theme={globalVars}>
+          <div data-scroll-container>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/vega-evx">
+                <VegaEvx />
+              </Route>
+              <Route path="/investors">
+                <Investors />
+              </Route>
+              <Route path="/blog">
+                <Blog />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/careers">
+                <Careers />
+              </Route>
+              <Route path="/support">
+                <Support />
+              </Route>
+              <Route path="/reserve">
+                <Reserve />
+              </Route>
+            </Switch>
+            <NavMain />
+          </div>
+        </ThemeProvider>
+      </body>
     </Router>
   );
 }

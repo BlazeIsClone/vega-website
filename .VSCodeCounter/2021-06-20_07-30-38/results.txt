@@ -1,0 +1,99 @@
+Date : 2021-06-20 07:30:38
+Directory : d:\Code\vega-app\src
+Total : 63 files,  3299 codes, 63 comments, 301 blanks, all 3663 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         43 |      2,979 |         57 |        269 |      3,305 |
+| CSS        |          1 |        191 |          6 |         17 |        214 |
+| XML        |         19 |        129 |          0 |         15 |        144 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                            |         63 |      3,299 |         63 |        301 |      3,663 |
+| about                                                        |          2 |        131 |          0 |         11 |        142 |
+| blog                                                         |          2 |        131 |          0 |         11 |        142 |
+| careers                                                      |          2 |        134 |          0 |         11 |        145 |
+| common                                                       |         32 |      1,027 |         46 |        113 |      1,186 |
+| common\svg                                                   |         19 |        129 |          0 |         15 |        144 |
+| home                                                         |         12 |        937 |          6 |         69 |      1,012 |
+| investors                                                    |          2 |        131 |          0 |         12 |        143 |
+| reserve                                                      |          1 |         60 |          0 |          5 |         65 |
+| support                                                      |          2 |        134 |          0 |         12 |        146 |
+| vegaEvx                                                      |          2 |        336 |          1 |         29 |        366 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                     | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\Code\vega-app\src\App.css                                 | CSS        |        191 |          6 |         17 |        214 |
+| d:\Code\vega-app\src\App.js                                  | JavaScript |         61 |          0 |          4 |         65 |
+| d:\Code\vega-app\src\NotFound.js                             | JavaScript |          9 |          0 |          2 |         11 |
+| d:\Code\vega-app\src\about\About.js                          | JavaScript |         59 |          0 |          6 |         65 |
+| d:\Code\vega-app\src\about\HeroSection.js                    | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\blog\Blog.js                            | JavaScript |         59 |          0 |          6 |         65 |
+| d:\Code\vega-app\src\blog\HeroSection.js                     | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\careers\Careers.js                      | JavaScript |         62 |          0 |          6 |         68 |
+| d:\Code\vega-app\src\careers\HeroSection.js                  | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\common\Body.js                          | JavaScript |         21 |          0 |          3 |         24 |
+| d:\Code\vega-app\src\common\Card.js                          | JavaScript |         34 |          0 |          3 |         37 |
+| d:\Code\vega-app\src\common\ContainedButton.js               | JavaScript |         39 |          0 |          3 |         42 |
+| d:\Code\vega-app\src\common\Footer.js                        | JavaScript |        123 |          0 |          7 |        130 |
+| d:\Code\vega-app\src\common\Headline.js                      | JavaScript |         29 |          0 |          2 |         31 |
+| d:\Code\vega-app\src\common\HeroContainer.js                 | JavaScript |         41 |          0 |          5 |         46 |
+| d:\Code\vega-app\src\common\NavMain.js                       | JavaScript |        323 |          9 |         23 |        355 |
+| d:\Code\vega-app\src\common\OutlinedButton.js                | JavaScript |          8 |          0 |          3 |         11 |
+| d:\Code\vega-app\src\common\Specs.js                         | JavaScript |         42 |          0 |          3 |         45 |
+| d:\Code\vega-app\src\common\Subtitle.js                      | JavaScript |         18 |          0 |          2 |         20 |
+| d:\Code\vega-app\src\common\TextButton.js                    | JavaScript |         44 |          0 |          3 |         47 |
+| d:\Code\vega-app\src\common\Typeset.js                       | JavaScript |         22 |          0 |          4 |         26 |
+| d:\Code\vega-app\src\common\libraryStack.js                  | JavaScript |        154 |         37 |         37 |        228 |
+| d:\Code\vega-app\src\common\svg\about.svg                    | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\blog_news.svg                | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\careers_fill.svg             | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\chevron_left_black_24dp.svg  | XML        |          1 |          0 |          0 |          1 |
+| d:\Code\vega-app\src\common\svg\chevron_right_black_24dp.svg | XML        |          1 |          0 |          0 |          1 |
+| d:\Code\vega-app\src\common\svg\home.svg                     | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\icons8-facebook-f 1.svg      | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\icons8-instagram 1.svg       | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\icons8-linkedin-2 1.svg      | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\icons8-play-button 1.svg     | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\icons8-twitter 1.svg         | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\logoEmblem.svg               | XML        |         11 |          0 |          1 |         12 |
+| d:\Code\vega-app\src\common\svg\menu_black_24dp.svg          | XML        |          1 |          0 |          0 |          1 |
+| d:\Code\vega-app\src\common\svg\request_page_black_24dp.svg  | XML        |          1 |          0 |          0 |          1 |
+| d:\Code\vega-app\src\common\svg\support.svg                  | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\vegaEvx.svg                  | XML        |          3 |          0 |          1 |          4 |
+| d:\Code\vega-app\src\common\svg\vegaLogo.svg                 | XML        |         24 |          0 |          1 |         25 |
+| d:\Code\vega-app\src\common\svg\vega_logo_lettering.svg      | XML        |         39 |          0 |          1 |         40 |
+| d:\Code\vega-app\src\common\svg\vega_with_tagline.svg        | XML        |         18 |          0 |          1 |         19 |
+| d:\Code\vega-app\src\home\BlogAndNews.js                     | JavaScript |         74 |          2 |          9 |         85 |
+| d:\Code\vega-app\src\home\ChargeNetInfo.js                   | JavaScript |         34 |          0 |          3 |         37 |
+| d:\Code\vega-app\src\home\HeroSection.js                     | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\home\Home.js                            | JavaScript |         29 |          0 |          3 |         32 |
+| d:\Code\vega-app\src\home\Newsletter.js                      | JavaScript |         79 |          0 |          5 |         84 |
+| d:\Code\vega-app\src\home\SliderDesign.js                    | JavaScript |         89 |          0 |          5 |         94 |
+| d:\Code\vega-app\src\home\SliderInnovation.js                | JavaScript |         70 |          0 |          8 |         78 |
+| d:\Code\vega-app\src\home\SliderOverview.js                  | JavaScript |         89 |          0 |          7 |         96 |
+| d:\Code\vega-app\src\home\SliderPerformance.js               | JavaScript |         86 |          0 |          6 |         92 |
+| d:\Code\vega-app\src\home\SliderRouter.js                    | JavaScript |        132 |          0 |          4 |        136 |
+| d:\Code\vega-app\src\home\SliderSpecs.js                     | JavaScript |         80 |          0 |          5 |         85 |
+| d:\Code\vega-app\src\home\ValuesHome.js                      | JavaScript |        103 |          4 |          9 |        116 |
+| d:\Code\vega-app\src\index.js                                | JavaScript |          4 |          0 |          2 |          6 |
+| d:\Code\vega-app\src\investors\HeroSection.js                | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\investors\Investors.js                  | JavaScript |         59 |          0 |          7 |         66 |
+| d:\Code\vega-app\src\reportWebVitals.js                      | JavaScript |         12 |          0 |          2 |         14 |
+| d:\Code\vega-app\src\reserve\Reserve.js                      | JavaScript |         60 |          0 |          5 |         65 |
+| d:\Code\vega-app\src\setupTests.js                           | JavaScript |          1 |          4 |          1 |          6 |
+| d:\Code\vega-app\src\support\HeroSection.js                  | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\support\Support.js                      | JavaScript |         62 |          0 |          7 |         69 |
+| d:\Code\vega-app\src\vegaEvx\HeroSection.js                  | JavaScript |         72 |          0 |          5 |         77 |
+| d:\Code\vega-app\src\vegaEvx\VegaEvx.js                      | JavaScript |        264 |          1 |         24 |        289 |
+| Total                                                        |            |      3,299 |         63 |        301 |      3,663 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+

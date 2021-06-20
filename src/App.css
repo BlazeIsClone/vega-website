@@ -83,6 +83,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
   font-size: 100%;
   font: inherit;
   overflow-x: none;
@@ -120,47 +121,6 @@ a {
   justify-content: center;
   transform: translateY(-100%);
   z-index: 1;
-}
-.barba-leave,
-.barba-enter .transition {
-  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
-}
-
-.barba-leave .transition {
-  transform: cubic-bezier(0.5, 0.7, 0.4, 1);
-}
-
-.barba-leave-active .transition {
-  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
-}
-
-.barba-leave-to .transition {
-  transform: translateY(0);
-}
-
-.barba-leave-active {
-  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
-}
-
-/* Cover down */
-.barba-enter .transition {
-  transform: translateY(0);
-}
-
-.barba-enter-active .transition {
-  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
-  display: flex;
-}
-
-.barba-enter-to .transition {
-  transform: translateY(100%);
-}
-
-.barba-enter-to .transition {
-  transform: translateY(0);
-}
-.barba-once-to .transition {
-  display: none;
 }
 
 /* Optimization For Smooth Scroll Behaviours*/

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
+  MemoryRouter as Router,
   Switch,
   Route,
   NavLink,

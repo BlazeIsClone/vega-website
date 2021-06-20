@@ -194,7 +194,6 @@ const HeaderNavItem = styled.div`
 const HeaderItemHamburger = styled.div`
   justify-content: space-between;
   align-items: center;
-  margin-right: 25px;
 `;
 const HamburgerIcon = styled(Player)`
   height: 50px;

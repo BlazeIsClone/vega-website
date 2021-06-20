@@ -11,6 +11,8 @@ import Blog from "./blog/Blog.js";
 import About from "./about/About.js";
 import Careers from "./careers/Careers.js";
 import Support from "./support/Support.js";
+import { AnimatePresence } from "framer-motion";
+import { AnimateSharedLayout } from "framer-motion";
 
 function App() {
   const globalVars = {
@@ -18,14 +20,15 @@ function App() {
     secondaryColor: "#0f0f0f",
     accentColor: "red",
     heroType: "Ruda",
+    negativeColor: "white",
   };
 
   return (
     <Router>
-      <body data-barba="wrapper">
-        <ThemeProvider theme={globalVars}>
-          <div data-scroll-container>
-            <Switch>
+      <ThemeProvider theme={globalVars}>
+        <div data-scroll-container>
+          <Switch>
+            <AnimatePresence initial={false} exitBeforeEnter>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -50,11 +53,11 @@ function App() {
               <Route path="/reserve">
                 <Reserve />
               </Route>
-            </Switch>
-            <NavMain />
-          </div>
-        </ThemeProvider>
-      </body>
+            </AnimatePresence>
+          </Switch>
+          <NavMain />
+        </div>
+      </ThemeProvider>
     </Router>
   );
 }

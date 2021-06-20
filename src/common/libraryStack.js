@@ -7,16 +7,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 // LocomotiveScroll for smooth scrolling and parallax
 import LocomotiveScroll from "locomotive-scroll";
 
-// Barba page transitions
-import barba from "@barba/core";
-import barbaCss from "@barba/css";
-import { fadeIn, fadeOut } from "./animations";
-
 // -----Initiating GSAP
 gsap.registerPlugin(ScrollTrigger);
-
-// -----Initiating Barba to use the css plugin
-barba.use(barbaCss);
 
 // -----Initiating Locomotive Scroll
 
@@ -67,41 +59,17 @@ const Scroll = (callbacks) => {
       document.documentElement.setAttribute("data-direction", func.direction);
     });
 
-    const body = document.querySelector("body");
+    // each time the window updates, and refreshes ScrollTrigger and then update LocomotiveScroll.
 
-    // Barba css pre initiation
-    barba.hooks.before((data) => {
-      const background = data.current.container.dataset.background;
-      body.style.setProperty("--page-background", background);
-    });
-
-    // each time the window updates, hookBarba and refresh ScrollTrigger and then update LocomotiveScroll.
-
-    // Syncing Barba Initiation with LocomotiveScroll and GSAP
-    barba.hooks.after(() => {
-      ScrollTrigger.addEventListener("refresh", () => {
-        locomotiveScroll.update();
-      });
+    ScrollTrigger.addEventListener("refresh", () => {
+      locomotiveScroll.update();
     });
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
 
-    // Initializing Barba JS (hooks between native route changes)
-    barba.init({
-      transitions: [
-        {
-          to: { namespace: ["with-cover"] },
-          leave() {},
-          enter() {},
-        },
-      ],
-    });
-
-    console.log(barba);
-
     // Checking for status
-    if (locomotiveScroll && ScrollTrigger && barba) {
+    if (locomotiveScroll && ScrollTrigger) {
       console.log("%c P I X E L S ", "background: #222; color: #bada55");
     }
 
@@ -190,11 +158,59 @@ const Scroll = (callbacks) => {
       //----- VegaEvx onScroll Logic
       if (locationUrl === "/vega-evx") {
         //hidden
-        if (scroll.y > 2880 || scroll.y < 1280) {
+        if (scroll.y < 900) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 1940) {
+        if (3360 > scroll.y && scroll.y > 900) {
+          navBar.style.transform = `translateX(0)`;
+        }
+      }
+
+      //----- Investors onScroll Logic
+      if (locationUrl === "/investors") {
+        //hidden
+        if (scroll.y < 900) {
+          navBar.style.transform = `translateX(100px)`;
+        }
+        //show
+        if (3360 > scroll.y && scroll.y > 900) {
+          navBar.style.transform = `translateX(0)`;
+        }
+      }
+
+      //----- About onScroll Logic
+      if (locationUrl === "/about") {
+        //hidden
+        if (scroll.y < 900) {
+          navBar.style.transform = `translateX(100px)`;
+        }
+        //show
+        if (3360 > scroll.y && scroll.y > 900) {
+          navBar.style.transform = `translateX(0)`;
+        }
+      }
+
+      //----- Careers onScroll Logic
+      if (locationUrl === "/careers") {
+        //hidden
+        if (scroll.y < 900) {
+          navBar.style.transform = `translateX(100px)`;
+        }
+        //show
+        if (3360 > scroll.y && scroll.y > 900) {
+          navBar.style.transform = `translateX(0)`;
+        }
+      }
+
+      //----- Support onScroll Logic
+      if (locationUrl === "/support") {
+        //hidden
+        if (scroll.y < 900) {
+          navBar.style.transform = `translateX(100px)`;
+        }
+        //show
+        if (3360 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }

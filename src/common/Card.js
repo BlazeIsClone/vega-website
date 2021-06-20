@@ -22,12 +22,17 @@ class Card extends Component {
         user-drag: none;
       }
     `;
+
     return (
       <Card>
         <img src={this.props.Img}></img>
         <Subtitle content={this.props.Subtilte} />
-        <Headline size="card" content={this.props.Headline} />
-        <Body content={this.props.Body} />
+        <Headline
+          size="card"
+          content={this.props.Headline}
+          color={this.props.color}
+        />
+        <Body content={this.props.Body} color={this.props.color} />
       </Card>
     );
   }

@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import videoSrc from "../common/mp4/heroMainVideo.mp4";
 import Container from "../common/HeroContainer.js";
+import ProgressiveImage from "react-progressive-image";
+
+// image
+import investorsHero from "./img/investorsHero.png";
 
 function HeroSection() {
   return (
@@ -12,11 +15,7 @@ function HeroSection() {
       </EffectsWrapper>
       <Container
         getClass="hero-container-text"
-        content={
-          <Player autoPlay loop muted data-keepplaying>
-            <source src={videoSrc} type="video/mp4" />
-          </Player>
-        }
+        content={<Image src={investorsHero}></Image>}
       >
         light years ahead
       </Container>
@@ -28,13 +27,6 @@ export default HeroSection;
 
 const ContainerWrapper = styled.div``;
 
-const Player = styled.video`
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  transform: translate(-50%, -50%);
-  z-index: -50;
-`;
 const EffectsWrapper = styled.div`
   top: 0px;
   left: 0px;
@@ -73,4 +65,12 @@ const EffectOverlay = styled.div`
   transition-delay: 0s, 0s;
   opacity: 0;
   z-index: -20;
+`;
+
+const Image = styled.img`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -50;
 `;

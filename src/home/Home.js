@@ -11,10 +11,7 @@ import Scroll from "../common/libraryStack.js";
 
 function Home() {
   return (
-    <main data-barba="container" data-barba-namespace="with-cover">
-      <div className="transition">
-        <h2>Cover Screen</h2>
-      </div>
+    <main>
       <Scroll />
       <div className="hero-container">
         <HeroSection />

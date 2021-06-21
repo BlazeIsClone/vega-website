@@ -5,6 +5,12 @@ import Footer from "../common/Footer.js";
 import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
 
+// Components
+import Form from "../common/Form.js";
+
+// Images
+import applyNowImg from "./img/applyNowImg.png";
+
 function Careers() {
   return (
     <main>
@@ -18,14 +24,22 @@ function Careers() {
           <MotionType>CAREERS</MotionType>
         </motion.div>
       </MotionContainer>
-      <div data-scroll-section>
-        <Scroll />
-        <div className="hero-container">
-          <HeroSection />
-        </div>
-        <div>
-          <Footer />
-        </div>
+      <div className="hero-container">
+        <HeroSection />
+      </div>
+      <div data-scroll-section className="scroll-optimize">
+        {/* ---- APPLYNOW SECTION ---- */}
+        <ApplyNowSection>
+          <Form
+            img={applyNowImg}
+            subtitle="apply for careers"
+            headline="work with us"
+            body="We challenge everything we do, from ideas to processes and even the minute detail that may seem
+insignificant to another if you too let’s get together to revolutionize our future"
+          />
+        </ApplyNowSection>
+        {/* ---- FOOTER SECTION ---- */}
+        <Footer />
       </div>
     </main>
   );
@@ -33,6 +47,10 @@ function Careers() {
 
 export default Careers;
 
+const ApplyNowSection = styled.div`
+  background-color: ${(props) => props.theme.pureColor};
+  width: 100vw;
+`;
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],
   duration: 2,

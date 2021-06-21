@@ -210,7 +210,7 @@ const Scroll = (callbacks) => {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 900) {
+        if (930 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }

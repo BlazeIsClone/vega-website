@@ -13,6 +13,7 @@ import Headline from "../common/Headline.js";
 import CardExtended from "../common/CardExtended.js";
 import BannerMoreInfo from "../common/BannerMoreInfo.js";
 import DescriptionBody from "../common/DescriptionBody.js";
+import Form from "../common/Form.js";
 
 // images
 import companyImg from "./img/companyImg.png";
@@ -23,6 +24,7 @@ import valuesImg from "./img/valuesImg.png";
 import valuesInfoImg from "./img/valueInfoImg.png";
 import subsidariesChargenet from "./img/subsidariesChargenet.png";
 import subsidariesAirgrow from "./img/subsidariesAirgrow.png";
+import enquiryImg from "./img/EnquiryImg.png";
 
 function Investors() {
   return (
@@ -116,7 +118,7 @@ function Investors() {
 
         {/* ---- SUBSIDARIES SECTION ---- */}
         <SubsidariesSection>
-          <Block data-scroll data-scroll-speed="2">
+          <Block data-scroll data-scroll-speed="1">
             <SubsidariesCol1>
               <SubsidariesHeadline>
                 <Headline color="black" content="Subsidaries" />
@@ -144,6 +146,15 @@ function Investors() {
 
         {/* ---- ENQUIRY SECTION ---- */}
 
+        <EnquirySection>
+          <Form
+            img={enquiryImg}
+            subtilte="enquiry"
+            headline="let’s talk!"
+            body="Hello there! Looks like you re interested in finding out more about Vega Or maybe you just wanted to
+start a conversation if so feel free to make an enquiry."
+          />
+        </EnquirySection>
         {/* ---- FOOTER SECTION ---- */}
         <Footer />
       </div>
@@ -153,13 +164,21 @@ function Investors() {
 
 export default Investors;
 
+const EnquirySection = styled.div``;
+
+const SubsidariesSection = styled.div`
+  padding-top: 70px;
+  height: 1000px;
+`;
+
 const SubsidariesHeadline = styled.div`
   position: relative;
   top: -50px;
 `;
-const SubsidariesSection = styled.div``;
 
-const SubsidariesCol2 = styled.div``;
+const SubsidariesCol2 = styled.div`
+  margin-top: 135px;
+`;
 
 const SubsidariesCol1 = styled.div``;
 

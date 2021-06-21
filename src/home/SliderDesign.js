@@ -22,7 +22,7 @@ function SliderDesign() {
             <ul>Height</ul>
           </li>
         </StatBars>
-        <TypeBlock data-scroll data-scroll-speed="1">
+        <TypeBlock>
           <Typeset
             subtitle="Design"
             headline="LEADING-EDGE

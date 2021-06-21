@@ -18,7 +18,7 @@ function SliderPerformance() {
             <ul>Top Speed</ul>
           </li>
         </StatBars>
-        <TypeBlock data-scroll data-scroll-speed="1">
+        <TypeBlock>
           <Typeset
             subtitle="chassis/ motor"
             headline="Astonishingly light for supreme performance"

@@ -21,6 +21,7 @@ function App() {
     accentColor: "red",
     heroType: "Ruda",
     negativeColor: "white",
+    mainFont: "Ruda",
   };
 
   return (

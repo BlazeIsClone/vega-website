@@ -19,7 +19,7 @@ function SliderInnovation() {
       </VideoWrapper>
       <TextBox>
         <TypeBlock>
-          <div data-scroll data-scroll-speed="1">
+          <div>
             <Typeset
               subtitle="autonomous driving"
               headline="Redefining the Future of Driving"

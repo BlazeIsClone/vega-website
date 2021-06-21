@@ -5,7 +5,7 @@ import ProgressiveImage from "react-progressive-image";
 // Components
 import Typeset from "./Typeset";
 
-const DescriptionBody = (props) => {
+function DescriptionBody(props) {
   const isFliped = props.isFliped;
   let body;
   if (isFliped) {
@@ -57,7 +57,7 @@ const DescriptionBody = (props) => {
   }
 
   return <div>{body}</div>;
-};
+}
 export default DescriptionBody;
 
 const BodyWrapperFliped = styled.div`
@@ -105,7 +105,7 @@ const Col2 = styled.div`
   width: 100%;
 `;
 const TextContainer = styled.div`
-  width: clamp(40rem, 100%, 100px);
+  width: clamp(40rem, 50%, 100px);
   align-self: center;
 `;
 

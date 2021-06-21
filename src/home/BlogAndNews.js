@@ -75,7 +75,7 @@ const Container = styled.div`
   background-color: ${(props) => props.theme.pureColor};
 `;
 const Block = styled.div`
-  height: 700px;
+  height: 800px;
   display: flex;
   flex-direction: row;
   background-color: white;

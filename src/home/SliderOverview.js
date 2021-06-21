@@ -8,7 +8,7 @@ function SliderOverview() {
   return (
     <Container>
       <ContentBlock>
-        <TypeBlock data-scroll data-scroll-speed="1">
+        <TypeBlock>
           <Typeset
             subtitle="vega evx"
             headline="The Vega evx pushes the boundaries of time. Race audaciously into a

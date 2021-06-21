@@ -4,7 +4,7 @@ import styled from "styled-components";
 function SliderSpecs() {
   return (
     <Container>
-      <Table data-scroll data-scroll-speed="1">
+      <Table>
         <TableItems>
           <tr>
             <td>Max Power</td>

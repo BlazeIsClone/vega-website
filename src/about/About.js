@@ -4,6 +4,18 @@ import HeroSection from "./HeroSection.js";
 import Footer from "../common/Footer.js";
 import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
+import ProgressiveImage from "react-progressive-image";
+
+// Components
+import Typeset from "../common/Typeset.js";
+import Card from "../common/Card.js";
+import Headline from "../common/Headline.js";
+import BannerMoreInfo from "../common/BannerMoreInfo.js";
+import DescriptionBody from "../common/DescriptionBody.js";
+
+// images
+import companyImg from "./img/companyImg.png";
+import careersInfoImg from "./img/careersBannerInfoImg.png";
 
 function About() {
   return (
@@ -18,10 +30,31 @@ function About() {
           <MotionType>ABOUT</MotionType>
         </motion.div>
       </MotionContainer>
-      <div data-scroll-section>
-        <div className="hero-container">
-          <HeroSection />
-        </div>
+      <div className="hero-container">
+        <HeroSection />
+      </div>
+      <div data-scroll-section className="scroll-optimize">
+        {/* ---- COMPANY SECTION ---- */}
+        <CompanyHero>
+          <DescriptionBody
+            img={companyImg}
+            subtitle="company"
+            headline="A brand inspired by passion"
+            body="We challenge everything we do, from ideas to processes and even the minute detail that may seem insignificant to another."
+          ></DescriptionBody>
+        </CompanyHero>
+
+        {/* ---- CAREERSINFO SECTION ---- */}
+        <CareersInfo>
+          <div style={{ backgroundImage: `url(${careersInfoImg})` }}>
+            <BannerMoreInfo
+              contentText="Our Values"
+              contentButton="About"
+            ></BannerMoreInfo>
+          </div>
+        </CareersInfo>
+
+        {/* ---- FOOTER SECTION ---- */}
         <Footer />
       </div>
     </main>
@@ -29,6 +62,27 @@ function About() {
 }
 
 export default About;
+
+const CareersInfo = styled.div``;
+const CompanyHero = styled.div``;
+
+const LeftImg = styled.div`
+  margin: 0 0 0 100px;
+  width: 80%;
+`;
+const CompanyCol1 = styled.div`
+  width: 100%;
+`;
+const CompanyCol2 = styled.div`
+  width: 100%;
+  display: flex;
+`;
+const TextContainer = styled.div`
+  width: clamp(40rem, 100%, 100px);
+  align-self: center;
+`;
+
+const ImageHandler = styled(ProgressiveImage)``;
 
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],

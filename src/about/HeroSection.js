@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import videoSrc from "../common/mp4/heroMainVideo.mp4";
 import Container from "../common/HeroContainer.js";
+
+// image
+import AboutHeroImg from "./img/aboutHeroImg.png";
 
 function HeroSection() {
   return (
@@ -12,11 +14,7 @@ function HeroSection() {
       </EffectsWrapper>
       <Container
         getClass="hero-container-text"
-        content={
-          <Player autoPlay loop muted data-keepplaying>
-            <source src={videoSrc} type="video/mp4" />
-          </Player>
-        }
+        content={<Image src={AboutHeroImg}></Image>}
       >
         light years ahead
       </Container>
@@ -28,10 +26,10 @@ export default HeroSection;
 
 const ContainerWrapper = styled.div``;
 
-const Player = styled.video`
+const Image = styled.img`
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 50%;
   transform: translate(-50%, -50%);
   z-index: -50;
 `;

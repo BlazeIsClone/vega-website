@@ -20,6 +20,7 @@ class Card extends Component {
         margin-bottom: 10px;
         user-select: none;
         user-drag: none;
+        cursor: pointer;
       }
     `;
 

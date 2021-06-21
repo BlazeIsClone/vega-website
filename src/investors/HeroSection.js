@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Container from "../common/HeroContainer.js";
-import ProgressiveImage from "react-progressive-image";
 
 // image
 import investorsHero from "./img/investorsHero.png";

@@ -8,7 +8,6 @@ class CardExtended extends Component {
   render() {
     const CardExtended = styled.div`
       width: calc(465px * 2);
-      height: 590px;
       min-width: 300px;
       background-color: none;
       align-items: center;
@@ -16,10 +15,11 @@ class CardExtended extends Component {
       gap: 20px;
       img {
         width: 100%;
-        height: auto;
+        height: 380px;
         margin-bottom: 10px;
         user-select: none;
         user-drag: none;
+        cursor: pointer;
       }
     `;
 

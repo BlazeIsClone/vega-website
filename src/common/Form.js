@@ -20,10 +20,7 @@ function Form(props) {
     <BlockWrapper>
       <Col1>
         <HeadlineImgWrapper>
-          <Headline
-            color="white"
-            content="lets create Brilliant synergies that are revolutionary"
-          />
+          <Headline color="white" content={props.imgHeadline} />
         </HeadlineImgWrapper>
         <ProgressiveImage src={props.img} placeholder={props.imgLow}>
           {(src) => <img src={src} alt="vega evx car" />}
@@ -73,7 +70,8 @@ function Form(props) {
 export default Form;
 
 const BlockWrapper = styled.div`
-  width: 1923px;
+  max-width: 1923px;
+  width: 100vw;
   min-height: 1080px;
   height: 100vh;
   display: flex;

@@ -32,6 +32,7 @@ function Careers() {
         <ApplyNowSection>
           <Form
             img={applyNowImg}
+            imgHeadline="lets create Brilliant synergies that are revolutionary"
             subtitle="apply for careers"
             headline="work with us"
             body="We challenge everything we do, from ideas to processes and even the minute detail that may seem

@@ -5,6 +5,12 @@ import Footer from "../common/Footer.js";
 import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
 
+// Components
+import Form from "../common/Form.js";
+
+// Images
+import EnquiryImg from "./img/enquiryImg.png";
+
 function Support() {
   return (
     <main>
@@ -18,15 +24,22 @@ function Support() {
           <MotionType>SUPPORT</MotionType>
         </motion.div>
       </MotionContainer>
+      <div className="hero-container">
+        <HeroSection />
+      </div>
+      <div data-scroll-section className="scroll-optimize">
+        <EnquirySection>
+          <Form
+            img={EnquiryImg}
+            subtitle="enquiry"
+            headline="let’s talk!"
+            body="Hello there! Looks like you re interested in finding out more about Vega Or maybe you just wanted to
+start a conversation if so feel free to make an enquiry."
+            imgHeadline='"With Infinite Imaginations We Can Achieve Greatness Together"'
+          />
+        </EnquirySection>
 
-      <div data-scroll-section>
-        <Scroll />
-        <div className="hero-container">
-          <HeroSection />
-        </div>
-        <div>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </main>
   );
@@ -34,6 +47,10 @@ function Support() {
 
 export default Support;
 
+const EnquirySection = styled.div`
+  background-color: ${(props) => props.theme.pureColor};
+  width: 100vw;
+`;
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],
   duration: 2,

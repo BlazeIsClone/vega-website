@@ -149,7 +149,8 @@ function Investors() {
         <EnquirySection>
           <Form
             img={enquiryImg}
-            subtilte="enquiry"
+            imgHeadline="lets create Brilliant synergies that are revolutionary"
+            subtitle="enquiry"
             headline="let’s talk!"
             body="Hello there! Looks like you re interested in finding out more about Vega Or maybe you just wanted to
 start a conversation if so feel free to make an enquiry."

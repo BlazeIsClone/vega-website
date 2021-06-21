@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+
+// Components
 import SliderRouter from "./SliderRouter.js";
 import ValuesHome from "./ValuesHome.js";
 import BlogAndNews from "./BlogAndNews.js";
-import ChargeNetInfo from "./ChargeNetInfo.js";
+import BannerMoreInfo from "../common/BannerMoreInfo.js";
 import Newsletter from "./Newsletter.js";
 import Footer from "../common/Footer.js";
 import HeroSection from "./HeroSection.js";
 import Scroll from "../common/libraryStack.js";
 
+// Images
+import chargeNetImg from "./assets/homepagelocation.png";
 function Home() {
   return (
     <main>
@@ -20,7 +24,14 @@ function Home() {
         <SliderRouter />
         <ValuesHome />
         <BlogAndNews />
-        <ChargeNetInfo />
+        <div style={{ backgroundImage: `url(${chargeNetImg})` }}>
+          <BannerMoreInfo
+            contentText="FIND THE NEAREST AVAILABLE CHARGING LOCATION"
+            contentButton="Chargenet"
+            color="white"
+            width="clamp"
+          />
+        </div>
         <Newsletter />
         <Footer />
       </div>

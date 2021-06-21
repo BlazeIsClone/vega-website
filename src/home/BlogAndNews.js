@@ -72,7 +72,7 @@ function BlogAndNews() {
 export default BlogAndNews;
 
 const Container = styled.div`
-  background-color: white;
+  background-color: ${(props) => props.theme.pureColor};
 `;
 const Block = styled.div`
   height: 700px;

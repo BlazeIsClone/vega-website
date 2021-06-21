@@ -8,7 +8,10 @@ class Body extends Component {
       font-family: Roboto, sans-serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 18px;
+      font-size: ${(props) =>
+        this.props.size === "var"
+          ? "clamp(1rem, -0.875rem + 8.333vw, 1.125rem)"
+          : "18px"};
       line-height: 21px;
       width: ${(props) =>
         this.props.width === "clamp" ? "clamp(20rem, 70%, 50rem)" : "none"};

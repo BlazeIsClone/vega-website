@@ -49,7 +49,7 @@ insignificant to another if you too let’s get together to revolutionize our fu
 export default Careers;
 
 const ApplyNowSection = styled.div`
-  background-color: ${(props) => props.theme.pureColor};
+  background-color: ${(props) => props.theme.negativeColor};
   width: 100vw;
 `;
 const transition = {

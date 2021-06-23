@@ -70,39 +70,39 @@ const BodyWrapperFliped = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 200px 0 100px;
-  img {
-    width: 100%;
-    height: auto;
-    min-width: 400px;
-  }
 `;
 
 const BodyWrapper = styled.div`
   max-height: 100vh;
   min-height: 1080px;
-  width: 100%;
+  width: 100vw;
   background-color: ${(props) => props.theme.negativeColor};
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0 100px 0 100px;
-  img {
-    width: 100%;
-    height: auto;
-    min-width: 400px;
-  }
+  padding: 0 200px 0 100px;
 `;
 
 const ImgWrapper = styled.div`
-  margin: 0 100px 0 100px;
-  width: 80%;
+  height: auto;
+  min-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 90%;
+  }
 `;
 const Col1 = styled.div`
-  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 `;
 const Col2 = styled.div`
-  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 `;
 const TextContainer = styled.div`
   width: clamp(40rem, 50%, 100px);

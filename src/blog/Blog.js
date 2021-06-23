@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import Card from "../common/Card.js";
 import CardExtended from "../common/CardExtended.js";
 import BannerMoreInfo from "../common/BannerMoreInfo.js";
-import TopTopics from "./TopTopics.js";
+import CardsBlock from "../common/CardsBlock.js";
 import StayConnected from "./StayConnected.js";
 
 // Images
@@ -44,7 +44,8 @@ function Blog() {
       <div data-scroll-section className="scroll-optimize">
         {/* ---- TOPTOPICS SECTION ---- */}
         <TopTopicsSection>
-          <TopTopics
+          <CardsBlock
+            headline="THIS WEEK’S TOP TOPICS"
             img1={img001}
             subtitle1="news"
             headline1="battery cells assembled"
@@ -127,14 +128,7 @@ const StayConnectedSection = styled.div`
 `;
 
 const TopTopicsSection = styled.div`
-  display: flex;
-  max-height: 100vh;
-  min-height: 1080px;
   background-color: ${(props) => props.theme.negativeColor};
-  flex-direction: row;
-  margin: 0 100px 0 0;
-  align-items: center;
-  width: 100vw;
 `;
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],

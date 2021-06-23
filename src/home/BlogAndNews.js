@@ -72,13 +72,13 @@ function BlogAndNews() {
 export default BlogAndNews;
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.pureColor};
+  background-color: ${(props) => props.theme.negativeColor};
 `;
 const Block = styled.div`
   height: 800px;
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: ${(props) => props.theme.negativeColor};
   gap: 20px;
   padding: 90px 0 0 162px;
 `;

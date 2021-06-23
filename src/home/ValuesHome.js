@@ -81,12 +81,11 @@ We are now ready to revolutionise the world we live in with cutting-edge technol
 export default ValuesHome;
 
 const GridTemplate = styled.div`
-  max-height: 100vh;
-  min-height: 780px;
+  min-height: 880px;
   width: auto;
   display: flex;
   column-gap: 60px;
-  background-color: white;
+  background-color: ${(props) => props.theme.negativeColor};
   align-items: center;
   justify-self: center;
   padding: 100px 60px 0 160px;
@@ -106,7 +105,9 @@ const ImgContainer = styled.div`
 `;
 const Img = styled.img`
   width: 100%;
-  height: 100%;
+  min-width: 500px;
+  object-fit: cover;
+  height: auto;
   user-select: none;
   user-drag: none;
 `;

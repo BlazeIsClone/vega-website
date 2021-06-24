@@ -69,7 +69,6 @@ function NavMain() {
       getUrl === "/investors" ||
       getUrl === "/blog"
     ) {
-      console.log("darkOn");
       setModeDark(true);
     } else if (
       getUrl === "/" ||
@@ -77,7 +76,6 @@ function NavMain() {
       getUrl === "/vega-evx"
     ) {
       setModeDark(false);
-      console.log("darkOff");
     }
   });
   const [modeDark, setModeDark] = useState(false);
@@ -91,10 +89,13 @@ function NavMain() {
   return (
     <Router>
       <HeaderNav className="navbar-header">
-        <NavLogoContainer onClick={() => history.push("/")}>
-          <HeaderLogo />
-          <HeaderLogoText modeDark={modeDark} />
-        </NavLogoContainer>
+        <a href="/">
+          <NavLogoContainer>
+            <HeaderLogo />
+            <HeaderLogoText modeDark={modeDark} />
+          </NavLogoContainer>
+        </a>
+
         <HeaderNavItem>
           <ContainedButton
             content="reserve"

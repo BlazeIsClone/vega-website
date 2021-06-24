@@ -25,6 +25,14 @@ class ContainedButton extends Component {
       background-color: ${(props) =>
         this.props.body === "white" ? "white" : "black"};
       color: ${(props) => (this.props.text === "white" ? "white" : "black")};
+      &:active {
+        background-color: ${(props) => props.theme.accentColor};
+      }
+    `;
+    const Value = styled.p`
+      &:hover {
+        transform: scale(1.1);
+      }
     `;
     return (
       <Button
@@ -32,7 +40,7 @@ class ContainedButton extends Component {
         className="navbar-header-button"
         onClick={this.props.onClick}
       >
-        {this.props.content}
+        <Value>{this.props.content}</Value>
       </Button>
     );
   }

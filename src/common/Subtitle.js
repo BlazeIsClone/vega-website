@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-class Subtitile extends Component {
+class Subtitle extends Component {
   render() {
     const Type = styled.h1`
       color: red;
@@ -17,4 +17,4 @@ class Subtitile extends Component {
     return <Type>{this.props.content}</Type>;
   }
 }
-export default Subtitile;
+export default Subtitle;

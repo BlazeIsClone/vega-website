@@ -49,13 +49,13 @@ function CardsBlock(props) {
         <Block ref={(el) => (cardsRef = el)}>
           <Card
             Img={props.img1}
-            Subtilte={props.subtitle1}
+            Subtitle={props.subtitle1}
             Headline={props.headline1}
             Body={props.body1}
           />
           <Card
             Img={props.img2}
-            Subtilte={props.subtitle2}
+            Subtitle={props.subtitle2}
             Headline={props.headline2}
             Body={props.body2}
           />
@@ -71,19 +71,19 @@ function CardsBlock(props) {
         <Block ref={(el) => (cardsRef = el)}>
           <Card
             Img={props.img1}
-            Subtilte={props.subtitle1}
+            Subtitle={props.subtitle1}
             Headline={props.headline1}
             Body={props.body1}
           />
           <Card
             Img={props.img2}
-            Subtilte={props.subtitle2}
+            Subtitle={props.subtitle2}
             Headline={props.headline2}
             Body={props.body2}
           />
           <Card
             Img={props.img3}
-            Subtilte={props.subtitle3}
+            Subtitle={props.subtitle3}
             Headline={props.headline3}
             Body={props.body3}
           />

@@ -7,22 +7,52 @@ import Subtitle from "./Subtitle.js";
 import Body from "./Body.js";
 
 function Card(props) {
-  return (
-    <CardWrapper>
-      <ImgWrapper>
+  const isCompactDark = props.isCompactDark;
+  let body;
+  if (isCompactDark) {
+    body = (
+      <CompactCardWrapper>
         <img src={props.Img}></img>
-      </ImgWrapper>
-      <TextWrapper>
-        <Subtitle content={props.Subtilte} />
+        <Subtitle content={props.Subtitle} />
         <Headline size="card" content={props.Headline} color={props.color} />
         <Body content={props.Body} color={props.color} />
-      </TextWrapper>
-    </CardWrapper>
-  );
+      </CompactCardWrapper>
+    );
+  } else {
+    body = (
+      <CardWrapper>
+        <ImgWrapper>
+          <img src={props.Img}></img>
+        </ImgWrapper>
+        <TextWrapper>
+          <Subtitle content={props.Subtitle} />
+          <Headline size="card" content={props.Headline} color={props.color} />
+          <Body content={props.Body} color={props.color} />
+        </TextWrapper>
+      </CardWrapper>
+    );
+  }
+  return <div>{body}</div>;
 }
 
 export default Card;
 
+const CompactCardWrapper = styled.div`
+  width: 465px;
+  height: 590px;
+  min-width: 300px;
+  background-color: none;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    user-select: none;
+    user-drag: none;
+  }
+`;
 const CardWrapper = styled.div`
   width: 465px;
   height: 590px;
@@ -39,6 +69,7 @@ const CardWrapper = styled.div`
     cursor: pointer;
   }
 `;
+
 const ImgWrapper = styled.div`
   img {
     height: auto;

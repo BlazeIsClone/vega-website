@@ -57,16 +57,24 @@ function VegaEvx() {
       </div>
       <div data-scroll-section className="scroll-optimize">
         {/* ---- PERFORMANCE SECTION ---- */}
-        <PerformanceHero>
+        <PerformanceHero className="target-performance">
           <PerformanceCol1>
-            <LeftImg data-scroll data-scroll-speed="1">
+            <LeftImg
+              data-scroll
+              data-scroll-speed="1"
+              data-scroll-target=".target-performance"
+            >
               <ImageHandler src={performanceImg} placeholder={{}}>
                 {(src) => <img src={src} alt="vega evx car" />}
               </ImageHandler>
             </LeftImg>
           </PerformanceCol1>
           <PerformanceCol2>
-            <TextContainer data-scroll data-scroll-speed="1">
+            <TextContainer
+              data-scroll
+              data-scroll-speed="1"
+              data-scroll-target=".target-performance"
+            >
               <Typeset
                 subtitle="performance"
                 headline="envisioning to be the quickest car in the world, with record-setting acceleration, range and performance"
@@ -74,7 +82,11 @@ function VegaEvx() {
                 color="white"
               />
             </TextContainer>
-            <RightImg data-scroll data-scroll-speed="2">
+            <RightImg
+              data-scroll
+              data-scroll-speed="2"
+              data-scroll-target=".target-performance"
+            >
               <ImageHandler src={performanceImgEngine} placeholder={{}}>
                 {(src) => <img src={src} alt="vega evx car" />}
               </ImageHandler>
@@ -141,21 +153,28 @@ function VegaEvx() {
         </ChassisSection>
 
         {/* ---- SAFETY SECTION ---- */}
-        <SafetySection>
+        <SafetySection className="target-safety">
           <ImageHandler src={safetyImg} placeholder={{}}>
             {(src) => <img src={src} alt="vega evx car" />}
           </ImageHandler>
-          <Block data-scroll data-scroll-speed="1">
+          <Block
+            data-scroll
+            data-scroll-speed="1.5"
+            data-scroll-target=".target-safety"
+          >
             <Card
+              isCompactDark={true}
               Img={safetyImg1}
-              Subtilte="news"
+              Subtitle="news"
               color="white"
+              Subtitle="sequrity"
               Headline="Candy coated to perfection"
             />
             <Card
+              isCompactDark={true}
               Img={safetyImg2}
-              Subtilte="news"
-              Headline="camber defined"
+              Subtitle="safety"
+              Headline="Candy coated to perfection"
               color="white"
             />
           </Block>
@@ -180,7 +199,7 @@ function VegaEvx() {
           </ExteriorCol2>
         </ExteriorSection>
         {/* ---- AUTONOMOUS SECTION ---- */}
-        <AutonomousSection>
+        <AutonomousSection className="target-autonomous">
           <AutonomousTop>
             <AutonomousRow1>
               <Typeset
@@ -305,7 +324,7 @@ function VegaEvx() {
           <ImageHandler src={carHeroImg} placeholder={{}}>
             {(src) => <img src={src} alt="vega evx car" />}
           </ImageHandler>
-          <ReserveinfoSection>
+          <ReserveinfoSection data-scroll data-scroll-speed="1">
             <Headline
               content="reserve your vega evx today"
               color="white"
@@ -343,7 +362,7 @@ const ReserveinfoSection = styled.div`
   justify-items: space-around;
   z-index: 1;
   position: absolute;
-  left: 50%;
+  left: 25%;
   transform: translateX(-55%);
   margin: 45% 0 0 0;
   column-gap: 200px;
@@ -517,9 +536,6 @@ const ExteriorCol2 = styled.div`
 const SafetySection = styled.div`
   background-color: ${(props) => props.theme.secondaryColor};
   width: 100vw;
-  img {
-    width: 100vw;
-  }
 `;
 const Block = styled.div`
   height: 500px;

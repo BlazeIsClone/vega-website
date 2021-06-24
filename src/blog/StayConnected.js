@@ -48,13 +48,13 @@ function StayConnected(props) {
         <BlockRow1>
           <CardExtended
             Img={props.img00}
-            Subtilte={props.subtitle00}
+            Subtitle={props.subtitle00}
             Headline={props.headline00}
             Body={props.body0}
           />
           <Card
             Img={props.img0}
-            Subtilte={props.subtitle0}
+            Subtitle={props.subtitle0}
             Headline={props.headline0}
             Body={props.body0}
           />
@@ -62,19 +62,19 @@ function StayConnected(props) {
         <BlockRow2>
           <Card
             Img={props.img1}
-            Subtilte={props.subtitle1}
+            Subtitle={props.subtitle1}
             Headline={props.headline1}
             Body={props.body1}
           />
           <Card
             Img={props.img2}
-            Subtilte={props.subtitle2}
+            Subtitle={props.subtitle2}
             Headline={props.headline2}
             Body={props.body2}
           />
           <Card
             Img={props.img3}
-            Subtilte={props.subtitle3}
+            Subtitle={props.subtitle3}
             Headline={props.headline3}
             Body={props.body3}
           />
@@ -110,5 +110,5 @@ const Block = styled.div`
   flex-direction: column;
   background-color: ${(props) => props.theme.pureColor};
   column-gap: 20px;
-  padding: 90px 0 0 162px;
+  padding: 90px 100px 0 162px;
 `;

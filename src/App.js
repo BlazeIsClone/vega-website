@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import "./App.css";
+
+// Components
 import NavMain from "./common/NavMain.js";
 import Home from "./home/Home.js";
 import VegaEvx from "./vegaEvx/VegaEvx.js";
@@ -53,8 +55,8 @@ function App() {
               <Reserve />
             </Route>
           </Switch>
-          <NavMain />
         </div>
+        <NavMain />
       </ThemeProvider>
     </Router>
   );

@@ -31,7 +31,7 @@ const OverlayWrapper = styled.div`
 `;
 const Text = styled.h1`
   opacity: 0;
-  font-family: ruda;
+  font-family: ${(props) => props.theme.mainFont};
   font-size: 3rem;
   font-weight: bolder;
   text-transform: uppercase;

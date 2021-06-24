@@ -13,7 +13,7 @@ function CardExtended(props) {
         <img src={props.Img}></img>
       </ImgWrapper>
       <TextWrapper>
-        <Subtitle content={props.Subtilte} />
+        <Subtitle content={props.Subtitle} />
         <Headline size="card" content={props.Headline} color={props.color} />
         <Body content={props.Body} color={props.color} />
       </TextWrapper>
@@ -24,12 +24,11 @@ function CardExtended(props) {
 export default CardExtended;
 
 const CardWrapper = styled.div`
-  width: calc(465px * 2);
+  width: calc(465px * 2 + 20px);
   min-width: 300px;
   background-color: none;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   overflow: hidden;
   img {
     width: 100%;

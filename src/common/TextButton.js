@@ -7,20 +7,19 @@ class TextButton extends Component {
     const Gridlayout = styled.div`
       display: flex;
       flex-direction: row;
-      align-items: center;
       margin-top: 20px;
       transition: all 0.2s ease;
+      width: 100%;
       &:hover {
         transform: scale(1.1);
         padding-left: 45px;
-        text-decoration: underline;
         svg {
           transform: rotate(180deg);
         }
       }
     `;
     const Button = styled.button`
-      width: 150px;
+      width: auto;
       display: inline-block;
       font-family: Ruda;
       font-style: normal;
@@ -32,7 +31,23 @@ class TextButton extends Component {
       background-color: inherit;
       cursor: pointer;
       text-transform: uppercase;
+      text-align: left;
       color: ${(props) => (this.props.color === "white" ? "white" : "black")};
+      &:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width 0.3s;
+      }
+      &:hover:after {
+        width: 100%;
+      }
     `;
     const Icon = styled.div`
       align-self: center;

@@ -38,39 +38,39 @@ function Support() {
           <HelpBlock>
             <HelpCol1>
               <ListHead>Purchasing</ListHead>
-              <ul>
+              <ListSort>
                 <ListItem>Pre-ordering</ListItem>
                 <ListItem>Enquire</ListItem>
                 <ListItem>Configuration</ListItem>
                 <ListItem>Reservation</ListItem>
-              </ul>
+              </ListSort>
             </HelpCol1>
             <HelpCol2>
               <ListHead>Products</ListHead>
-              <ul>
+              <ListSort>
                 <ListItem>Pre-Ordering</ListItem>
                 <ListItem>Enquire</ListItem>
                 <ListItem>Configuration</ListItem>
                 <ListItem>Reservation</ListItem>
-              </ul>
+              </ListSort>
             </HelpCol2>
             <HelpCol3>
               <ListHead>Company</ListHead>
-              <ul>
+              <ListSort>
                 <ListItem>About</ListItem>
                 <ListItem>Our Values</ListItem>
                 <ListItem>The Team</ListItem>
                 <ListItem>Careers</ListItem>
-              </ul>
+              </ListSort>
             </HelpCol3>
             <HelpCol4>
               <ListHead>News and Alerts</ListHead>
-              <ul>
+              <ListSort>
                 <ListItem>Blog and News</ListItem>
                 <ListItem>Newsletter</ListItem>
                 <ListItem>Soical Media</ListItem>
                 <ListItem>Contact</ListItem>
-              </ul>
+              </ListSort>
             </HelpCol4>
           </HelpBlock>
         </HelpSection>
@@ -142,8 +142,12 @@ start a conversation if so feel free to make an enquiry."
 
 export default Support;
 
+const ListSort = styled.ul`
+  width: 100%;
+`;
 const ConatctColumnPrototype = styled.div`
   margin: 80px 70px 0;
+  width: 100%;
 `;
 const ContactCol1 = styled(ConatctColumnPrototype)``;
 const ContactCol2 = styled(ConatctColumnPrototype)``;
@@ -193,11 +197,11 @@ const ListHead = styled.h2`
   font-weight: bold;
   font-size: 26px;
   line-height: 32px;
-  display: flex;
   align-items: center;
   text-transform: uppercase;
   color: #000000;
   padding: 10px 0;
+  width: auto;
 `;
 const ListItem = styled.li`
   list-style: none;
@@ -208,13 +212,26 @@ const ListItem = styled.li`
   line-height: 17px;
   color: #000000;
   padding: 20px 0 0 20px;
+  width: auto;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+  }
+  &:hover:after {
+    width: 100%;
   }
 `;
 const HelpColumnPrototype = styled.div`
   margin: 80px 70px 0;
+  width: auto;
 `;
 const HelpCol1 = styled(HelpColumnPrototype)``;
 const HelpCol2 = styled(HelpColumnPrototype)``;

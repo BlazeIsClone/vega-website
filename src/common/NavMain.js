@@ -4,17 +4,13 @@ import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import ContainedButton from "./ContainedButton.js";
 
 // Importing SVGs as React Components
-import { ReactComponent as NavLogoIcon } from "./svg/vega_logo_lettering.svg";
+import { ReactComponent as NavLogoText } from "./svg/vegaLogo_Onlylettring.svg";
+import { ReactComponent as NavLogoIcon } from "./svg/vegaLogo.svg";
 import { ReactComponent as LogoEmblem } from "./svg/logoEmblem.svg";
 import { ReactComponent as AboutIcon } from "./svg/about.svg";
 import { ReactComponent as HomeIcon } from "./svg/home.svg";
 import { ReactComponent as SupportIcon } from "./svg/support.svg";
 import { ReactComponent as VegaEvxIcon } from "./svg/vegaEvx.svg";
-
-// Dev Optional imports
-import { ReactComponent as InvestorsIcon } from "./svg/request_page_black_24dp.svg";
-import { ReactComponent as CareersIcon } from "./svg/careers_fill.svg";
-import { ReactComponent as BlogAndNewsIcon } from "./svg/blog_news.svg";
 
 //Lottie Animator Player
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -65,8 +61,26 @@ function NavMain() {
         ease: "power3.easeOut",
       }
     );
-  });
+    const getUrl = window.location.pathname;
 
+    if (
+      getUrl === "/about" ||
+      getUrl === "/support" ||
+      getUrl === "/investors" ||
+      getUrl === "/blog"
+    ) {
+      console.log("darkOn");
+      setModeDark(true);
+    } else if (
+      getUrl === "/" ||
+      getUrl === "/careers" ||
+      getUrl === "/vega-evx"
+    ) {
+      setModeDark(false);
+      console.log("darkOff");
+    }
+  });
+  const [modeDark, setModeDark] = useState(false);
   const [staticStatus, setStaticStatus] = useState(true);
   const [activeStatus, setActiveStatus] = useState(false);
 
@@ -77,9 +91,10 @@ function NavMain() {
   return (
     <Router>
       <HeaderNav className="navbar-header">
-        <a href="/">
+        <NavLogoContainer onClick={() => history.push("/")}>
           <HeaderLogo />
-        </a>
+          <HeaderLogoText modeDark={modeDark} />
+        </NavLogoContainer>
         <HeaderNavItem>
           <ContainedButton
             content="reserve"
@@ -198,12 +213,31 @@ const HeaderItemHamburger = styled.div`
 const HamburgerIcon = styled(Player)`
   height: 50px;
   cursor: pointer;
+  path {
+    fill: ${(props) => (props.modeDark ? "white" : "black")};
+  }
 `;
-const HeaderLogo = styled(NavLogoIcon)`
+const NavLogoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
   margin: 20px 0 0 20px;
   cursor: pointer;
+`;
+const HeaderLogo = styled(NavLogoIcon)`
+  cursor: pointer;
   height: 100%;
-  width: 500px;
+  width: 60px;
+`;
+const HeaderLogoText = styled(NavLogoText)`
+  padding: 0 0 0 20px;
+  height: 100%;
+  width: 360px;
+  path {
+    fill: ${(props) => (props.modeDark ? "white" : "black")};
+  }
 `;
 
 const NavWrapper = styled.div``;

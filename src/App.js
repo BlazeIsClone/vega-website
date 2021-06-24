@@ -11,8 +11,6 @@ import Blog from "./blog/Blog.js";
 import About from "./about/About.js";
 import Careers from "./careers/Careers.js";
 import Support from "./support/Support.js";
-import { AnimatePresence } from "framer-motion";
-import { AnimateSharedLayout } from "framer-motion";
 
 function App() {
   const globalVars = {
@@ -30,32 +28,30 @@ function App() {
       <ThemeProvider theme={globalVars}>
         <div data-scroll-container>
           <Switch>
-            <AnimatePresence initial={false} exitBeforeEnter>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/vega-evx">
-                <VegaEvx />
-              </Route>
-              <Route path="/investors">
-                <Investors />
-              </Route>
-              <Route path="/blog">
-                <Blog />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/careers">
-                <Careers />
-              </Route>
-              <Route path="/support">
-                <Support />
-              </Route>
-              <Route path="/reserve">
-                <Reserve />
-              </Route>
-            </AnimatePresence>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/vega-evx">
+              <VegaEvx />
+            </Route>
+            <Route path="/investors">
+              <Investors />
+            </Route>
+            <Route path="/blog">
+              <Blog />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/careers">
+              <Careers />
+            </Route>
+            <Route path="/support">
+              <Support />
+            </Route>
+            <Route path="/reserve">
+              <Reserve />
+            </Route>
           </Switch>
           <NavMain />
         </div>

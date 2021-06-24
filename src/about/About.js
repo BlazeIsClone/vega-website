@@ -91,12 +91,16 @@ know we must."
           titleHeadline="AREAS OF FOCUS"
           titleBody="Every inch of the Vega EVX is crafted for a one-of-a-kind driving excitement."
           img01={compatibilitiesSoftwareImg}
+          img01Alt="software interface"
           body1="Software"
           img02={compatibilitiesPrototypingImg}
+          img02Alt="circuit board"
           body2="Prototype"
           img03={compatibilitiesManufactureImg}
+          img02Alt="fabricator working with a machine"
           body3="Manufacture"
           img04={compatibilitiesDesignImg}
+          img02Alt="designer sketching on a paper"
           body4="Design"
         />
         {/* ---- VALUESHERO SECTION ---- */}

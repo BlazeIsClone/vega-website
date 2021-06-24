@@ -13,6 +13,7 @@ import Specs from "../common/Specs.js";
 import Body from "../common/Body.js";
 import Headline from "../common/Headline.js";
 import ContainedButton from "../common/ContainedButton.js";
+import CardSlider from "../common/CardSlider.js";
 
 // Media Imports
 import performanceImg from "./img/performanceImg.png";
@@ -257,25 +258,15 @@ function VegaEvx() {
         {/* ---- INTERIOR FEATURES SECTION ---- */}
 
         <InteriorFeaturesSection>
-          <InteriorFeaturesText>
-            <Typeset
-              subtitle="autonomous driving"
-              headline="Redefining the Future of Driving"
-              body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
-              color="black"
-            />
-          </InteriorFeaturesText>
-          <InteriorFeaturesScroll data-scroll data-scroll-speed="1">
-            <ImageHandler src={interiorFeaturesScroll_img3} placeholder={{}}>
-              {(src) => <img src={src} alt="vega evx car" />}
-            </ImageHandler>
-            <ImageHandler src={interiorFeaturesScroll_img2} placeholder={{}}>
-              {(src) => <img src={src} alt="vega evx car" />}
-            </ImageHandler>
-            <ImageHandler src={interiorFeaturesScroll_img1} placeholder={{}}>
-              {(src) => <img src={src} alt="vega evx car" />}
-            </ImageHandler>
-          </InteriorFeaturesScroll>
+          <CardSlider
+            isCompact={true}
+            titleSubtitle="compatibilities"
+            titleHeadline="AREAS OF FOCUS"
+            titleBody="Every inch of the Vega EVX is crafted for a one-of-a-kind driving excitement."
+            img01={interiorFeaturesScroll_img3}
+            img02={interiorFeaturesScroll_img2}
+            img03={interiorFeaturesScroll_img1}
+          />
         </InteriorFeaturesSection>
 
         {/* ---- ENTERTAINMENT SECTION ---- */}
@@ -396,8 +387,7 @@ const EntertainmentCol2 = styled.div`
 `;
 
 const InteriorFeaturesSection = styled.div`
-  min-height: 1080px;
-  height: 100vh;
+  height: 1080px;
 `;
 const InteriorFeaturesText = styled.div`
   padding: 250px 0 0 100px;

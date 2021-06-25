@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   MemoryRouter as Router,
   Switch,
   Route,
   NavLink,
   withRouter,
+  useLocation,
 } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
+
+// Components
 import SliderOverview from "./SliderOverview.js";
 import SliderDesign from "./SliderDesign.js";
 import SliderPerformance from "./SliderPerformance.js";
@@ -14,25 +18,47 @@ import SliderInnovation from "./SliderInnovation.js";
 import SliderSpecs from "./SliderSpecs.js";
 
 function SliderRouter() {
-  const NavLinked = styled(NavLink)``;
+  const NavLinked = styled(NavLink)`
+    transition: all 0.2s ease;
+  `;
   return (
-    <Router keyLength={6}>
+    <Router>
       <Container>
-        <Switch>
-          <Route exact path="/" component={SliderOverview} />
-          <Route exact path="/design-overview" component={SliderDesign} />
-          <Route
-            exact
-            path="/performance-overview"
-            component={SliderPerformance}
-          />
-          <Route
-            exact
-            path="/innovation-overview"
-            component={SliderInnovation}
-          />
-          <Route exact path="/specs-overview" component={SliderSpecs} />
-        </Switch>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition key={location.key} timeout={450} classNames="fade">
+                <Switch>
+                  <Route exact path="/" component={SliderOverview} />
+                  <Route
+                    key={location.key}
+                    exact
+                    path="/design-overview"
+                    component={SliderDesign}
+                  />
+                  <Route
+                    key={location.key}
+                    exact
+                    path="/performance-overview"
+                    component={SliderPerformance}
+                  />
+                  <Route
+                    key={location.key}
+                    exact
+                    path="/innovation-overview"
+                    component={SliderInnovation}
+                  />
+                  <Route
+                    key={location.key}
+                    exact
+                    path="/specs-overview"
+                    component={SliderSpecs}
+                  />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
         <NavBlock>
           <NavLinked
             exact
@@ -90,12 +116,14 @@ const Container = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
+  background-color: black;
+  z-index: -1;
 `;
 const NavBlock = styled.div`
   justify-content: center;
   align-self: center;
   width: 80vw;
-  margin-top: 100px;
+  margin-top: 130px;
   position: absolute;
   list-style: none;
   display: flex;
@@ -116,7 +144,7 @@ const NavItem = styled.button`
   font-weight: bold;
   font-size: 18px;
   text-transform: uppercase;
-  color: #c0c0c0;
+  color: white;
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -128,7 +156,7 @@ const NavItem = styled.button`
   outline: none;
   text-decoration: none;
   &:hover {
-    color: white;
+    color: red;
   }
 `;
 

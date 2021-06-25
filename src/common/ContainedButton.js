@@ -14,7 +14,7 @@ class ContainedButton extends Component {
       text-align: center;
       text-overflow: ellipsis;
       text-transform: uppercase;
-      font-family: Roboto, sans-serif;
+      font-family: ${(props) => props.theme.secondaryFont};
       font-style: normal;
       font-weight: 500;
       font-size: 14px;
@@ -27,6 +27,7 @@ class ContainedButton extends Component {
       color: ${(props) => (this.props.text === "white" ? "white" : "black")};
       &:active {
         background-color: ${(props) => props.theme.accentColor};
+        color: white;
       }
     `;
     const Value = styled.p`

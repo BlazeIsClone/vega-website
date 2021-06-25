@@ -25,7 +25,11 @@ function SliderPerformance() {
             body="The light carbon fiber monocoque body ensures a prodigious power to weight ratio, for a jaw-dropping acceleration and top speed."
             color="white"
           />
-          <TextButton content="Read More" color="white" />
+          <TextButton
+            content="Read More"
+            color="white"
+            onClick={() => window.open("/vega-evx", "_self")}
+          />
         </TypeBlock>
       </ContentBlock>
     </Container>
@@ -34,6 +38,10 @@ function SliderPerformance() {
 
 export default SliderPerformance;
 const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   max-height: 100vh;
   min-height: 1060px;
   width: auto;

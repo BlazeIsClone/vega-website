@@ -42,7 +42,8 @@ class TextButton extends Component {
         display: block;
         width: 0;
         height: 2px;
-        background: #000;
+        background-color: ${(props) =>
+          this.props.color === "white" ? "white" : "black"};
         transition: width 0.3s;
       }
       &:hover:after {
@@ -50,9 +51,9 @@ class TextButton extends Component {
       }
     `;
     const Icon = styled.div`
-      align-self: center;
-      padding-top: 3px;
+      justify-content: center;
       transform: rotate(180deg);
+      padding: 9px 0 0 0;
     `;
     const Svg = styled(IconSvg)`
       fill: ${(props) => (this.props.color === "white" ? "white" : "black")};
@@ -62,7 +63,7 @@ class TextButton extends Component {
         <Icon>
           <Svg />
         </Icon>
-        <Button>{this.props.content}</Button>
+        <Button onClick={this.props.onClick}>{this.props.content}</Button>
       </Gridlayout>
     );
   }

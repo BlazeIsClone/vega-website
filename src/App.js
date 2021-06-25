@@ -22,7 +22,7 @@ function App() {
     heroType: "Ruda",
     negativeColor: "white",
     mainFont: "Ruda",
-    secondaryFont: "Roboto, sans-serif",
+    secondaryFont: "Roboto, Helvetica Neue, sans-serif",
   };
 
   return (

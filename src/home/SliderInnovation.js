@@ -32,6 +32,7 @@ function SliderInnovation() {
                 color="white"
                 body="white"
                 text="black"
+                onClick={() => window.open("/vega-evx", "_self")}
               />
             </ButtonWrapper>
           </div>
@@ -44,6 +45,10 @@ function SliderInnovation() {
 export default SliderInnovation;
 
 const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   max-height: 100vh;
   min-height: 1060px;
   width: 100%;
@@ -60,7 +65,8 @@ const TypeBlock = styled.div`
 `;
 
 const TextBox = styled.div`
-  height: 270px;
+  height: 300px;
+  margin-top: auto;
   background-color: ${(props) => props.theme.secondaryColor};
   justify-content: center;
   padding: 40px 60px 0 60px;

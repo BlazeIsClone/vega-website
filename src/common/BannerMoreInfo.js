@@ -12,6 +12,7 @@ function BannerMoreInfo(props) {
           text="black"
           body="white"
           content={props.contentButton}
+          onClick={props.onClick}
         />
       </Content>
     </Layout>

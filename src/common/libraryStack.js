@@ -102,7 +102,7 @@ const Scroll = (callbacks) => {
 
     locomotiveScroll.on("scroll", ({ limit, scroll }) => {
       //--ScrollBar Slider Progress
-      const progress = (scroll.y / limit.y) * 100;
+      const progress = (scroll.y / limit.y) * 100 + 70;
       scrollBar.style.transform = `translate3d(0, ${progress}px, 0)`;
 
       //--NavHeader onScroll Logic
@@ -158,35 +158,34 @@ const Scroll = (callbacks) => {
       //----- VegaEvx onScroll Logic
       if (locationUrl === "/vega-evx") {
         //hidden
-        if (scroll.y < 900) {
+        if (scroll.y < 900 || scroll.y > 16000) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 900) {
+        if (16000 > scroll.y && scroll.y > 1960) {
           navBar.style.transform = `translateX(0)`;
         }
       }
-
       //----- Investors onScroll Logic
       if (locationUrl === "/investors") {
         //hidden
-        if (scroll.y < 900) {
+        if (scroll.y < 900 || scroll.y > 6532) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 900) {
+        if (6500 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }
 
-      //----- Blog onScroll Logic
+      //----- Blog AND NEWS onScroll Logic
       if (locationUrl === "/blog") {
         //hidden
-        if (scroll.y < 900) {
+        if (scroll.y < 900 || scroll.y > 2848) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 900) {
+        if (2840 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }
@@ -194,11 +193,11 @@ const Scroll = (callbacks) => {
       //----- About onScroll Logic
       if (locationUrl === "/about") {
         //hidden
-        if (scroll.y < 900) {
+        if (scroll.y < 900 || scroll.y > 5400) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 900) {
+        if (5400 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }
@@ -206,11 +205,11 @@ const Scroll = (callbacks) => {
       //----- Careers onScroll Logic
       if (locationUrl === "/careers") {
         //hidden
-        if (scroll.y < 900) {
+        if (scroll.y < 900 || scroll.y > 1375) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (930 > scroll.y && scroll.y > 900) {
+        if (1360 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }
@@ -218,15 +217,30 @@ const Scroll = (callbacks) => {
       //----- Support onScroll Logic
       if (locationUrl === "/support") {
         //hidden
-        if (scroll.y < 900) {
+        if (scroll.y < 900 || scroll.y > 2450) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (3360 > scroll.y && scroll.y > 900) {
+        if (2460 > scroll.y && scroll.y > 900) {
           navBar.style.transform = `translateX(0)`;
         }
       }
     });
+
+    const locationUrl = window.location.pathname;
+
+    if (locationUrl == "/vega-evx" || locationUrl == "/about") {
+      setTimeout(() => {
+        scrollUpdateTrigger();
+      }, 4000);
+    }
+
+    const scrollUpdateTrigger = () => {
+      if (locationUrl == "/vega-evx" || locationUrl == "/about") {
+        locomotiveScroll.update();
+        console.log("hi");
+      }
+    };
 
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy();

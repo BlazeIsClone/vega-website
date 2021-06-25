@@ -6,8 +6,6 @@ import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
 
 // Components
-import Card from "../common/Card.js";
-import CardExtended from "../common/CardExtended.js";
 import BannerMoreInfo from "../common/BannerMoreInfo.js";
 import CardsBlock from "../common/CardsBlock.js";
 import StayConnected from "./StayConnected.js";

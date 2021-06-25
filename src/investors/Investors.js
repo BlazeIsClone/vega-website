@@ -92,7 +92,7 @@ function Investors() {
             <Card
               Img={newsImg1}
               Headline="conquering covid 19"
-              Subtilte="news"
+              Subtitle="news"
               Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale"
               color="black"
               Headline="Candy coated to perfection"
@@ -102,7 +102,7 @@ function Investors() {
             <CardExtended
               Img={newsImg2}
               Headline="conquering covid 19"
-              Subtilte="news"
+              Subtitle="news"
               Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
               color="black"
             />
@@ -126,7 +126,7 @@ function Investors() {
               <CardExtended
                 Img={subsidariesChargenet}
                 Headline="conquering covid 19"
-                Subtilte="news"
+                Subtitle="news"
                 Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale"
                 color="black"
                 Headline="Candy coated to perfection"
@@ -136,7 +136,7 @@ function Investors() {
               <Card
                 Img={subsidariesAirgrow}
                 Headline="conquering covid 19"
-                Subtilte="news"
+                Subtitle="news"
                 Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
                 color="black"
               />

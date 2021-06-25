@@ -16,7 +16,11 @@ function SliderOverview() {
             body="Race-inspired refinement. Every detail heightens the connection between you and your Vega EVX."
             color="white"
           />
-          <TextButton content="Read More" color="white" />
+          <TextButton
+            content="Read More"
+            color="white"
+            onClick={() => window.open("/vega-evx", "_self")}
+          />
         </TypeBlock>
         <StatBars>
           <li>
@@ -40,6 +44,10 @@ function SliderOverview() {
 export default SliderOverview;
 
 const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   max-height: 100vh;
   min-height: 1060px;
   width: auto;

@@ -22,14 +22,24 @@ function Newsletter() {
       <FormBlock>
         <FormElement action="#">
           <InputLabel>Your email address</InputLabel>
-          <InputElement type="email" placeholder="john@email.com" />
+          <InputElement
+            name="myfrom"
+            type="email"
+            placeholder="john@email.com"
+            autoComplete="on"
+          />
         </FormElement>
-        <ContainedButton text="white" content="Subscribe" onClick={null} />
+        <ContainedButton text="white" content="Subscribe" onClick={onSubmit} />
       </FormBlock>
     </Block>
   );
 }
+
 export default Newsletter;
+
+const onSubmit = () => {
+  alert("Thank you for subscribing ❤");
+};
 
 const Block = styled.div`
   display: flex;
@@ -42,7 +52,7 @@ const Block = styled.div`
   background-color: white;
 `;
 
-const FormBlock = styled.div`
+const FormBlock = styled.form`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -51,8 +61,7 @@ const FormBlock = styled.div`
 `;
 
 const FormElement = styled.form`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: ${(props) => props.theme.secondaryFont};
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -65,8 +74,8 @@ const InputElement = styled.input`
   width: 570px;
   display: block;
   background-color: #f9f9f9;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: ${(props) => props.theme.secondaryFont};
+  padding-left: 15px;
   height: 44px;
   outline-style: none;
   border-color: white;
@@ -79,5 +88,6 @@ const InputElement = styled.input`
 `;
 const InputLabel = styled.label`
   position: relative;
+  padding-left: 7px;
   top: -10px;
 `;

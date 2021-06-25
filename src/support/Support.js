@@ -88,7 +88,9 @@ function Support() {
                   day.
                 </ContactListItem>
               </ul>
-              <TextButton content="customerservice@vega.com" />
+              <a href="mailto:contact@vega.com?subject = Contact&body = Hello!">
+                <TextButton content="customerservice@vega.com" />
+              </a>
             </ContactCol1>
             <ContactCol2>
               <ListHead>CHAT and CALL</ListHead>
@@ -97,7 +99,10 @@ function Support() {
                   Weekdays: 8 AM-8 PM (CDT) Weekends: Closed.
                 </ContactListItem>
               </ul>
-              <TextButton content="+94 010-1010101" />
+
+              <a href="tel:+94123-456-7890">
+                <TextButton content="+94 010-1010101" />
+              </a>
             </ContactCol2>
             <ContactCol3>
               <ListHead>HEADQUARTERS</ListHead>
@@ -106,7 +111,9 @@ function Support() {
                   Trace Expert City, Tripoli Market, Maradana, Sri Lanka.
                 </ContactListItem>
               </ul>
-              <TextButton content="Find on Map" />
+              <a href="https://www.google.com/maps/place/Vega+Innovations/@6.92919,79.8588103,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae25957b0ad1599:0xd167ac13eea7707a!8m2!3d6.9292439!4d79.8610685">
+                <TextButton content="Find on Map" />
+              </a>
             </ContactCol3>
             <ContactCol4>
               <ListHead>FACTORY</ListHead>
@@ -116,7 +123,9 @@ function Support() {
                   day.
                 </ContactListItem>
               </ul>
-              <TextButton content="Find on Map" />
+              <a href="https://www.google.com/maps/place/Vega+Innovations/@6.92919,79.8588103,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae25957b0ad1599:0xd167ac13eea7707a!8m2!3d6.9292439!4d79.8610685">
+                <TextButton content="Find on Map" />
+              </a>
             </ContactCol4>
           </ContactBlock>
         </ContactSection>
@@ -178,7 +187,7 @@ const ContactListItem = styled.li`
   font-size: 16px;
   line-height: 17px;
   color: #000000;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 2px;
 `;
 
 const HelpBlock = styled.div`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import ProgressiveImage from "react-progressive-image";
 
@@ -9,16 +9,6 @@ import Body from "./Body";
 import Headline from "./Headline.js";
 
 function Form(props) {
-  let formFooterInfo = "We typically respond within one business day.";
-
-  const onSubmit = () => {
-    if (window.confirm("Are you sure you want to submit?")) {
-      return alert("🚀 Thank you for submitting!");
-    } else {
-      return;
-    }
-  };
-
   return (
     <BlockWrapper>
       <Col1>
@@ -43,18 +33,28 @@ function Form(props) {
           <FormBlock>
             <FormElementName action="#">
               <InputLabel>Name</InputLabel>
-              <InputElement type="name" placeholder="Sam Holdands" />
+              <InputElement
+                type="name"
+                placeholder="Sam Holdands"
+                autoComplete="on"
+              />
             </FormElementName>
             {/* ---- Email ---- */}
             <FormElementEmail action="#">
               <InputLabel>Email</InputLabel>
-              <InputElement type="email" placeholder="samholdands@email.com" />
+              <InputElement
+                type="email"
+                placeholder="samholdands@email.com"
+                autoComplete="on"
+              />
             </FormElementEmail>
             {/* ---- Message ---- */}
             <InputLabel for="input-body">Message</InputLabel>
-            <FormElementMessage action="#">
-              <InputElement id="input-body" type="text"></InputElement>
-            </FormElementMessage>
+            <FormElementMessage
+              action="#"
+              placeholder="hello! I have a question regarding..."
+              id="form-message"
+            ></FormElementMessage>
           </FormBlock>
 
           {/* ---- FormFooter ---- */}
@@ -69,6 +69,16 @@ function Form(props) {
 }
 
 export default Form;
+
+let formFooterInfo = "We typically respond within one business day.";
+
+const onSubmit = () => {
+  if (window.confirm("Are you sure you want to submit?")) {
+    return alert("🚀 Thank you for submitting!");
+  } else {
+    return;
+  }
+};
 
 const BlockWrapper = styled.div`
   width: 100vw;

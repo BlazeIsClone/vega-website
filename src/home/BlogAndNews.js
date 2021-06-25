@@ -48,19 +48,19 @@ function BlogAndNews() {
       <Block ref={(el) => (cardsRef = el)}>
         <Card
           Img={img001}
-          Subtilte="news"
+          Subtitle="news"
           Headline="Candy coated to perfection"
           Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
         />
         <Card
           Img={img002}
-          Subtilte="news"
+          Subtitle="news"
           Headline="camber defined"
           Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
         />
         <Card
           Img={img003}
-          Subtilte="races"
+          Subtitle="races"
           Headline="LIVING ON THE TRACK"
           Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
         />

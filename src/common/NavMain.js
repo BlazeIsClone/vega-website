@@ -108,6 +108,7 @@ function NavMain() {
               hover
               ref={animationRef}
               src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
+              modeDark={modeDark}
             ></HamburgerIcon>
           </HeaderItemHamburger>
         </HeaderNavItem>
@@ -132,7 +133,7 @@ function NavMain() {
             <HomeIcon style={IconStyles} onClick={() => history.push("/")} />
             <VegaEvxIcon
               style={IconStyles}
-              onClick={() => history.push("/vega-evx")}
+              onClick={() => history.push("/vega-evx", "_self")}
             />
             <AboutIcon
               style={IconStyles}
@@ -155,6 +156,7 @@ function NavMain() {
             <NavItems>Blog and News</NavItems>
             <NavItems>Newsletter</NavItems>
             <NavMainItemsWrapper>
+              {/* Without ReactRouterDOM => window.open("/vega-evx","_self") */}
               <NavMainItems onClick={() => history.push("/vega-evx")}>
                 Vega Evx
               </NavMainItems>

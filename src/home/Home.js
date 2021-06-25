@@ -41,6 +41,7 @@ function Home() {
             contentButton="Chargenet"
             color="white"
             width="clamp"
+            onClick={onSubmit}
           />
         </div>
         <Newsletter />
@@ -51,6 +52,14 @@ function Home() {
 }
 
 export default Home;
+
+const onSubmit = () => {
+  if (window.confirm("🤚 Hold Up! are you sure you want to leave?")) {
+    return window.open("https://chargenet.lk/");
+  } else {
+    return;
+  }
+};
 
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],

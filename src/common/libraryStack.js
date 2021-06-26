@@ -102,8 +102,8 @@ const Scroll = (callbacks) => {
 
     locomotiveScroll.on("scroll", ({ limit, scroll }) => {
       //--ScrollBar Slider Progress
-      const progress = (scroll.y / limit.y) * 100 + 70;
-      scrollBar.style.transform = `translate3d(0, ${progress}px, 0)`;
+      const progress = (scroll.y / limit.y) * 100;
+      scrollBar.style.transform = `translate3d(0, ${35 + progress}px, 0)`;
 
       //--NavHeader onScroll Logic
       if (scroll.y > 250) {
@@ -158,11 +158,11 @@ const Scroll = (callbacks) => {
       //----- VegaEvx onScroll Logic
       if (locationUrl === "/vega-evx") {
         //hidden
-        if (scroll.y < 900 || scroll.y > 16000) {
+        if (scroll.y < 900 || scroll.y > 14100) {
           navBar.style.transform = `translateX(100px)`;
         }
         //show
-        if (16000 > scroll.y && scroll.y > 1960) {
+        if (14000 > scroll.y && scroll.y > 1960) {
           navBar.style.transform = `translateX(0)`;
         }
       }
@@ -227,8 +227,9 @@ const Scroll = (callbacks) => {
       }
     });
 
-    const locationUrl = window.location.pathname;
+    // Update LocomotiveScroll after page load to fix possible bugs in some pages while scrolling (listen to URL changes and if change triggers wait X about before executing update to bypass possible errors).
 
+    const locationUrl = window.location.pathname;
     if (locationUrl == "/vega-evx" || locationUrl == "/about") {
       setTimeout(() => {
         scrollUpdateTrigger();
@@ -238,7 +239,6 @@ const Scroll = (callbacks) => {
     const scrollUpdateTrigger = () => {
       if (locationUrl == "/vega-evx" || locationUrl == "/about") {
         locomotiveScroll.update();
-        console.log("hi");
       }
     };
 

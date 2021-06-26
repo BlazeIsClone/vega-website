@@ -52,7 +52,7 @@ const Block = styled.div`
   background-color: white;
 `;
 
-const FormBlock = styled.form`
+const FormBlock = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;

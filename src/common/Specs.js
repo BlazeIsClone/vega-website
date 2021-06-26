@@ -51,9 +51,10 @@ const HeadlineWrapper = styled.div`
   align-self: center;
   justify-content: center;
   margin: 0 125px 0 0;
-  padding: 200px 0 0 0;
+  padding: 220px 0 0 0;
 `;
 const Container = styled.div`
+  padding: 0 100px 0 80px;
   max-height: 100vh;
   min-height: 1060px;
   display: flex;

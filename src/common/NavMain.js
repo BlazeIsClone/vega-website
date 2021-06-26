@@ -37,7 +37,6 @@ function NavMain() {
       }
     });
   }, []);
-
   // GSAP animations
   var navItemsRef = useRef(null);
   var tl = new Timeline();
@@ -133,7 +132,7 @@ function NavMain() {
             <HomeIcon style={IconStyles} onClick={() => history.push("/")} />
             <VegaEvxIcon
               style={IconStyles}
-              onClick={() => history.push("/vega-evx", "_self")}
+              onClick={() => history.push("/vega-evx")}
             />
             <AboutIcon
               style={IconStyles}
@@ -378,7 +377,7 @@ const ScrollBar = styled.div`
   height: 100%;
   justify-self: center;
   align-items: center;
-  margin: 45px 45px;
+  margin: 35px 45px;
   border-radius: 100px;
 `;
 

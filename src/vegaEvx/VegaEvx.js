@@ -311,10 +311,12 @@ function VegaEvx() {
         </EntertainmentSection>
 
         {/* ---- CABIN SECTION ---- */}
-        <CabinSection data-scroll data-scroll-speed="-1">
-          <ImageHandler src={cabinImg} placeholder={{}}>
-            {(src) => <img src={src} alt="vega evx car" />}
-          </ImageHandler>
+        <CabinSection>
+          <div data-scroll data-scroll-speed="-1">
+            <ImageHandler src={cabinImg} placeholder={{}}>
+              {(src) => <img src={src} alt="vega evx car" />}
+            </ImageHandler>
+          </div>
         </CabinSection>
 
         {/* ---- SPECS SECTION ---- */}
@@ -439,7 +441,7 @@ const InteriorRow1 = styled.div`
   height: 300px;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0 0 100px;
+  padding: 0 100px 0 100px;
 `;
 const InteriorRow2 = styled.div`
   img {

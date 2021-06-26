@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import HeroSection from "./HeroSection.js";
 import Footer from "../common/Footer.js";
 import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
 import ProgressiveImage from "react-progressive-image";
+import axios from "axios";
 
 // Components
 import Typeset from "../common/Typeset.js";
@@ -28,6 +29,29 @@ import visionariesImg01 from "./img/visionariesImg01.png";
 import visionariesImg02 from "./img/visionariesImg02.png";
 
 function About() {
+  const hostname = process.env.REACT_APP_HOSTNAME_URL;
+  // While fetching render default placeholder data
+  const [loading, setLoading] = useState(true);
+  // Storing Data Fetched from API
+  const [cardData, setCardData] = useState([]);
+
+  // Fetch data asynchronously from th API uising Axios
+  const fetchData = async () => {
+    await axios
+      .get(`${hostname}/api/about`)
+      .then((res) => {
+        let dataArray = res.data[0];
+        // Assing to hook
+        setCardData(dataArray);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(`error caught white fetching data : ${error}`);
+      });
+  };
+  // callback on componentDidMount
+  useEffect(() => fetchData(), []);
+
   return (
     <main>
       <Scroll />
@@ -122,17 +146,13 @@ know we must."
             twoCards={true}
             headline="THIS WEEK’S TOP TOPICS"
             img1={visionariesImg01}
-            subtitle1="news"
-            headline1="battery cells assembled"
-            body1="It’s time Vega EVX is on its way to Geniva to attend to this year motorshow.
-Here in Sri Lanka if you want to join with Vega make sure you enlist
-yourself."
+            subtitle1={loading ? "Loading" : cardData.card0.subtitle}
+            headline1={loading ? "Loading" : cardData.card0.headline}
+            body1={loading ? "Loading" : cardData.card0.body}
             img2={visionariesImg02}
-            subtitle2="news"
-            headline2="battery cells assembled"
-            body2="It’s time Vega EVX is on its way to Geniva to attend to this year motorshow.
-Here in Sri Lanka if you want to join with Vega make sure you enlist
-yourself."
+            subtitle2={loading ? "Loading" : cardData.card1.subtitle}
+            headline2={loading ? "Loading" : cardData.card1.headline}
+            body2={loading ? "Loading" : cardData.card1.body}
           />
         </VisionariesSection>
 

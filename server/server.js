@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const router = express.Router({});
+const path = require("path");
 
 require("dotenv").config();
 
@@ -15,58 +15,134 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 
+// Start connection to mongoDb with mongoose
 connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-//Schema
+// Defining the shape of the schema
 const Schema = mongoose.Schema;
-const BlogPostSchema = new Schema({
-  image: String,
-  subtitle: String,
-  headline: String,
-  body: String,
-  date: {
-    type: String,
-    default: Date.now(),
+const databaseShape = new Schema();
+
+const homeDataShape = new mongoose.Schema(
+  {
+    subtitle: String,
+    headline: String,
+    body: String,
   },
+  { collection: "vega-evx" }
+);
+const vegaEvxDataShape = new mongoose.Schema(
+  {
+    subtitle: String,
+    headline: String,
+    body: String,
+  },
+  { collection: "vega-evx" }
+);
+const blogDataShape = new mongoose.Schema(
+  {
+    subtitle: String,
+    headline: String,
+    body: String,
+  },
+  { collection: "blog" }
+);
+const investorsDataShape = new mongoose.Schema(
+  {
+    subtitle: String,
+    headline: String,
+    body: String,
+  },
+  { collection: "investors" }
+);
+const aboutDataShape = new mongoose.Schema(
+  {
+    subtitle: String,
+    headline: String,
+    body: String,
+  },
+  { collection: "about" }
+);
+
+//Models
+const homePageSchema = mongoose.model("home", homeDataShape);
+const vegaEvxSchema = mongoose.model("vega-evx", vegaEvxDataShape);
+const blogSchema = mongoose.model("blog", blogDataShape);
+const investorsSchema = mongoose.model("investors", investorsDataShape);
+const aboutSchema = mongoose.model("about", aboutDataShape);
+
+// API IndexPage
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-//Model
-const BlogPost = mongoose.model("BlogPost", BlogPostSchema);
-
-//Save to DB
-
-const data = {
-  image: "thisImage",
-  subtitle: "News",
-  headline: "Candy Painted",
-  body: "Amazing color comes to life today wittness",
-};
-
-//const newBlogPost = new BlogPost(data);
-
-/*
-newBlogPost.save((error) => {
-  if (error) {
-    console.log("error while saving data");
-  } else {
-    console.log("Data Saved");
-  }
-});
-
-*/
-app.get("/api", (req, res) => {
-  BlogPost.find({})
+// HomePage
+app.get("/api/home", (req, res) => {
+  homePageSchema
+    .find({})
     .then((data) => {
       console.log("Data", data);
       res.json(data);
     })
     .catch((error) => {
-      console.log("Error", error);
+      console.error(`server caught in response : , ${error}`);
     });
 });
 
+// Vega-evx Page
+app.get("/api/vega-evx", (req, res) => {
+  vegaEvxSchema
+    .find({})
+    .then((data) => {
+      console.log("Data", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error(`server caught in response : , ${error}`);
+    });
+});
+
+// Blog Page
+app.get("/api/blog", (req, res) => {
+  blogSchema
+    .find({})
+    .then((data) => {
+      console.log("Data", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error(`server caught in response : , ${error}`);
+    });
+});
+
+// Investors Page
+app.get("/api/investors", (req, res) => {
+  investorsSchema
+    .find({})
+    .then((data) => {
+      console.log("Data", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error(`server caught in response : , ${error}`);
+    });
+});
+
+// About Page
+app.get("/api/about", (req, res) => {
+  aboutSchema
+    .find({})
+    .then((data) => {
+      console.log("Data", data);
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error(`server caught in response : , ${error}`);
+    });
+});
+
+// Listen
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });

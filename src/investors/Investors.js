@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import HeroSection from "./HeroSection.js";
 import Footer from "../common/Footer.js";
 import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
 import ProgressiveImage from "react-progressive-image";
+import axios from "axios";
 
 // Components
 import Typeset from "../common/Typeset.js";
@@ -27,6 +28,29 @@ import subsidariesAirgrow from "./img/subsidariesAirgrow.png";
 import enquiryImg from "./img/EnquiryImg.png";
 
 function Investors() {
+  const hostname = process.env.REACT_APP_HOSTNAME_URL;
+  // While fetching render default placeholder data
+  const [loading, setLoading] = useState(true);
+  // Storing Data Fetched from API
+  const [cardData, setCardData] = useState([]);
+
+  // Fetch data asynchronously from th API uising Axios
+  const fetchData = async () => {
+    await axios
+      .get(`${hostname}/api/investors`)
+      .then((res) => {
+        let dataArray = res.data[0];
+        // Assing to hook
+        setCardData(dataArray);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(`error caught white fetching data : ${error}`);
+      });
+  };
+  // callback on componentDidMount
+  useEffect(() => fetchData(), []);
+
   return (
     <main>
       <Scroll />
@@ -91,9 +115,9 @@ function Investors() {
             </InnovationHeadline>
             <Card
               Img={newsImg1}
-              Headline="conquering covid 19"
-              Subtitle="news"
-              Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale"
+              Subtitle={loading ? "Loading" : cardData.card0.subtitle}
+              Headline={loading ? "Loading" : cardData.card0.headline}
+              Body={loading ? "Loading" : cardData.card0.body}
               color="black"
               Headline="Candy coated to perfection"
             />
@@ -101,9 +125,9 @@ function Investors() {
           <InnovationCol2>
             <CardExtended
               Img={newsImg2}
-              Headline="conquering covid 19"
-              Subtitle="news"
-              Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
+              Subtitle={loading ? "Loading" : cardData.card1.subtitle}
+              Headline={loading ? "Loading" : cardData.card1.headline}
+              Body={loading ? "Loading" : cardData.card1.body}
               color="black"
             />
           </InnovationCol2>
@@ -125,19 +149,18 @@ function Investors() {
               </SubsidariesHeadline>
               <CardExtended
                 Img={subsidariesChargenet}
-                Headline="conquering covid 19"
-                Subtitle="news"
-                Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale"
+                Subtitle={loading ? "Loading" : cardData.card2.subtitle}
+                Headline={loading ? "Loading" : cardData.card2.headline}
+                Body={loading ? "Loading" : cardData.card2.body}
                 color="black"
-                Headline="Candy coated to perfection"
               />
             </SubsidariesCol1>
             <SubsidariesCol2>
               <Card
                 Img={subsidariesAirgrow}
-                Headline="conquering covid 19"
-                Subtitle="news"
-                Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
+                Subtitle={loading ? "Loading" : cardData.card3.subtitle}
+                Headline={loading ? "Loading" : cardData.card3.headline}
+                Body={loading ? "Loading" : cardData.card3.body}
                 color="black"
               />
             </SubsidariesCol2>

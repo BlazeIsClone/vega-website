@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import img001 from "./assets/homepageblog_newsim01.png";
 import img002 from "./assets/homepageblog_newsim02.png";
@@ -6,6 +6,7 @@ import img003 from "./assets/homepageblog_newsim03.png";
 import Headline from "../common/Headline.js";
 import Card from "../common/Card.js";
 import gsap from "gsap";
+import axios from "axios";
 
 // Gsap Plugins plugins:
 import { Timeline } from "gsap/gsap-core";
@@ -14,6 +15,29 @@ import { Timeline } from "gsap/gsap-core";
 
 function BlogAndNews() {
   let cardsRef = useRef(null);
+
+  const hostname = process.env.REACT_APP_HOSTNAME_URL;
+  // While fetching render default placeholder data
+  const [loading, setLoading] = useState(true);
+  // Storing Data Fetched from API
+  const [cardData, setCardData] = useState([]);
+
+  // Fetch data asynchronously from th API uising Axios
+  const fetchData = async () => {
+    await axios
+      .get(`${hostname}/api/home`)
+      .then((res) => {
+        let dataArray = res.data[0];
+        // Assing to hook
+        setCardData(dataArray);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(`error caught white fetching data : ${error}`);
+      });
+  };
+  // callback on componentDidMount
+  useEffect(() => fetchData(), []);
 
   useEffect(() => {
     let tl = new Timeline();
@@ -41,28 +65,28 @@ function BlogAndNews() {
         },
       }
     );
-  });
+  }, []);
   return (
     <Container data-scroll data-scroll-speed="2">
       <Headline paddingLeft="card" content="BLOG AND NEWS" />
       <Block ref={(el) => (cardsRef = el)}>
         <Card
           Img={img001}
-          Subtitle="news"
-          Headline="Candy coated to perfection"
-          Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
+          Subtitle={loading ? "Loading" : cardData.card0.subtitle}
+          Headline={loading ? "Loading" : cardData.card0.headline}
+          Body={loading ? "Loading" : cardData.card0.body}
         />
         <Card
           Img={img002}
-          Subtitle="news"
-          Headline="camber defined"
-          Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
+          Subtitle={loading ? "Loading" : cardData.card1.subtitle}
+          Headline={loading ? "Loading" : cardData.card1.headline}
+          Body={loading ? "Loading" : cardData.card1.body}
         />
         <Card
           Img={img003}
-          Subtitle="races"
-          Headline="LIVING ON THE TRACK"
-          Body="A superstar techno DJ, inspired by motorsport and sampling the sounds of the race track, performing live alongside a 1000cv Ferrari SF90 Stradale, made for a unique event at the Mugello circuit in Italy"
+          Subtitle={loading ? "Loading" : cardData.card2.subtitle}
+          Headline={loading ? "Loading" : cardData.card2.headline}
+          Body={loading ? "Loading" : cardData.card2.body}
         />
       </Block>
     </Container>

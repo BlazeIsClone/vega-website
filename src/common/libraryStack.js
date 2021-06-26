@@ -231,7 +231,7 @@ const Scroll = (callbacks) => {
 
     const locationUrl = window.location.pathname;
     if (locationUrl == "/vega-evx" || locationUrl == "/about") {
-      setTimeout(() => {
+      var timoutTrigger = setTimeout(() => {
         scrollUpdateTrigger();
       }, 4000);
     }
@@ -242,8 +242,12 @@ const Scroll = (callbacks) => {
       }
     };
 
+    // When ComponentDidUnmount clear out garbage which might cause side effects.
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy();
+      if (ScrollTrigger) {
+        clearTimeout(timoutTrigger);
+      }
     };
   }, [callbacks]);
 

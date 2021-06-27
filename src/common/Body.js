@@ -5,7 +5,7 @@ class Body extends Component {
   render() {
     const Type = styled.p`
       justify-self: center;
-      font-family: Roboto, sans-serif;
+      font-family: ${(props) => props.theme.secondaryFont};
       font-style: normal;
       font-weight: normal;
       font-size: ${(props) =>

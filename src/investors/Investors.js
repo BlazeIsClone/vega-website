@@ -19,12 +19,10 @@ import Form from "../common/Form.js";
 // images
 import companyImg from "./img/companyImg.png";
 import capabilitiesImg from "./img/capabilitiesImg.png";
-import newsImg1 from "./img/newsImg1.png";
-import newsImg2 from "./img/newsImg2.png";
+import imgPlaceholder from "./img/imgPlaceholder.png";
+import imgPlaceholderExtended from "./img/imgPlaceholderExtended.png";
 import valuesImg from "./img/valuesImg.png";
 import valuesInfoImg from "./img/valueInfoImg.png";
-import subsidariesChargenet from "./img/subsidariesChargenet.png";
-import subsidariesAirgrow from "./img/subsidariesAirgrow.png";
 import enquiryImg from "./img/EnquiryImg.png";
 
 function Investors() {
@@ -114,7 +112,7 @@ function Investors() {
               <Headline color="black" content="Innovation" />
             </InnovationHeadline>
             <Card
-              Img={newsImg1}
+              Img={loading ? imgPlaceholder : cardData.card0.img}
               Subtitle={loading ? "Loading" : cardData.card0.subtitle}
               Headline={loading ? "Loading" : cardData.card0.headline}
               Body={loading ? "Loading" : cardData.card0.body}
@@ -124,7 +122,7 @@ function Investors() {
           </InnovationCol1>
           <InnovationCol2>
             <CardExtended
-              Img={newsImg2}
+              Img={loading ? imgPlaceholderExtended : cardData.card1.img}
               Subtitle={loading ? "Loading" : cardData.card1.subtitle}
               Headline={loading ? "Loading" : cardData.card1.headline}
               Body={loading ? "Loading" : cardData.card1.body}
@@ -148,7 +146,7 @@ function Investors() {
                 <Headline color="black" content="Subsidaries" />
               </SubsidariesHeadline>
               <CardExtended
-                Img={subsidariesChargenet}
+                Img={loading ? imgPlaceholderExtended : cardData.card2.img}
                 Subtitle={loading ? "Loading" : cardData.card2.subtitle}
                 Headline={loading ? "Loading" : cardData.card2.headline}
                 Body={loading ? "Loading" : cardData.card2.body}
@@ -157,7 +155,7 @@ function Investors() {
             </SubsidariesCol1>
             <SubsidariesCol2>
               <Card
-                Img={subsidariesAirgrow}
+                Img={loading ? imgPlaceholder : cardData.card3.img}
                 Subtitle={loading ? "Loading" : cardData.card3.subtitle}
                 Headline={loading ? "Loading" : cardData.card3.headline}
                 Body={loading ? "Loading" : cardData.card3.body}
@@ -201,7 +199,7 @@ const SubsidariesHeadline = styled.div`
 `;
 
 const SubsidariesCol2 = styled.div`
-  margin-top: 135px;
+  margin-top: 108px;
 `;
 
 const SubsidariesCol1 = styled.div``;
@@ -212,7 +210,7 @@ const InnovationHeadline = styled.div`
 `;
 const InnovationCol1 = styled.div``;
 const InnovationCol2 = styled.div`
-  margin-top: -43.5px;
+  margin-top: -45.5px;
 `;
 const Block = styled.div`
   display: flex;

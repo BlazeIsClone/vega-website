@@ -96,7 +96,7 @@ const FooterIcons = styled.div`
 `;
 
 const FooterNav = styled.div`
-  font-family: Roboto;
+  font-family: ${(props) => props.theme.secondaryFont};
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -116,7 +116,7 @@ const FooterNav = styled.div`
 `;
 const FooterText = styled.p`
   p {
-    font-family: Roboto;
+    font-family: ${(props) => props.theme.secondaryFont};
     font-style: normal;
     font-weight: normal;
     font-size: 14px;

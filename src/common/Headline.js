@@ -4,12 +4,13 @@ import styled from "styled-components";
 class Headline extends Component {
   render() {
     const Type = styled.h1`
-      font-family: Ruda, sans-serif;
+      font-family: ${(props) => props.theme.mainFont};
       font-style: normal;
       font-weight: bold;
       font-size: ${(props) => (this.props.size === "card" ? "26px" : "36px")};
       line-height: 36px;
       text-transform: uppercase;
+      padding-bottom: 3px;
       width: ${(props) =>
         this.props.width === "clamp" ? "clamp(20rem, 100%, 50rem)" : "none"};
       color: ${(props) => (this.props.color === "white" ? "white" : "black")};

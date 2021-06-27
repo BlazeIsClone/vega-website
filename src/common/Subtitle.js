@@ -5,7 +5,7 @@ class Subtitle extends Component {
   render() {
     const Type = styled.h1`
       color: red;
-      font-family: Numans, sans-serif;
+      font-family: ${(props) => props.theme.tirtiaryFont};
       font-style: normal;
       font-weight: normal;
       font-size: 18px;

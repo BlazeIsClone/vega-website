@@ -23,6 +23,7 @@ function App() {
     negativeColor: "white",
     mainFont: "Ruda",
     secondaryFont: "Roboto, Helvetica Neue, sans-serif",
+    tirtiaryFont: "Numans, sans-serif",
   };
 
   return (

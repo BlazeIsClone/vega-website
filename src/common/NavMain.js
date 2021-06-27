@@ -293,7 +293,7 @@ const NavMainItemsWrapper = styled.div`
 `;
 const NavMainItems = styled.ul`
   padding-top: 25px;
-  font-family: Roboto;
+  font-family: ${(props) => props.theme.mainFont};
   font-style: italic;
   font-weight: bold;
   font-size: 18px;
@@ -308,7 +308,7 @@ const NavMainItems = styled.ul`
   }
 `;
 const NavItems = styled.ul`
-  font-family: Roboto;
+  font-family: ${(props) => props.theme.mainFont};
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

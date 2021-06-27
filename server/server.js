@@ -30,7 +30,7 @@ const homeDataShape = new mongoose.Schema(
     headline: String,
     body: String,
   },
-  { collection: "vega-evx" }
+  { collection: "home" }
 );
 const vegaEvxDataShape = new mongoose.Schema(
   {
@@ -82,7 +82,6 @@ app.get("/api/home", (req, res) => {
   homePageSchema
     .find({})
     .then((data) => {
-      console.log("Data", data);
       res.json(data);
     })
     .catch((error) => {
@@ -95,7 +94,6 @@ app.get("/api/vega-evx", (req, res) => {
   vegaEvxSchema
     .find({})
     .then((data) => {
-      console.log("Data", data);
       res.json(data);
     })
     .catch((error) => {
@@ -108,7 +106,6 @@ app.get("/api/blog", (req, res) => {
   blogSchema
     .find({})
     .then((data) => {
-      console.log("Data", data);
       res.json(data);
     })
     .catch((error) => {
@@ -121,7 +118,6 @@ app.get("/api/investors", (req, res) => {
   investorsSchema
     .find({})
     .then((data) => {
-      console.log("Data", data);
       res.json(data);
     })
     .catch((error) => {
@@ -134,7 +130,6 @@ app.get("/api/about", (req, res) => {
   aboutSchema
     .find({})
     .then((data) => {
-      console.log("Data", data);
       res.json(data);
     })
     .catch((error) => {

@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import img001 from "./assets/homepageblog_newsim01.png";
-import img002 from "./assets/homepageblog_newsim02.png";
-import img003 from "./assets/homepageblog_newsim03.png";
 import Headline from "../common/Headline.js";
 import Card from "../common/Card.js";
 import gsap from "gsap";
@@ -11,7 +8,8 @@ import axios from "axios";
 // Gsap Plugins plugins:
 import { Timeline } from "gsap/gsap-core";
 
-// GSAP animations
+// Images
+import imgPlaceholder from "./assets/imgPlaceholder.png";
 
 function BlogAndNews() {
   let cardsRef = useRef(null);
@@ -71,19 +69,19 @@ function BlogAndNews() {
       <Headline paddingLeft="card" content="BLOG AND NEWS" />
       <Block ref={(el) => (cardsRef = el)}>
         <Card
-          Img={img001}
+          Img={loading ? imgPlaceholder : cardData.card0.img}
           Subtitle={loading ? "Loading" : cardData.card0.subtitle}
           Headline={loading ? "Loading" : cardData.card0.headline}
           Body={loading ? "Loading" : cardData.card0.body}
         />
         <Card
-          Img={img002}
+          Img={loading ? imgPlaceholder : cardData.card1.img}
           Subtitle={loading ? "Loading" : cardData.card1.subtitle}
           Headline={loading ? "Loading" : cardData.card1.headline}
           Body={loading ? "Loading" : cardData.card1.body}
         />
         <Card
-          Img={img003}
+          Img={loading ? imgPlaceholder : cardData.card2.img}
           Subtitle={loading ? "Loading" : cardData.card2.subtitle}
           Headline={loading ? "Loading" : cardData.card2.headline}
           Body={loading ? "Loading" : cardData.card2.body}

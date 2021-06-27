@@ -25,8 +25,7 @@ import compatibilitiesSoftwareImg from "./img/compatibilitiesSoftwareImg.png";
 import valuesHeroImg from "./img/valuesHeroImg.png";
 import valuesImg01 from "./img/valuesImg01.png";
 import valuesImg02 from "./img/valuesImg02.png";
-import visionariesImg01 from "./img/visionariesImg01.png";
-import visionariesImg02 from "./img/visionariesImg02.png";
+import imgPlaceholder from "./img/imgPlaceholder.png";
 
 function About() {
   const hostname = process.env.REACT_APP_HOSTNAME_URL;
@@ -145,11 +144,11 @@ know we must."
           <CardsBlock
             twoCards={true}
             headline="THIS WEEK’S TOP TOPICS"
-            img1={visionariesImg01}
+            img1={loading ? imgPlaceholder : cardData.card0.img}
             subtitle1={loading ? "Loading" : cardData.card0.subtitle}
             headline1={loading ? "Loading" : cardData.card0.headline}
             body1={loading ? "Loading" : cardData.card0.body}
-            img2={visionariesImg02}
+            img2={loading ? imgPlaceholder : cardData.card1.img}
             subtitle2={loading ? "Loading" : cardData.card1.subtitle}
             headline2={loading ? "Loading" : cardData.card1.headline}
             body2={loading ? "Loading" : cardData.card1.body}

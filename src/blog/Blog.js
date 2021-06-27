@@ -12,16 +12,10 @@ import CardsBlock from "../common/CardsBlock.js";
 import StayConnected from "./StayConnected.js";
 
 // Images
-import img001 from "./img/weeksTopTopicsImg01.png";
-import img002 from "./img/weeksTopTopicsImg02.png";
-import img003 from "./img/weeksTopTopicsImg03.png";
+import imgPlaceholder from "./img/imgPlaceholder.png";
+import imgPlaceholderExtended from "./img/imgPlaceholderExtended.png";
 
 import newsletterInfoImg from "./img/newsletterInfoImg.png";
-import stayConnectedImg01 from "./img/stayConnectedImg01.png";
-import stayConnectedImg02 from "./img/stayConnectedImg02.png";
-import stayConnectedImg03 from "./img/stayConnectedImg03.png";
-import stayConnectedImg04 from "./img/stayConnectedImg04.png";
-import stayConnectedImg05 from "./img/stayConnectedImg05.png";
 
 function Blog() {
   const hostname = process.env.REACT_APP_HOSTNAME_URL;
@@ -67,15 +61,15 @@ function Blog() {
         <TopTopicsSection>
           <CardsBlock
             headline="THIS WEEK’S TOP TOPICS"
-            img1={img001}
+            img1={loading ? imgPlaceholder : cardData.card0.img}
             subtitle1={loading ? "Loading" : cardData.card0.subtitle}
             headline1={loading ? "Loading" : cardData.card0.headline}
             body1={loading ? "Loading" : cardData.card0.body}
-            img2={img002}
+            img2={loading ? imgPlaceholder : cardData.card1.img}
             subtitle2={loading ? "Loading" : cardData.card1.subtitle}
             headline2={loading ? "Loading" : cardData.card1.headline}
             body2={loading ? "Loading" : cardData.card1.body}
-            img3={img003}
+            img3={loading ? imgPlaceholder : cardData.card2.img}
             subtitle3={loading ? "Loading" : cardData.card2.subtitle}
             headline3={loading ? "Loading" : cardData.card2.headline}
             body3={loading ? "Loading" : cardData.card2.body}
@@ -91,23 +85,23 @@ function Blog() {
         {/* ---- STAYCONNECTED SECTION ---- */}
         <StayConnectedSection>
           <StayConnected
-            img00={stayConnectedImg01}
+            img00={loading ? imgPlaceholderExtended : cardData.card3.img}
             subtitle00={loading ? "Loading" : cardData.card3.subtitle}
             headline00={loading ? "Loading" : cardData.card3.headline}
             body00={loading ? "Loading" : cardData.card3.body}
-            img0={stayConnectedImg02}
+            img0={loading ? imgPlaceholder : cardData.card4.img}
             subtitle0={loading ? "Loading" : cardData.card4.subtitle}
             headline0={loading ? "Loading" : cardData.card4.headline}
             body0={loading ? "Loading" : cardData.card4.body}
-            img1={stayConnectedImg03}
+            img1={loading ? imgPlaceholder : cardData.card5.img}
             subtitle1={loading ? "Loading" : cardData.card5.subtitle}
             headline1={loading ? "Loading" : cardData.card5.headline}
             body1={loading ? "Loading" : cardData.card5.body}
-            img2={stayConnectedImg04}
+            img2={loading ? imgPlaceholder : cardData.card6.img}
             subtitle2={loading ? "Loading" : cardData.card6.subtitle}
             headline2={loading ? "Loading" : cardData.card6.headline}
             body2={loading ? "Loading" : cardData.card6.body}
-            img3={stayConnectedImg05}
+            img3={loading ? imgPlaceholder : cardData.card7.img}
             subtitle3={loading ? "Loading" : cardData.card7.subtitle}
             headline3={loading ? "Loading" : cardData.card7.headline}
             body3={loading ? "Loading" : cardData.card7.body}

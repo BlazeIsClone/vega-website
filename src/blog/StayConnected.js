@@ -50,7 +50,7 @@ function StayConnected(props) {
             Img={props.img00}
             Subtitle={props.subtitle00}
             Headline={props.headline00}
-            Body={props.body0}
+            Body={props.body00}
           />
           <Card
             Img={props.img0}

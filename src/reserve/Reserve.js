@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
-
 function Reserve() {
   return (
     <Main>

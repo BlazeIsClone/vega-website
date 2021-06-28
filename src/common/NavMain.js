@@ -60,13 +60,15 @@ function NavMain() {
         ease: "power3.easeOut",
       }
     );
-    const getUrl = window.location.pathname;
 
+    // Change HeaderNav Theme depending on page
+    const getUrl = window.location.pathname;
     if (
       getUrl === "/about" ||
       getUrl === "/support" ||
       getUrl === "/investors" ||
-      getUrl === "/blog"
+      getUrl === "/blog" ||
+      getUrl === "/reserve"
     ) {
       setModeDark(true);
     } else if (

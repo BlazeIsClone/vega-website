@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
+
+// Images
+import placeholderImg from "./img/placeholderImg.png";
 
 function Reserve() {
   return (
@@ -15,15 +17,36 @@ function Reserve() {
           <MotionType>RESERVE</MotionType>
         </motion.div>
       </MotionContainer>
-      <div data-scroll-section>
-        <div>
-          <center>Reserve</center>
-        </div>
-      </div>
+      <ContainerWrapper>
+        <Col1>
+          <VisualizerCanvas></VisualizerCanvas>
+        </Col1>
+        <Col2></Col2>
+      </ContainerWrapper>
     </Main>
   );
 }
 export default Reserve;
+
+const ContainerWrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-color: ${(props) => props.theme.secondaryColor};
+`;
+
+const Col1 = styled.div`
+  background-image: url(${placeholderImg});
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 90%;
+`;
+
+const VisualizerCanvas = styled.canvas``;
+
+const Col2 = styled.div`
+  width: 10%;
+  height: 100%;
+`;
 
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],

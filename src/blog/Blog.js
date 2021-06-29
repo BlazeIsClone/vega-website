@@ -80,6 +80,7 @@ function Blog() {
           <BannerMoreInfo
             contentText="SUBSCRIBE TO VEGA NEWSLETTER"
             contentButton="newsletter"
+            onClick={() => window.open("/", "_self")}
           ></BannerMoreInfo>
         </div>
         {/* ---- STAYCONNECTED SECTION ---- */}

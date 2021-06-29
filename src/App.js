@@ -53,15 +53,17 @@ function App() {
             <Route path="/support">
               <Support />
             </Route>
-            <Route path="/reserve">
-              <Reserve />
-            </Route>
-            <Route>
-              <NotFound />
-            </Route>
           </Switch>
         </div>
         <NavMain />
+        <Switch>
+          <Route path="/reserve">
+            <Reserve />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
       </ThemeProvider>
     </Router>
   );

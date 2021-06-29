@@ -161,6 +161,7 @@ know we must."
             <BannerMoreInfo
               contentText="JOIN OUR TEAM "
               contentButton="Careers"
+              onClick={() => window.open("/", "_self")}
             ></BannerMoreInfo>
           </div>
         </CareersInfo>

@@ -155,7 +155,7 @@ function Reserve() {
 
 export default Reserve;
 
-// OnLoad Wait for 3D Scene using React Built-in Suspense
+// OnLoad Wait for 3D Scene to load using React Built-in Suspense
 
 function Loading() {
   return (

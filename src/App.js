@@ -13,6 +13,7 @@ import Blog from "./blog/Blog.js";
 import About from "./about/About.js";
 import Careers from "./careers/Careers.js";
 import Support from "./support/Support.js";
+import NotFound from "./NotFound.js";
 
 function App() {
   const globalVars = {
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <Route path="/reserve">
               <Reserve />
+            </Route>
+            <Route>
+              <NotFound />
             </Route>
           </Switch>
         </div>

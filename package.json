@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/core": "^7.14.6",
     "@lottiefiles/react-lottie-player": "^3.3.1",
+    "@react-three/drei": "^7.0.2",
     "@react-three/fiber": "^7.0.1",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",

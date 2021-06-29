@@ -20,6 +20,12 @@ import gsap from "gsap";
 import { Timeline } from "gsap/gsap-core";
 
 function NavMain() {
+  // States
+  const [modeDark, setModeDark] = useState(false);
+  const [staticStatus, setStaticStatus] = useState(true);
+  const [activeStatus, setActiveStatus] = useState(false);
+  const [btnState, setBtnState] = useState(false);
+
   //React router dom uri push
   const history = useHistory();
   //Lottie animator
@@ -37,6 +43,7 @@ function NavMain() {
       }
     });
   }, []);
+
   // GSAP animations
   var navItemsRef = useRef(null);
   var tl = new Timeline();
@@ -61,7 +68,7 @@ function NavMain() {
       }
     );
 
-    // Change HeaderNav Theme depending on page
+    // Change HeaderNav State depending on RouteLocationPathname
     const getUrl = window.location.pathname;
     if (
       getUrl === "/about" ||
@@ -77,11 +84,14 @@ function NavMain() {
       getUrl === "/vega-evx"
     ) {
       setModeDark(false);
+      setBtnState(true);
+    }
+    if (getUrl == "/reserve") {
+      setBtnState(false);
+    } else {
+      setBtnState(true);
     }
   });
-  const [modeDark, setModeDark] = useState(false);
-  const [staticStatus, setStaticStatus] = useState(true);
-  const [activeStatus, setActiveStatus] = useState(false);
 
   const IconStyles = {
     cursor: "pointer",
@@ -98,12 +108,15 @@ function NavMain() {
         </a>
 
         <HeaderNavItem>
-          <ContainedButton
-            content="reserve"
-            text="white"
-            height="nav"
-            onClick={() => history.push("/reserve")}
-          ></ContainedButton>
+          <ContainedButtonWrapper btnState={btnState}>
+            <ContainedButton
+              content="reserve"
+              text="white"
+              height="nav"
+              onClick={() => window.open("/reserve", "_self")}
+              className="nav-header-contained-btn"
+            />
+          </ContainedButtonWrapper>
           <HeaderItemHamburger className="navbar-hamburger">
             <HamburgerIcon
               hover
@@ -199,7 +212,7 @@ const HeaderNav = styled.div`
   background-color: inherit;
   transition: all 0.5s ease-in-out;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  padding: 5px 5px 0 5px;
+  padding: 5px 0 0 5px;
 `;
 const HeaderNavItem = styled.div`
   display: flex;
@@ -210,13 +223,21 @@ const HeaderNavItem = styled.div`
   margin-top: 10px;
   margin-left: 40px;
 `;
+
+const ContainedButtonWrapper = styled.div`
+  padding: 0 50px 0 0;
+  display: ${(props) => (props.btnState ? "flex" : "none")};
+`;
+
 const HeaderItemHamburger = styled.div`
   justify-content: space-between;
   align-items: center;
+  margin: 0 70px 0 0;
 `;
 const HamburgerIcon = styled(Player)`
   height: 50px;
   cursor: pointer;
+  width: 55px;
   path {
     fill: ${(props) => (props.modeDark ? "white" : "black")};
   }

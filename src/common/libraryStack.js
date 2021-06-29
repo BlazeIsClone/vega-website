@@ -17,7 +17,6 @@ let scrollContainer = "[data-scroll-container]";
 const Scroll = (callbacks) => {
   useEffect(() => {
     let locomotiveScroll;
-
     locomotiveScroll = new LocomotiveScroll({
       el: document.querySelector(scrollContainer),
       smooth: true,

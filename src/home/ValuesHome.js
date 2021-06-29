@@ -67,11 +67,13 @@ function ValuesHome() {
           <Headline content="Redefining Tomorrow's World"></Headline>
           <Body
             content="Inspired by a hyper creative generation of multidisciplinary innovators, our passion brought us here.
-We are now ready to revolutionise the world we live in with cutting-edge technology, to enhance lives, to bring people closer to nature and to each other in extraordinary ways.
-"
+We are now ready to revolutionise the world we live in with cutting-edge technology, to enhance lives, to bring people closer to nature and to each other in extraordinary ways."
             width="clamp"
           />
-          <TextButton content="About Us"></TextButton>
+          <TextButton
+            content="About Us"
+            onClick={() => window.open("/about", "_self")}
+          ></TextButton>
         </TextWrapper>
       </Container>
     </ContainerWrapper>

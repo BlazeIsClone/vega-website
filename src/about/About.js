@@ -82,7 +82,7 @@ function About() {
           <ValuesCol1 data-scroll data-scroll-speed="1">
             <ValuesTypeWrapper>
               <Typeset
-                body="envisioning to be the quickest car in the world, with record-setting acceleration, range and performance"
+                body="Our teams are highly skilled, we perform brilliantly, when we collaborate; it is something we do every day."
                 color="black"
               />
             </ValuesTypeWrapper>
@@ -96,12 +96,9 @@ function About() {
             </ProgressiveImage>
             <ValuesTypeWrapper>
               <Typeset
-                subtitle="performance"
+                subtitle="values"
                 headline="We Believe"
-                body="The underlying magic you see in everything we do is a result of our team,
-their passion, innate talent and commitment to make the world a better
-place, inclusive and accessible to everyone alike; we believe we can, we
-know we must."
+                body="The underlying magic you see in everything we do is a result of our team, their passion, innate talent and commitment to make the world a better place, inclusive and accessible to everyone alike; we believe we can, we know we must."
                 color="black"
               />
             </ValuesTypeWrapper>
@@ -161,7 +158,7 @@ know we must."
             <BannerMoreInfo
               contentText="JOIN OUR TEAM "
               contentButton="Careers"
-              onClick={() => window.open("/", "_self")}
+              onClick={() => window.open("/careers", "_self")}
             ></BannerMoreInfo>
           </div>
         </CareersInfo>

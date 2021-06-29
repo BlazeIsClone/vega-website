@@ -70,8 +70,8 @@ function Investors() {
           <DescriptionBody
             img={companyImg}
             subtitle="company"
-            headline="A brand inspired by passion"
-            body="We challenge everything we do, from ideas to processes and even the minute detail that may seem insignificant to another."
+            headline="Precision Engineering, Living Innovation."
+            body="A pioneering venture to design and develop a world class, high performance, electric supercar in Sri Lanka. For autonomous navigation, the use of advanced AI based software, coupled with intuitive software and hardware, optimizes the performance of the supercar and its powerful drive-train."
           ></DescriptionBody>
         </CompanyHero>
 
@@ -85,9 +85,9 @@ function Investors() {
 
           <CapabilitiesRow2>
             <Typeset
-              subtitle="performance"
-              headline="envisioning to be the quickest car in the world, with record-setting acceleration, range and performance"
-              body="Fully electric, two seater super car, in a handmade carbon fiber body powered by a dual motor all-wheel-drive drivetrain. All automotive electronics, including the liquid cooled motor controllers and Li-ion battery pack is designed and manufactured in-house, showcasing some of the most advanced technologies in the EV super car space."
+              subtitle="capabilities"
+              headline="DESIGNing, PROTOTYPing, MANUFACTURing"
+              body="Inspired by a hyper creative generation with multidisciplinary expertise, we design brilliant end-to-end solutions for multi industry applications. By harnessing the power of advanced algorithms and cutting-edge technology, we focus on delivering futuristic solution to optimize performance and profitability sustainably."
               color="black"
             />
           </CapabilitiesRow2>
@@ -97,9 +97,9 @@ function Investors() {
         <ValuesSection>
           <DescriptionBody
             img={valuesImg}
-            subtitle="company"
-            headline="A brand inspired by passion"
-            body="We challenge everything we do, from ideas to processes and even the minute detail that may seem insignificant to another."
+            subtitle="values"
+            headline="We Believe"
+            body="The underlying magic you see in everything we do is a result of our team, their passion, innate talent and commitment to make the world a better place, inclusive and accessible to everyone alike; we believe we can, we know we must."
             isFliped={true}
           ></DescriptionBody>
         </ValuesSection>
@@ -135,6 +135,7 @@ function Investors() {
           <BannerMoreInfo
             contentText="Our Values"
             contentButton="About"
+            onClick={() => window.open("/about", "_self")}
           ></BannerMoreInfo>
         </div>
 
@@ -233,7 +234,7 @@ const CapabilitiesRow2 = styled.div`
   h2,
   p {
     padding: 0 0 0 500px;
-    width: clamp(65rem, 85%, 75rem);
+    width: clamp(65rem, 100%, 85rem);
   }
 `;
 

@@ -98,9 +98,9 @@ function VegaEvx() {
         <BatterySection>
           <BatteryCol1 data-scroll data-scroll-speed="1">
             <Typeset
-              subtitle="performance"
-              headline="envisioning to be the quickest car in the world, with record-setting acceleration, range and performance"
-              body="Fully electric, two seater super car, in a handmade carbon fiber body powered by a dual motor all-wheel-drive drivetrain. All automotive electronics, including the liquid cooled motor controllers and Li-ion battery pack is designed and manufactured in-house, showcasing some of the most advanced technologies in the EV super car space."
+              subtitle="battery"
+              headline="All Electric adaptive Powertrain"
+              body="Design and develop high performance liquid cooled battery packs using pouch and cylindrical cells. Capability to design dual tab cooled, cell fused battery assemblies with integrated state-of-the-art Battery Management Systems."
               color="black"
             />
           </BatteryCol1>
@@ -119,9 +119,9 @@ function VegaEvx() {
           </PowertrainCol1>
           <PowertrainCol2 data-scroll data-scroll-speed="1">
             <Typeset
-              subtitle="performance"
-              headline="envisioning to be the quickest car in the world, with record-setting acceleration, range and performance"
-              body="Fully electric, two seater super car, in a handmade carbon fiber body powered by a dual motor all-wheel-drive drivetrain. All automotive electronics, including the liquid cooled motor controllers and Li-ion battery pack is designed and manufactured in-house, showcasing some of the most advanced technologies in the EV super car space."
+              subtitle="powertrain"
+              headline="dual motor all wheel drive"
+              body="Mid-engined, fast forward. The light Vega EVX body ensures a prodigious power to weight ratio, for a jaw-dropping acceleration and top speed."
               color="black"
             />
           </PowertrainCol2>
@@ -141,9 +141,9 @@ function VegaEvx() {
               <TypeBlock>
                 <div>
                   <Typeset
-                    subtitle="autonomous driving"
-                    headline="Redefining the Future of Driving"
-                    body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
+                    subtitle="chassis"
+                    headline="High Impact Protection"
+                    body="Vega EVX is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack for incredible occupant protection and low rollover risk. Every car includes Vega’s latest active safety features, such as Automatic Emergency Braking, at no extra cost."
                     color="black"
                   />
                 </div>
@@ -168,13 +168,13 @@ function VegaEvx() {
               Subtitle="news"
               color="white"
               Subtitle="sequrity"
-              Headline="Candy coated to perfection"
+              Headline="360 security coverage"
             />
             <Card
               isCompactDark={true}
               Img={safetyImg2}
               Subtitle="safety"
-              Headline="Candy coated to perfection"
+              Headline="rear collision detection"
               color="white"
             />
           </Block>
@@ -184,9 +184,9 @@ function VegaEvx() {
         <ExteriorSection>
           <ExteriorCol1>
             <Typeset
-              subtitle="autonomous driving"
-              headline="Redefining the Future of Driving"
-              body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
+              subtitle="exterior"
+              headline="Designed for Efficiency"
+              body="With the lowest drag coefficient on Earth and unmatched efficiency, Vega EVX is built for speed and range. Together with a wider body and chassis, these elements help you go down the straight or around corners quicker than ever."
               color="white"
             />
           </ExteriorCol1>
@@ -204,8 +204,8 @@ function VegaEvx() {
             <AutonomousRow1>
               <Typeset
                 subtitle="autonomous driving"
-                headline="Redefining the Future of Driving"
-                body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
+                headline="Future of Driving"
+                body="Autopilot enables your car to steer, accelerate and brake automatically within its lane under your active supervision, assisting with the most burdensome parts of driving. With over-the-air software updates, the latest enhancements are available instantly."
                 color="white"
               />
             </AutonomousRow1>
@@ -228,9 +228,9 @@ function VegaEvx() {
           <DashboardTop>
             <DashboardRow1>
               <Typeset
-                subtitle="autonomous driving"
-                headline="Redefining the Future of Driving"
-                body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
+                subtitle="dashboard"
+                headline="Fully DIGITALISED interfaces"
+                body="Clean, powerful yet invisible cabin conditioning. Tri-zone temperature controls, ventilated front seats and HEPA filtration come standard."
                 color="white"
               />
             </DashboardRow1>
@@ -261,9 +261,9 @@ function VegaEvx() {
         <InteriorSection>
           <InteriorRow1>
             <Typeset
-              subtitle="autonomous driving"
-              headline="Redefining the Future of Driving"
-              body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
+              subtitle="interior"
+              headline="LEADING EDGE and sporty BY DESIGN"
+              body="Clean, powerful yet invisible cabin conditioning. Tri-zone temperature controls, ventilated front seats and HEPA filtration come standard."
               color="white"
             />
           </InteriorRow1>
@@ -279,8 +279,8 @@ function VegaEvx() {
         <InteriorFeaturesSection>
           <CardSlider
             isCompact={true}
-            titleSubtitle="compatibilities"
-            titleHeadline="AREAS OF FOCUS"
+            titleSubtitle="interior features"
+            titleHeadline="every detail covered"
             titleBody="Every inch of the Vega EVX is crafted for a one-of-a-kind driving excitement."
             img01={interiorFeaturesScroll_img3}
             img02={interiorFeaturesScroll_img2}
@@ -292,9 +292,9 @@ function VegaEvx() {
         <EntertainmentSection>
           <EntertainmnetCol1>
             <Typeset
-              subtitle="autonomous driving"
-              headline="Redefining the Future of Driving"
-              body="Advance traction control inverters for electric vehicle applications, using patent pending technology for lightweight, high power density requirements."
+              subtitle="entertainment system"
+              headline="surround yourself"
+              body="A 22-speaker, 960-watt audio system with active noise canceling offers the best listening experience at home or on the road."
               color="black"
             />
             <div data-scroll data-scroll-speed="-0.6">
@@ -332,7 +332,12 @@ function VegaEvx() {
               color="white"
               width="clamp"
             />
-            <ContainedButton text="black" body="white" content="Reserve" />
+            <ContainedButton
+              text="black"
+              body="white"
+              content="Reserve"
+              onClick={() => window.open("/reserve", "_self")}
+            />
           </ReserveinfoSection>
         </CarheroSection>
         {/* ---- FOOTER SECTION ---- */}
@@ -502,7 +507,8 @@ const AutonomousTop = styled.div`
 `;
 
 const AutonomousRow1 = styled.div`
-  padding: 100px 0 50px 100px;
+  padding: 100px 100px 50px 100px;
+  margin: 0 150px 0 0;
 `;
 const AutonomousRow2 = styled.div`
   margin: 0 200px 0 100px;
@@ -581,6 +587,7 @@ const TextBox = styled.div`
   justify-content: center;
   padding: 60px 60px 0 60px;
   margin-top: auto;
+  margin: 0 100px 0 0;
 `;
 
 const VideoWrapper = styled.div`

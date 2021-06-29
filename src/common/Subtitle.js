@@ -11,7 +11,6 @@ class Subtitle extends Component {
       font-size: 18px;
       line-height: 21px;
       text-transform: uppercase;
-      cursor: pointer;
       padding-bottom: 5px;
     `;
     return <Type>{this.props.content}</Type>;

@@ -164,12 +164,10 @@ function NavMain() {
           showActive={activeStatus}
         >
           <NavElements ref={(el) => (navItemsRef = el)}>
-            <NavMainItems onClick={() => history.push("/")}>Home</NavMainItems>
-            <NavItems>Vega Evx</NavItems>
-            <NavItems>Values</NavItems>
-            <NavItems>Blog and News</NavItems>
-            <NavItems>Newsletter</NavItems>
             <NavMainItemsWrapper>
+              <NavMainItems onClick={() => history.push("/")}>
+                Home
+              </NavMainItems>
               {/* Without ReactRouterDOM => window.open("/vega-evx","_self") */}
               <NavMainItems onClick={() => history.push("/vega-evx")}>
                 Vega Evx

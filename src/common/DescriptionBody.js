@@ -75,7 +75,6 @@ const BodyWrapperFliped = styled.div`
 const BodyWrapper = styled.div`
   max-height: 100vh;
   min-height: 1080px;
-  width: 100vw;
   background-color: ${(props) => props.theme.negativeColor};
   display: flex;
   flex-direction: row;
@@ -90,8 +89,9 @@ const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 200px 0 100px;
   img {
-    width: 90%;
+    width: 120%;
   }
 `;
 const Col1 = styled.div`

@@ -3,17 +3,21 @@ import styled from "styled-components";
 
 function HeroContainer(props) {
   return (
-    <div>
+    <ContainerWrapper>
       <OverlayWrapper>
         <Text className={props.getClass}>{props.children}</Text>
       </OverlayWrapper>
       <Container>{props.content}</Container>
-    </div>
+    </ContainerWrapper>
   );
 }
 
 export default HeroContainer;
 
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
 const Container = styled.div``;
 
 const OverlayWrapper = styled.div`

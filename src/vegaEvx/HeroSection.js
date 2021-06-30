@@ -26,15 +26,25 @@ function HeroSection() {
 
 export default HeroSection;
 
-const ContainerWrapper = styled.div``;
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+`;
 
 const Player = styled.video`
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  overflow: hidden;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
   z-index: -50;
 `;
+
 const EffectsWrapper = styled.div`
   top: 0px;
   left: 0px;

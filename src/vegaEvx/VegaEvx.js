@@ -154,9 +154,11 @@ function VegaEvx() {
 
         {/* ---- SAFETY SECTION ---- */}
         <SafetySection className="target-safety">
-          <ImageHandler src={safetyImg} placeholder={{}}>
-            {(src) => <img src={src} alt="vega evx car" />}
-          </ImageHandler>
+          <SefetySectionImgWrapper>
+            <ImageHandler src={safetyImg} placeholder={{}}>
+              {(src) => <img src={src} alt="vega evx car" />}
+            </ImageHandler>
+          </SefetySectionImgWrapper>
           <Block
             data-scroll
             data-scroll-speed="1.5"
@@ -370,7 +372,6 @@ const ReserveinfoSection = styled.div`
   z-index: 1;
   position: absolute;
   left: 25%;
-  transform: translateX(-55%);
   margin: 45% 0 0 0;
   column-gap: 200px;
 `;
@@ -535,6 +536,13 @@ const ExteriorCol1 = styled.div`
 const ExteriorCol2 = styled.div`
   width: 70%;
   margin: 0 200px 0 0;
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const SefetySectionImgWrapper = styled.div`
   img {
     width: 100%;
     height: auto;

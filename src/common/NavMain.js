@@ -55,15 +55,15 @@ function NavMain() {
       {
         opacity: 0,
         y: "0.5em",
-        stagger: 0.1,
-        duration: 0.2,
+        stagger: 0.2,
+        duration: 0.3,
         ease: "power3.easeIn",
       },
       {
         opacity: 1,
         y: "0em",
-        stagger: 0.1,
-        duration: 0.2,
+        stagger: 0.2,
+        duration: 0.3,
         ease: "power3.easeOut",
       }
     );

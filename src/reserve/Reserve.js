@@ -12,10 +12,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Model from "./Car_renderd_default";
 
-//obj
-import CarModelDefault from "./obj/car_model_default.glb";
-import car_model_default_compressed from "./obj/car_model_default.glb";
-
 // Importing SVGs as React Components
 import { ReactComponent as NavLogoText } from "../common/svg/vegaLogo_Onlylettring.svg";
 import { ReactComponent as NavLogoIcon } from "../common/svg/vegaLogo.svg";
@@ -24,9 +20,6 @@ import { ReactComponent as NavLogoIcon } from "../common/svg/vegaLogo.svg";
 import Headline from "../common/Headline";
 import ContainedButton from "../common/ContainedButton";
 import Body from "../common/Body";
-
-// Images
-import placeholderImg from "./img/placeholderImg.png";
 
 function Reserve() {
   //Lottie animator

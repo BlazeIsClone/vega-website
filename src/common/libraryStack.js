@@ -100,7 +100,7 @@ const Scroll = (callbacks) => {
     locomotiveScroll.on("scroll", ({ limit, scroll }) => {
       //--ScrollBar Slider Progress
       const progress = (scroll.y / limit.y) * 100;
-      scrollBar.style.transform = `translate3d(0, ${35 + progress}px, 0)`;
+      scrollBar.style.transform = `translate3d(0, ${progress}px, 0)`;
 
       //--NavHeader onScroll Logic
       if (scroll.y > 250) {

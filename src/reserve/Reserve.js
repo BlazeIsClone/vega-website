@@ -31,7 +31,12 @@ function Reserve() {
       <MotionContainer>
         <motion.div
           style={motionContainerStyle}
-          animate={{ y: "100vh" }}
+          animate={{
+            y: "100vh",
+            transitionEnd: {
+              display: "none",
+            },
+          }}
           transition={transition}
         >
           <MotionType>RESERVE</MotionType>
@@ -97,18 +102,28 @@ function Reserve() {
               {/* ---- OPTIONS SECTION ---- */}
               <OptionsSection>
                 <OptionSectionRow1>
-                  <Body content="SINGLE MOTOR RWD" color="white" />
-                  <Body
-                    content="You will be able to complete your configuration as production nears in late 2022. "
-                    color="white"
-                  />
+                  <OptionsHeadWrapper>
+                    <Body content="SINGLE MOTOR RWD" color="white" />
+                  </OptionsHeadWrapper>
+                  <OptionsBodyWrapper>
+                    <Body
+                      content="You will be able to complete your configuration as production nears in late 2022. "
+                      color="white"
+                    />
+                  </OptionsBodyWrapper>
                 </OptionSectionRow1>
+
+                <SectionDivider></SectionDivider>
                 <OptionSectionRow2>
-                  <Body content="TRI MOTOR AWD" color="white" />
-                  <Body
-                    content="You will be able to complete your configuration as production nears in late 2022. "
-                    color="white"
-                  />
+                  <OptionsHeadWrapper>
+                    <Body content="TRI MOTOR AWD" color="white" />
+                  </OptionsHeadWrapper>
+                  <OptionsBodyWrapper>
+                    <Body
+                      content="You will be able to complete your configuration as production nears in late 2022. "
+                      color="white"
+                    />
+                  </OptionsBodyWrapper>
                 </OptionSectionRow2>
               </OptionsSection>
               {/* ---- ADDON SECTION ---- */}
@@ -116,6 +131,7 @@ function Reserve() {
                 <AddonSectionRow1>
                   <Body content="SINGLE MOTOR RWD" color="white" />
                 </AddonSectionRow1>
+                <SectionDivider></SectionDivider>
                 <AddonSectionRow2>
                   <Body content="TRI MOTOR AWD" color="white" />
                 </AddonSectionRow2>
@@ -141,11 +157,20 @@ function Reserve() {
 
               {/* ---- PRICE SECTION ---- */}
               <PriceSection>
-                <Body content="Due Today" color="white" />
-                <Body content="$ 1,000 USD" color="white" />
-                <ContainedButton content="Reserve Now" text="white" />
+                <PriceCol1>
+                  <Body content="Due Today" color="white" />
+                  <Body content="$ 1,000 USD" color="white" />
+                </PriceCol1>
+                <PriceCol2>
+                  <ContainedButton content="Reserve Now" text="white" />
+                </PriceCol2>
               </PriceSection>
-              <NoticeSection></NoticeSection>
+              <NoticeSection>
+                <Body
+                  content="You will be able to complete your configuration as production nears in late 2022."
+                  color="white"
+                />
+              </NoticeSection>
             </ContentBodyWrapper>
           </ScrollWrapper>
         </Col2>
@@ -176,6 +201,7 @@ function Loading() {
 
 const MainWrapper = styled.div`
   position: fixed;
+  z-index: 1;
 `;
 
 const ContainerWrapper = styled.div`
@@ -197,7 +223,7 @@ const Col1 = styled.div`
     cursor: grabbing;
   }
   @media (max-width: 1440px) {
-    width: 70%;
+    width: 60%;
   }
 `;
 
@@ -231,13 +257,14 @@ const Col2 = styled.div`
   height: auto;
   transition: ease-out all 0.3s;
   background-color: #0a0a0a;
+  padding: 0 20px 0 0;
   @media (max-width: 1440px) {
-    width: 30%;
+    width: 40%;
   }
 `;
 
 const ScrollWrapper = styled.div`
-  overflow-y: scroll;
+  overflow-y: show;
 `;
 const HeadWrapper = styled.div`
   padding: 20px 0 0 48px;
@@ -277,11 +304,38 @@ const OptionSectionRow1 = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px 0 0 20px;
+  padding: 10px 0 0 10px;
+  :hover {
+    color: yellow;
+  }
+`;
+
+const SectionDivider = styled.div`
+  background: #d0d0d0;
+  border-radius: 4px;
+  height: 2px;
+  margin: 25px;
+`;
+
+const OptionsHeadWrapper = styled.div`
+  p {
+    font-weight: 600;
+    font-style: normal;
+    font-family: ${(props) => props.theme.secondaryFont};
+    padding: 0 0 15px 0;
+  }
+`;
+const OptionsBodyWrapper = styled.div`
+  p {
+    font-size: 14px;
+    line-height: 16px;
+  }
 `;
 const OptionSectionRow2 = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px 0 0 20px;
+  padding: 0 0 0 10px;
 `;
 const AddonSection = styled.div`
   margin: 10px 0 0 0;
@@ -289,6 +343,12 @@ const AddonSection = styled.div`
   height: 180px;
   background: #252525;
   border-radius: 4px;
+  padding: 10px;
+  p {
+    font-family: ${(props) => props.theme.secondaryFont};
+    font-style: normal;
+    font-weight: 600;
+  }
 `;
 
 const AddonSectionRow1 = styled.div`
@@ -316,11 +376,26 @@ const PriceSection = styled.div`
   margin: 20px 0 0 0;
   display: flex;
   flex-direction: row;
+  width: 100%;
   button {
     background-color: #252525;
   }
 `;
-const NoticeSection = styled.div``;
+const PriceCol1 = styled.div`
+  padding: 0 10px 0 50px;
+  width: 50%;
+`;
+const PriceCol2 = styled.div`
+  padding: 0 0 0 40px;
+  width: 50%;
+`;
+const NoticeSection = styled.div`
+  padding: 35px;
+  p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+`;
 
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],

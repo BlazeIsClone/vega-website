@@ -181,6 +181,8 @@ export default function Model(props) {
         <mesh
           geometry={nodes.Cube019.geometry}
           material={nodes.Cube019.material}
+          material-color="black"
+          material-shininess="100"
         />
         <mesh
           geometry={nodes.Cube019_1.geometry}
@@ -191,10 +193,14 @@ export default function Model(props) {
         <mesh
           geometry={nodes.Cube021.geometry}
           material={nodes.Cube021.material}
+          material-color="black"
+          material-shininess="100"
         />
         <mesh
           geometry={nodes.Cube021_1.geometry}
           material={nodes.Cube021_1.material}
+          material-color="black"
+          shininess="100"
         />
       </group>
       <group position={[-0.03, -0.36, -0.5]} scale={1.16}>

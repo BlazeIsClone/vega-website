@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, createRef } from "react";
+import React, { Suspense, useRef, createRef, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -18,6 +18,7 @@ import { ReactComponent as NavLogoIcon } from "../common/svg/vegaLogo.svg";
 import Headline from "../common/Headline";
 import ContainedButton from "../common/ContainedButton";
 import Body from "../common/Body";
+import { Scene } from "three";
 
 function Reserve() {
   //Lottie animator
@@ -49,6 +50,7 @@ function Reserve() {
           {/* ---- CANVAS SECTION ---- */}
           <Canvas
             shadows
+            alpha={true}
             dpr={[1, 2]}
             camera={{ fov: 50, zoom: 2 }}
             style={{
@@ -56,17 +58,25 @@ function Reserve() {
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundColor: "black",
+              paddingTop: "8%",
             }}
           >
             <Suspense fallback={<Loading />}>
-              <OrbitControls enableZoom={false} />
+              <OrbitControls
+                enableZoom={false}
+                maxAzimuthAngle={Math.PI / 9}
+                minAzimuthAngle={-Math.PI / 1}
+                maxPolarAngle={1.5}
+                minPolarAngle={1}
+              />
               <Stage
-                controls={ref}
+                position={[1, 0.6, 0.2]}
+                ontrols={ref}
                 preset="soft"
                 intensity={1.9}
                 environment="night"
               >
-                <Model rotation={[0, -0.6, 0]}></Model>
+                <Model rotation={[0, -0.6, 0]} />
               </Stage>
             </Suspense>
           </Canvas>

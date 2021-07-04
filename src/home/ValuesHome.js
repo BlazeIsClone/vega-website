@@ -6,7 +6,6 @@ import Headline from "../common/Headline.js";
 import Subtitle from "../common/Subtitle.js";
 import Body from "../common/Body.js";
 import gsap from "gsap";
-import { TweenMax, TimelineLite, Power3 } from "gsap";
 
 // or get other plugins:
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -18,9 +17,9 @@ function ValuesHome() {
   let animationWrapper = useRef(null);
   let images = useRef(null);
   let text = useRef(null);
-  let tl = new Timeline();
 
   useEffect(() => {
+    let tl = new Timeline();
     const firstImage = images;
     let textElement = text;
     //Image Animations

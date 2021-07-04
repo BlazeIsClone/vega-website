@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 // ThreeJs Fiber components
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Model from "./Car_renderd_default";

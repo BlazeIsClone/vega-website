@@ -117,10 +117,10 @@ function About() {
           img02Alt="circuit board"
           body2="Prototype"
           img03={compatibilitiesManufactureImg}
-          img02Alt="fabricator working with a machine"
+          img03Alt="fabricator working with a machine"
           body3="Manufacture"
           img04={compatibilitiesDesignImg}
-          img02Alt="designer sketching on a paper"
+          img04Alt="designer sketching on a paper"
           body4="Design"
         />
         {/* ---- VALUESHERO SECTION ---- */}
@@ -228,24 +228,6 @@ const ValuesCol2 = styled.div`
 
 const CareersInfo = styled.div``;
 const CompanyHero = styled.div``;
-
-const LeftImg = styled.div`
-  margin: 0 0 0 100px;
-  width: 80%;
-`;
-const CompanyCol1 = styled.div`
-  width: 100%;
-`;
-const CompanyCol2 = styled.div`
-  width: 100%;
-  display: flex;
-`;
-const TextContainer = styled.div`
-  width: clamp(40rem, 100%, 100px);
-  align-self: center;
-`;
-
-const ImageHandler = styled(ProgressiveImage)``;
 
 const transition = {
   ease: [0.6, 0.01, -0.05, 0.9],

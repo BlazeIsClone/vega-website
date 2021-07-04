@@ -10,7 +10,7 @@ function CardExtended(props) {
   return (
     <CardWrapper>
       <ImgWrapper>
-        <img src={props.Img}></img>
+        <img src={props.Img} alt="blog and news"></img>
       </ImgWrapper>
       <TextWrapper>
         <Subtitle content={props.Subtitle} />

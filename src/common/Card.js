@@ -12,7 +12,7 @@ function Card(props) {
   if (isCompactDark) {
     body = (
       <CompactCardWrapper>
-        <img src={props.Img}></img>
+        <img src={props.Img} alt="blog and news"></img>
         <Subtitle content={props.Subtitle} />
         <Headline size="card" content={props.Headline} color={props.color} />
         <Body content={props.Body} color={props.color} />
@@ -22,7 +22,7 @@ function Card(props) {
     body = (
       <CardWrapper>
         <ImgWrapper>
-          <img src={props.Img}></img>
+          <img src={props.Img} alt="blog and news"></img>
         </ImgWrapper>
         <TextWrapper>
           <Subtitle content={props.Subtitle} />

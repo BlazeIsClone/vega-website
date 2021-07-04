@@ -167,7 +167,6 @@ function VegaEvx() {
             <Card
               isCompactDark={true}
               Img={safetyImg1}
-              Subtitle="news"
               color="white"
               Subtitle="sequrity"
               Headline="360 security coverage"
@@ -415,27 +414,6 @@ const EntertainmentCol2 = styled.div`
 
 const InteriorFeaturesSection = styled.div`
   height: 1080px;
-`;
-const InteriorFeaturesText = styled.div`
-  padding: 250px 0 0 100px;
-`;
-const InteriorFeaturesScroll = styled.div`
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-  position: relative;
-  left: -400px;
-  margin: 100px 0 0 0;
-  column-gap: 12px;
-  cursor: w-resize;
-  img {
-    height: auto;
-    width: 35%;
-    user-select: none;
-    user-drag: none;
-  }
 `;
 const InteriorSection = styled.div`
   height: auto;

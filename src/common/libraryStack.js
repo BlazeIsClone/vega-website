@@ -82,7 +82,6 @@ const Scroll = (callbacks) => {
     let pxCalc;
     let heroText;
     let scrollBar;
-    let textWrapper;
     let overlayContainer;
 
     scrollBar = document.querySelector(".scroll-element");
@@ -95,7 +94,6 @@ const Scroll = (callbacks) => {
       ".hero-section-overlay-container"
     );
     heroText = document.querySelector(".hero-container-text");
-    textWrapper = document.querySelector(".hero-container-text");
 
     // Locomotivescroll, scrolljacks the dom so we need to use the provided event listeners to access scroll positions
 
@@ -229,14 +227,14 @@ const Scroll = (callbacks) => {
     // Update LocomotiveScroll after page load to fix possible bugs in some pages while scrolling (listen to URL changes and if change triggers wait X about before executing update to bypass possible errors).
 
     const locationUrl = window.location.pathname;
-    if (locationUrl == "/vega-evx" || locationUrl == "/about") {
+    if (locationUrl === "/vega-evx" || locationUrl === "/about") {
       var timoutTrigger = setTimeout(() => {
         scrollUpdateTrigger();
       }, 4000);
     }
 
     const scrollUpdateTrigger = () => {
-      if (locationUrl == "/vega-evx" || locationUrl == "/about") {
+      if (locationUrl === "/vega-evx" || locationUrl === "/about") {
         locomotiveScroll.update();
       }
     };

@@ -46,9 +46,9 @@ function NavMain() {
 
   // GSAP animations
   var navItemsRef = useRef(null);
-  var tl = new Timeline();
 
   useEffect(() => {
+    var tl = new Timeline();
     let navItemsRig = navItemsRef;
     tl = gsap.fromTo(
       navItemsRig.children,
@@ -86,7 +86,7 @@ function NavMain() {
       setModeDark(false);
       setBtnState(true);
     }
-    if (getUrl == "/reserve") {
+    if (getUrl === "/reserve") {
       setBtnState(false);
     } else {
       setBtnState(true);
@@ -323,21 +323,6 @@ const NavMainItems = styled.ul`
   letter-spacing: -0.154px;
   text-decoration: none;
   color: white;
-  &:hover {
-    cursor: pointer;
-    color: ${(props) => props.theme.accentColor};
-  }
-`;
-const NavItems = styled.ul`
-  font-family: ${(props) => props.theme.mainFont};
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: end;
-  letter-spacing: -0.154px;
-  color: white;
-  padding: 5px 0 0 0;
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.accentColor};

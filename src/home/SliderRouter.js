@@ -5,7 +5,6 @@ import {
   Route,
   NavLink,
   withRouter,
-  useLocation,
 } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";

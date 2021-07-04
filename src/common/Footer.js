@@ -1,12 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Link,
-} from "react-router-dom";
+
 import { ReactComponent as VegaFooter } from "./svg/vega_with_tagline.svg";
 import { ReactComponent as FacebookIcon } from "./svg/icons8-facebook-f 1.svg";
 import { ReactComponent as TwitterIcon } from "./svg/icons8-twitter 1.svg";
@@ -40,21 +34,34 @@ function Footer() {
         </ul>
       </FooterNav>
       <FooterIcons>
-        <a href="https://www.facebook.com/VegaInnovations" target="_blank">
+        <a
+          href="https://www.facebook.com/VegaInnovations"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FacebookIcon />
         </a>
-        <a href="https://twitter.com" target="_blank">
+        <a href="https://twitter.com" target="_blank" rel="noreferrer">
           <TwitterIcon />
         </a>
-        <a href="https://www.youtube.com/vegainnovations" target="_blank">
+        <a
+          href="https://www.youtube.com/vegainnovations"
+          target="_blank"
+          rel="noreferrer"
+        >
           <YoutubeIcon />
         </a>
-        <a href="https://www.instagram.com/vegainnovations" target="_blank">
+        <a
+          href="https://www.instagram.com/vegainnovations"
+          target="_blank"
+          rel="noreferrer"
+        >
           <InstagramIcon />
         </a>
         <a
           href="https://www.linkedin.com/company/vega-innovations"
           target="_blank"
+          rel="noreferrer"
         >
           <LinkedInIcon />
         </a>

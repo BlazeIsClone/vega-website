@@ -7,14 +7,14 @@ class TextButton extends Component {
     const Gridlayout = styled.div`
       display: flex;
       flex-direction: row;
-      margin-top: 20px;
       transition: all 0.2s ease;
       width: 100%;
       &:hover {
         transform: scale(1.1);
-        padding-left: 45px;
+        padding-left: 40px;
         svg {
           transform: rotate(180deg);
+          fill: ${(props) => props.theme.accentColor};
         }
       }
     `;
@@ -33,9 +33,11 @@ class TextButton extends Component {
       text-transform: uppercase;
       text-align: left;
       color: ${(props) => (this.props.color === "white" ? "white" : "black")};
+      padding-top: 10px;
       &:hover {
         text-decoration: none;
         cursor: pointer;
+        color: ${(props) => props.theme.accentColor};
       }
       &:after {
         content: "";
@@ -48,6 +50,7 @@ class TextButton extends Component {
       }
       &:hover:after {
         width: 100%;
+        background-color: ${(props) => props.theme.accentColor};
       }
     `;
     const Icon = styled.div`

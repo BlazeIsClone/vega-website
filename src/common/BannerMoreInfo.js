@@ -25,6 +25,9 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   height: 336px;
+  img {
+    background-repeat: no-repeat;
+  }
 `;
 const Content = styled.div`
   display: flex;

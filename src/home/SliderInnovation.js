@@ -54,6 +54,11 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  video {
+    width: 100vw;
+  }
 `;
 const AutoPlayVideo = styled.video``;
 

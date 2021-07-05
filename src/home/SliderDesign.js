@@ -50,10 +50,6 @@ const Container = styled.div`
   width: auto;
   display: flex;
   flex-direction: column;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   background: linear-gradient(
       180deg,
       #ffffff 0%,
@@ -61,6 +57,8 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     ),
     url(${HeroMainBanner});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const StatBars = styled.ul`

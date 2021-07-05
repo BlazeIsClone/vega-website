@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Headline from "./Headline.js";
 import Subtitle from "./Subtitle.js";
 import Body from "./Body.js";
+import TextButton from "./TextButton.js";
 
 function Card(props) {
   const isCompactDark = props.isCompactDark;
@@ -29,6 +30,10 @@ function Card(props) {
           <Headline size="card" content={props.Headline} color={props.color} />
           <Body content={props.Body} color={props.color} />
         </TextWrapper>
+        <TextButton
+          content="Read More"
+          onClick={() => window.open("/blog", "_self")}
+        />
       </CardWrapper>
     );
   }
@@ -55,7 +60,7 @@ const CompactCardWrapper = styled.div`
 `;
 const CardWrapper = styled.div`
   width: 465px;
-  height: 590px;
+  height: 620px;
   min-width: 300px;
   background-color: none;
   align-items: center;
@@ -86,4 +91,5 @@ const TextWrapper = styled.div`
   background-color: ${(props) => props.theme.negativeColor};
   position: relative;
   z-index: 10;
+  padding-bottom: 5px;
 `;

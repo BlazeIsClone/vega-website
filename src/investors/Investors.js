@@ -131,7 +131,13 @@ function Investors() {
           </InnovationCol2>
         </Block>
         {/* ---- VALUES INFO SECTION ---- */}
-        <div style={{ backgroundImage: `url(${valuesInfoImg})` }}>
+        <div
+          style={{
+            backgroundImage: `url(${valuesInfoImg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <BannerMoreInfo
             contentText="Our Values"
             contentButton="About"
@@ -200,7 +206,7 @@ const SubsidariesHeadline = styled.div`
 `;
 
 const SubsidariesCol2 = styled.div`
-  margin-top: 108px;
+  margin-top: 80px;
 `;
 
 const SubsidariesCol1 = styled.div``;
@@ -211,7 +217,7 @@ const InnovationHeadline = styled.div`
 `;
 const InnovationCol1 = styled.div``;
 const InnovationCol2 = styled.div`
-  margin-top: -45.5px;
+  margin-top: -30px;
 `;
 const Block = styled.div`
   display: flex;

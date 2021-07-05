@@ -66,7 +66,7 @@ const Table = styled.div`
   color: #ffffff;
   width: 100%;
   height: 100%;
-  margin: auto 150px;
+  margin: 280px 150px 0 150px;
 `;
 
 const TableItems = styled.table`
@@ -84,5 +84,8 @@ const TableItems = styled.table`
     text-align: left;
     height: 60px;
     vertical-align: center;
+  }
+  @media (max-width: 1440px) {
+    margin: 120px 150px 0 150px;
   }
 `;

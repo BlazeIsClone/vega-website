@@ -50,12 +50,8 @@ const Container = styled.div`
   right: 0;
   max-height: 100vh;
   min-height: 1060px;
-  width: auto;
   display: flex;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   background: linear-gradient(
       180deg,
       #ffffff 0%,
@@ -63,6 +59,8 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     ),
     url(${HeroMainBanner});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const StatBars = styled.ul`
@@ -72,8 +70,7 @@ const StatBars = styled.ul`
   color: white;
   font-size: 36px;
   list-style: none;
-  width: 900px;
-
+  width: 800px;
   li,
   ul {
     font-family: Ruda;
@@ -94,10 +91,15 @@ const StatBars = styled.ul`
 const TypeBlock = styled.div`
   align-self: center;
   width: 800px;
+
+  @media (max-width: 1440px) {
+    width: 500px;
+    margin: 0 50px 0 70px;
+  }
 `;
 
 const ContentBlock = styled.div`
   display: flex;
   align-self: center;
-  padding: 700px 60px 0 60px;
+  margin: 700px 300px 0 300px;
 `;

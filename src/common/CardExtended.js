@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Headline from "./Headline.js";
 import Subtitle from "./Subtitle.js";
 import Body from "./Body.js";
+import TextButton from "./TextButton.js";
 
 function CardExtended(props) {
   return (
@@ -17,6 +18,7 @@ function CardExtended(props) {
         <Headline size="card" content={props.Headline} color={props.color} />
         <Body content={props.Body} color={props.color} />
       </TextWrapper>
+      <TextButton content="Read More" />
     </CardWrapper>
   );
 }

@@ -154,7 +154,13 @@ function About() {
 
         {/* ---- CAREERSINFO SECTION ---- */}
         <CareersInfo>
-          <div style={{ backgroundImage: `url(${careersInfoImg})` }}>
+          <div
+            style={{
+              backgroundImage: `url(${careersInfoImg})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
             <BannerMoreInfo
               contentText="JOIN OUR TEAM "
               contentButton="Careers"

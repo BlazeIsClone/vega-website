@@ -24,6 +24,7 @@ import imgPlaceholderExtended from "./img/imgPlaceholderExtended.png";
 import valuesImg from "./img/valuesImg.png";
 import valuesInfoImg from "./img/valueInfoImg.png";
 import enquiryImg from "./img/EnquiryImg.png";
+import roadmapImg from "./img/roadmapImg.png";
 
 function Investors() {
   const hostname = process.env.REACT_APP_HOSTNAME_URL;
@@ -105,6 +106,20 @@ function Investors() {
         </ValuesSection>
 
         {/* ---- ROADMAP SECTION ---- */}
+        <RoadmapSection>
+          <RoadmapRow1 data-scroll data-scroll-speed="-0.5">
+            <Typeset
+              subtitle="roadmap"
+              headline="THE FUTURE IS YET TO BE DEFINED"
+              color="black"
+            />
+          </RoadmapRow1>
+          <RoadmapRow2>
+            <ImageHandler src={roadmapImg} placeholder={{}}>
+              {(src) => <img src={src} alt="vega evx car" />}
+            </ImageHandler>
+          </RoadmapRow2>
+        </RoadmapSection>
         {/* ---- INNOVATION SECTION ---- */}
         <Block data-scroll data-scroll-speed="2">
           <InnovationCol1>
@@ -192,6 +207,20 @@ start a conversation if so feel free to make an enquiry."
 }
 
 export default Investors;
+
+const RoadmapSection = styled.div`
+  height: 900px;
+  margin: 0 0 50px 0;
+`;
+const RoadmapRow1 = styled.div`
+  padding: 0 100px 50px 100px;
+`;
+const RoadmapRow2 = styled.div`
+  img {
+    width: 100vw;
+    height: auto;
+  }
+`;
 
 const EnquirySection = styled.div``;
 

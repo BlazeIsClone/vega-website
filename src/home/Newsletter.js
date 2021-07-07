@@ -20,16 +20,20 @@ function Newsletter() {
         width="clamp"
       />
       <FormBlock>
-        <FormElement action="#">
+        <FormElement action="http://localhost:5000/signup" method="POST">
           <InputLabel>Your email address</InputLabel>
           <InputElement
-            name="myfrom"
-            type="email"
             placeholder="john@email.com"
-            autoComplete="on"
+            type="email"
+            name="email"
+          />
+          <ContainedButton
+            text="white"
+            content="Subscribe"
+            type="submit"
+            formAction="http://localhost:5000/signup"
           />
         </FormElement>
-        <ContainedButton text="white" content="Subscribe" onClick={onSubmit} />
       </FormBlock>
     </Block>
   );
@@ -37,9 +41,7 @@ function Newsletter() {
 
 export default Newsletter;
 
-const onSubmit = () => {
-  alert("Thank you for subscribing ❤");
-};
+const onSubmit = () => {};
 
 const Block = styled.div`
   display: flex;

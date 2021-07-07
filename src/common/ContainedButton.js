@@ -40,6 +40,7 @@ class ContainedButton extends Component {
         type="button"
         className="navbar-header-button"
         onClick={this.props.onClick}
+        children={this.props.children}
       >
         <Value>{this.props.content}</Value>
       </Button>

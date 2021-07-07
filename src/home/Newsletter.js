@@ -34,13 +34,8 @@ function Newsletter() {
             type="email"
             name="email"
           />
-          <ContainedButton
-            text="white"
-            content="Subscribe"
-            type="submit"
-            formAction="http://localhost:5000/signup"
-          />
         </FormElement>
+        <ContainedButton text="white" content="Subscribe" />
       </FormBlock>
     </Block>
   );

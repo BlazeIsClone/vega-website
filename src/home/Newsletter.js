@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Headline from "../common/Headline.js";
 import Body from "../common/Body.js";
 import ContainedButton from "../common/ContainedButton.js";
 
 function Newsletter() {
+  const hostname = process.env.REACT_APP_HOSTNAME_URL;
+
+  useEffect(() => {
+    document
+      .querySelector("#home-newsletter-form")
+      .setAttribute("action", `${hostname}/signup`);
+  }, []);
   return (
     <Block data-scroll data-scroll-speed="1">
       <Headline
@@ -20,7 +27,7 @@ function Newsletter() {
         width="clamp"
       />
       <FormBlock>
-        <FormElement action="http://localhost:5000/signup" method="POST">
+        <FormElement method="POST" id="home-newsletter-form">
           <InputLabel>Your email address</InputLabel>
           <InputElement
             placeholder="john@email.com"

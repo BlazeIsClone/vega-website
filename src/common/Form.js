@@ -9,6 +9,14 @@ import Body from "./Body";
 import Headline from "./Headline.js";
 
 function Form(props) {
+  const hostname = process.env.REACT_APP_HOSTNAME_URL;
+
+  useEffect(() => {
+    document
+      .querySelector("#form-enquiry")
+      .setAttribute("action", `${hostname}/signup`);
+  }, []);
+
   return (
     <BlockWrapper>
       <Col1>
@@ -30,7 +38,11 @@ function Form(props) {
             />
           </HeadlineWrapper>
           {/* ---- Name ---- */}
-          <form action="http://localhost:5000/enquiry" method="post">
+          <form
+            action="http://localhost:5000/enquiry"
+            method="post"
+            id="form-enquiry"
+          >
             <FormBlock>
               <FormElementName>
                 <InputLabel>Name</InputLabel>

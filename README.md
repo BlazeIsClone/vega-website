@@ -1,3 +1,5 @@
+##### Disclaimer This repository and the content inside isn't affiliated with Vega Innovations in any way. This content is strictly exclusive and may contain copyrighted material and false information.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

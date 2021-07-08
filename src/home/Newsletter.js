@@ -34,6 +34,7 @@ function Newsletter() {
               placeholder="john@email.com"
               type="email"
               name="email"
+              required
             />
             <ContainedButton
               text="white"

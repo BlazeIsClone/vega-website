@@ -30,38 +30,50 @@ function Form(props) {
             />
           </HeadlineWrapper>
           {/* ---- Name ---- */}
-          <FormBlock>
-            <FormElementName action="#">
-              <InputLabel>Name</InputLabel>
-              <InputElement
-                type="name"
-                placeholder="Sam Holdands"
-                autoComplete="on"
-              />
-            </FormElementName>
-            {/* ---- Email ---- */}
-            <FormElementEmail action="#">
-              <InputLabel>Email</InputLabel>
-              <InputElement
-                type="email"
-                placeholder="samholdands@email.com"
-                autoComplete="on"
-              />
-            </FormElementEmail>
-            {/* ---- Message ---- */}
-            <InputLabel for="input-body">Message</InputLabel>
-            <FormElementMessage
-              action="#"
-              placeholder="hello! I have a question regarding..."
-              id="form-message"
-            ></FormElementMessage>
-          </FormBlock>
+          <form action="http://localhost:5000/enquiry" method="post">
+            <FormBlock>
+              <FormElementName>
+                <InputLabel>Name</InputLabel>
+                <InputElement
+                  type="name"
+                  name="name"
+                  placeholder="Sam Holdands"
+                  autoComplete="on"
+                  required
+                />
+              </FormElementName>
+              {/* ---- Email ---- */}
+              <FormElementEmail>
+                <InputLabel>Email</InputLabel>
+                <InputElement
+                  type="email"
+                  name="email"
+                  placeholder="samholdands@email.com"
+                  autoComplete="on"
+                  required
+                />
+              </FormElementEmail>
+              {/* ---- Message ---- */}
+              <InputLabel for="input-body">Message</InputLabel>
+              <FormElementMessage
+                placeholder="hello! I have a question regarding..."
+                id="form-message"
+                name="message"
+                required
+              ></FormElementMessage>
+            </FormBlock>
 
-          {/* ---- FormFooter ---- */}
-          <FormFooter>
-            <Body content={formFooterInfo} />
-            <ContainedButton text="white" content="Send" onClick={onSubmit} />
-          </FormFooter>
+            {/* ---- FormFooter ---- */}
+            <FormFooter>
+              <Body content={formFooterInfo} />
+              <ContainedButton
+                text="white"
+                content="Send"
+                type="submit"
+                value="submit"
+              />
+            </FormFooter>
+          </form>
         </WidthWrapper>
       </Col2>
     </BlockWrapper>

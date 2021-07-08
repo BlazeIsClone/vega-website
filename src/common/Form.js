@@ -14,7 +14,7 @@ function Form(props) {
   useEffect(() => {
     document
       .querySelector("#form-enquiry")
-      .setAttribute("action", `${hostname}/signup`);
+      .setAttribute("action", `${hostname}/enquiry`);
   }, []);
 
   return (

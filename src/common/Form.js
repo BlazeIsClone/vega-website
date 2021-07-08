@@ -38,7 +38,7 @@ function Form(props) {
             />
           </HeadlineWrapper>
           {/* ---- Name ---- */}
-          <form method="post" id="form-enquiry">
+          <form method="POST" id="form-enquiry">
             <FormBlock>
               <FormElementName>
                 <InputLabel>Name</InputLabel>

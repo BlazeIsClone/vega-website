@@ -67,11 +67,6 @@ const Scroll = (callbacks) => {
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
 
-    // Checking for status
-    if (locomotiveScroll && ScrollTrigger) {
-      console.log("%c P I X E L S ", "background: #222; color: #bada55");
-    }
-
     //-------Locomotive Scroll Events
 
     let navBar;

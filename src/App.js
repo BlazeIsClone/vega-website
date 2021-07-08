@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
@@ -16,6 +16,14 @@ import Support from "./support/Support.js";
 import NotFound from "./NotFound.js";
 
 function App() {
+  useEffect(() => {
+    console.log("%c P I X E L S ", "color: #bada55");
+    console.log(
+      "%cDisclaimer This content isn't official and is not affiliated with Vega Innovations in any way. This content is strictly exclusive only for beta testers as a proof of concept which may contain copyrighted material and false information.",
+      "color: #ff0000"
+    );
+  }, []);
+
   const globalVars = {
     mainColor: "white",
     secondaryColor: "#0f0f0f",

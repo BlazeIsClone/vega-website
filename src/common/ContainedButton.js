@@ -37,7 +37,7 @@ class ContainedButton extends Component {
     `;
     return (
       <Button
-        type="button"
+        type={this.props.type === "submit" ? "submit" : "button"}
         className="navbar-header-button"
         onClick={this.props.onClick}
         children={this.props.children}

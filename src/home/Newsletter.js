@@ -29,21 +29,26 @@ function Newsletter() {
       <FormBlock>
         <FormElement method="POST" id="home-newsletter-form">
           <InputLabel>Your email address</InputLabel>
-          <InputElement
-            placeholder="john@email.com"
-            type="email"
-            name="email"
-          />
+          <FormElementChild>
+            <InputElement
+              placeholder="john@email.com"
+              type="email"
+              name="email"
+            />
+            <ContainedButton
+              text="white"
+              content="Subscribe"
+              type="submit"
+              value="submit"
+            />
+          </FormElementChild>
         </FormElement>
-        <ContainedButton text="white" content="Subscribe" />
       </FormBlock>
     </Block>
   );
 }
 
 export default Newsletter;
-
-const onSubmit = () => {};
 
 const Block = styled.div`
   display: flex;
@@ -74,19 +79,28 @@ const FormElement = styled.form`
   justify-content: center;
   height: 140px;
 `;
+
+const FormElementChild = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  button {
+    margin: 0 0 18px 10px;
+  }
+`;
 const InputElement = styled.input`
   width: 570px;
   display: block;
   background-color: #f9f9f9;
   font-family: ${(props) => props.theme.secondaryFont};
   padding-left: 15px;
-  height: 44px;
   outline-style: none;
   border-color: white;
   border: 1px solid #ccc;
   border-radius: 4px;
   justify-self: center;
-  height: 44px;
+  height: 42px;
   position: relative;
   top: -8px;
 `;

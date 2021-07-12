@@ -103,7 +103,7 @@ function NavMain() {
     <Router>
       {/* Top Nav Section */}
       <HeaderNav className="navbar-header">
-        <a href="/">
+        <a href="/" aria-label="homepage link">
           <NavLogoContainer>
             <HeaderLogo />
             <HeaderLogoText modeDark={modeDark} />
@@ -137,7 +137,7 @@ function NavMain() {
           showStatic={staticStatus}
         >
           <LogoWrapper>
-            <a href="/">
+            <a href="/" aria-label="homepage link">
               <Emblem />
             </a>
           </LogoWrapper>
@@ -169,26 +169,26 @@ function NavMain() {
           <NavElements ref={(el) => (navItemsRef = el)}>
             <NavMainItemsWrapper>
               <NavMainItems onClick={() => history.push("/")}>
-                Home
+                <li>Home</li>
               </NavMainItems>
               {/* Without ReactRouterDOM => window.open("/vega-evx","_self") */}
               <NavMainItems onClick={() => history.push("/vega-evx")}>
-                Vega Evx
+                <li>Vega Evx</li>
               </NavMainItems>
               <NavMainItems onClick={() => history.push("/investors")}>
-                Investors
+                <li>Investors</li>
               </NavMainItems>
               <NavMainItems onClick={() => history.push("/blog")}>
-                Blog And News
+                <li>Blog And News</li>
               </NavMainItems>
               <NavMainItems onClick={() => history.push("/about")}>
-                About
+                <li>About</li>
               </NavMainItems>
               <NavMainItems onClick={() => history.push("/careers")}>
-                Careers
+                <li>Careers</li>
               </NavMainItems>
               <NavMainItems onClick={() => history.push("/support")}>
-                Support
+                <li>Support</li>
               </NavMainItems>
             </NavMainItemsWrapper>
           </NavElements>
@@ -312,6 +312,7 @@ const NavMainItemsWrapper = styled.div`
   margin: 10px 0 auto 0;
 `;
 const NavMainItems = styled.ul`
+  list-style: none;
   padding-top: 25px;
   font-family: ${(props) => props.theme.mainFont};
   font-style: italic;

@@ -52,7 +52,7 @@ function Reserve() {
       <ContainerWrapper>
         <Col1>
           {/* ---- HEADER LOGO SECTION ---- */}
-          <a href="/">
+          <a href="/" aria-label="homepage">
             <NavLogoContainer>
               <HeaderLogo />
               <HeaderLogoText />

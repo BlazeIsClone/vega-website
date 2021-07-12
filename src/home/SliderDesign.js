@@ -9,18 +9,18 @@ function SliderDesign() {
     <Container>
       <ContentBlock>
         <StatBars>
-          <li>
-            453ᶜᵐ
-            <ul>Length</ul>
-          </li>
-          <li>
-            197ᶜᵐ
-            <ul>Width</ul>
-          </li>
-          <li>
-            122ᶜᵐ
-            <ul>Height</ul>
-          </li>
+          <ul>
+            <LiLarge>453ᶜᵐ</LiLarge>
+            <LiLow>Length</LiLow>
+          </ul>
+          <ul>
+            <LiLarge>197ᶜᵐ</LiLarge>
+            <LiLow>Width</LiLow>
+          </ul>
+          <ul>
+            <LiLarge>122ᶜᵐ</LiLarge>
+            <LiLow>Height</LiLow>
+          </ul>
         </StatBars>
         <TypeBlock>
           <Typeset
@@ -61,7 +61,7 @@ const Container = styled.div`
   background-size: cover;
 `;
 
-const StatBars = styled.ul`
+const StatBars = styled.div`
   display: flex;
   align-self: flex-start;
   font-size: 36px;
@@ -70,20 +70,23 @@ const StatBars = styled.ul`
   gap: 40px;
   li,
   ul {
+    list-style: none;
     font-family: Ruda;
     font-style: normal;
     font-weight: normal;
     color: #ffffff;
     text-align: center;
   }
-  li {
-    font-size: 56px;
-    line-height: 78px;
-  }
-  ul {
-    font-size: 24px;
-    line-height: 29px;
-  }
+`;
+
+const LiLarge = styled.li`
+  font-size: 56px;
+  line-height: 78px;
+`;
+
+const LiLow = styled.li`
+  font-size: 24px;
+  line-height: 29px;
 `;
 const TypeBlock = styled.div`
   align-self: flex-start;

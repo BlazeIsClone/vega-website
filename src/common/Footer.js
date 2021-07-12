@@ -11,41 +11,46 @@ import { ReactComponent as LinkedInIcon } from "./svg/icons8-linkedin-2 1.svg";
 function Footer() {
   return (
     <FooterWrapper>
-      <a href="/">
-        <VegaFooter />
+      <a href="/" aria-label="homepage link">
+        <VegaFooterIcon />
       </a>
       <FooterNav>
-        <ul>
-          <a href="/vega-evx">
-            <li>VEGA EVX</li>
-          </a>
-          <a href="/investors">
-            <li>INVESTORS</li>
-          </a>
-          <a href="/blog">
-            <li>BLOG</li>
-          </a>
-          <a href="/about">
-            <li>ABOUT</li>
-          </a>
-          <a href="/support">
-            <li>SUPPORT</li>
-          </a>
-        </ul>
+        <a href="/vega-evx" aria-label="vega evx page">
+          VEGA EVX
+        </a>
+        <a href="/investors" aria-label="investors page">
+          INVESTORS
+        </a>
+        <a href="/blog" aria-label="blog page">
+          BLOG
+        </a>
+        <a href="/about" aria-label="about page">
+          ABOUT
+        </a>
+        <a href="/support" aria-label="support page">
+          SUPPORT
+        </a>
       </FooterNav>
       <FooterIcons>
         <a
           href="https://www.facebook.com/VegaInnovations"
+          aria-label="vega facebook"
           target="_blank"
           rel="noreferrer"
         >
           <FacebookIcon />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noreferrer">
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="vega twitter"
+        >
           <TwitterIcon />
         </a>
         <a
           href="https://www.youtube.com/vegainnovations"
+          aria-label="vega youtube"
           target="_blank"
           rel="noreferrer"
         >
@@ -53,6 +58,7 @@ function Footer() {
         </a>
         <a
           href="https://www.instagram.com/vegainnovations"
+          aria-label="vega instagram"
           target="_blank"
           rel="noreferrer"
         >
@@ -60,6 +66,7 @@ function Footer() {
         </a>
         <a
           href="https://www.linkedin.com/company/vega-innovations"
+          aria-label="vega linked-in"
           target="_blank"
           rel="noreferrer"
         >
@@ -89,8 +96,10 @@ const FooterWrapper = styled.div`
   }
 `;
 
+const VegaFooterIcon = styled(VegaFooter)``;
+
 const FooterIcons = styled.div`
-  margin: 20px 0 40px 0;
+  margin: 10px 0 40px 0;
   display: flex;
   flex-direction: row;
   column-gap: 50px;
@@ -105,19 +114,16 @@ const FooterIcons = styled.div`
 const FooterNav = styled.div`
   font-family: ${(props) => props.theme.secondaryFont};
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  color: #666666;
-  ul {
-    list-style: none;
-
-    a {
-      li {
-        display: inline-block;
-        margin: 100px 75px 100px 75px;
-        color: #666666;
-      }
+  list-style: none;
+  a {
+    color: hsl(0, 0%, 49%);
+    display: inline-block;
+    margin: 100px 75px 100px 75px;
+    &:hover {
+      color: white;
     }
   }
 `;

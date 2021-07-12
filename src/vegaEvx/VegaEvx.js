@@ -27,7 +27,7 @@ import safetyImg2 from "./img/safetyImg2.png";
 import exteriorImg from "./img/exteriorImg.png";
 import autonomousVideo from "./img/autonomousVideo.mp4";
 import dashbaordImg from "./img/dashboardImg.png";
-import dashboardSpeedoImg from "./img/dashboardSpeedoImg.gif";
+import dashboardSpeedoImg from "./img/dashboardSpeedoImg.mp4";
 import dashboardSpeedoLow from "./img/dashboardSpeedoLow.jpg";
 import dashboardHeroImg from "./img/dashboardHeroImg.png";
 import interiorHero from "./img/interiorHero.png";
@@ -61,7 +61,7 @@ function VegaEvx() {
           <PerformanceCol1>
             <LeftImg
               data-scroll
-              data-scroll-speed="1"
+              data-scroll-speed="-0.3"
               data-scroll-target=".target-performance"
             >
               <ImageHandler src={performanceImg} placeholder={{}}>
@@ -244,16 +244,19 @@ function VegaEvx() {
             </DashboardRow2>
           </DashboardTop>
           <DashboardBot data-scroll data-scroll-speed="2">
-            <ImageHandler
-              src={dashboardSpeedoImg}
-              placeholder={dashboardSpeedoLow}
+            <video
+              poster={dashboardSpeedoLow}
+              autoPlay
+              loop
+              muted
+              data-keepplaying
             >
-              {(src) => <img src={src} alt="vega evx car" />}
-            </ImageHandler>
+              <source src={dashboardSpeedoImg} type="video/mp4" />
+            </video>
           </DashboardBot>
           <DashboardHero>
             <ImageHandler src={dashboardHeroImg} placeholder={{}}>
-              {(src) => <img src={src} alt="vega evx car" />}
+              {(src) => <img src={src} alt="interior dashbaord" />}
             </ImageHandler>
           </DashboardHero>
         </DashboardSection>
@@ -459,8 +462,8 @@ const DashboardBot = styled.div`
   position: relative;
   top: 120px;
   left: 200px;
-  img {
-    width: 36%;
+  video {
+    width: 30%;
     height: auto;
     user-select: none;
     user-drag: none;

@@ -9,14 +9,14 @@ function SliderPerformance() {
     <Container>
       <ContentBlock>
         <StatBars>
-          <li>
-            3.1s
-            <ul>0-100Km/h</ul>
-          </li>
-          <li>
-            +300km/h
-            <ul>Top Speed</ul>
-          </li>
+          <ul>
+            <LiLarge>3.1s</LiLarge>
+            <LiLow>0-100Km/h</LiLow>
+          </ul>
+          <ul>
+            <LiLarge>+300km/h</LiLarge>
+            <LiLow>Top Speed</LiLow>
+          </ul>
         </StatBars>
         <TypeBlock>
           <Typeset
@@ -58,7 +58,7 @@ const Container = styled.div`
   background-size: cover;
 `;
 
-const StatBars = styled.ul`
+const StatBars = styled.div`
   display: flex;
   align-self: flex-start;
   align-items: center;
@@ -71,20 +71,23 @@ const StatBars = styled.ul`
 
   li,
   ul {
+    list-style: none;
     font-family: Ruda;
     font-style: normal;
     font-weight: normal;
     color: white;
     text-align: center;
   }
-  li {
-    font-size: 56px;
-    line-height: 78px;
-  }
-  ul {
-    font-size: 24px;
-    line-height: 29px;
-  }
+`;
+
+const LiLarge = styled.li`
+  font-size: 56px;
+  line-height: 78px;
+`;
+
+const LiLow = styled.li`
+  font-size: 24px;
+  line-height: 29px;
 `;
 const TypeBlock = styled.div`
   width: 900px;

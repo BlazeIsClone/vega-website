@@ -23,18 +23,18 @@ function SliderOverview() {
           />
         </TypeBlock>
         <StatBars>
-          <li>
-            3.1s
-            <ul>0-100Km/hA</ul>
-          </li>
-          <li>
-            +300km/h
-            <ul>Top Speed</ul>
-          </li>
-          <li>
-            +300km/h
-            <ul>Range</ul>
-          </li>
+          <ul>
+            <LiLarge>3.1s</LiLarge>
+            <LiLow>0-100Km/hA</LiLow>
+          </ul>
+          <ul>
+            <LiLarge>+300km/h</LiLarge>
+            <LiLow>Top Speed</LiLow>
+          </ul>
+          <ul>
+            <LiLarge>600km</LiLarge>
+            <LiLow>Range</LiLow>
+          </ul>
         </StatBars>
       </ContentBlock>
     </Container>
@@ -63,7 +63,7 @@ const Container = styled.div`
   background-size: cover;
 `;
 
-const StatBars = styled.ul`
+const StatBars = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -73,21 +73,25 @@ const StatBars = styled.ul`
   width: 800px;
   li,
   ul {
+    list-style: none;
     font-family: Ruda;
     font-style: normal;
     font-weight: normal;
     color: #ffffff;
     text-align: center;
   }
-  li {
-    font-size: 42px;
-    line-height: 78px;
-  }
-  ul {
-    font-size: 24px;
-    line-height: 29px;
-  }
 `;
+
+const LiLarge = styled.li`
+  font-size: 56px;
+  line-height: 78px;
+`;
+
+const LiLow = styled.li`
+  font-size: 24px;
+  line-height: 29px;
+`;
+
 const TypeBlock = styled.div`
   align-self: center;
   width: 800px;

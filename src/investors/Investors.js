@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import HeroSection from "./HeroSection.js";
 import Footer from "../common/Footer.js";
@@ -6,6 +6,8 @@ import Scroll from "../common/libraryStack.js";
 import { motion } from "framer-motion";
 import ProgressiveImage from "react-progressive-image";
 import axios from "axios";
+import { Timeline } from "gsap/gsap-core";
+import gsap from "gsap";
 
 // Components
 import Typeset from "../common/Typeset.js";
@@ -49,6 +51,67 @@ function Investors() {
   };
   // callback on componentDidMount
   useEffect(() => fetchData(), []);
+
+  let cardsRef = useRef(null);
+
+  useEffect(() => {
+    // GSAP animations
+    let tl = new Timeline();
+    let cardsRig = cardsRef;
+
+    tl = gsap.fromTo(
+      cardsRig.children,
+      {
+        opacity: 0,
+        y: "8em",
+        stagger: 0.5,
+        duration: 0.8,
+        ease: "power2.easeOut",
+      },
+      {
+        opacity: 1,
+        y: "0",
+        stagger: 0.5,
+        duration: 0.8,
+        ease: "power3.easeOut",
+
+        scrollTrigger: {
+          trigger: cardsRig,
+          scroller: "[data-scroll-container]",
+        },
+      }
+    );
+  });
+  let cardsRefTwo = useRef(null);
+
+  useEffect(() => {
+    // GSAP animations
+    let tl = new Timeline();
+    let cardsRigTwo = cardsRefTwo;
+
+    tl = gsap.fromTo(
+      cardsRigTwo.children,
+      {
+        opacity: 0,
+        y: "8em",
+        stagger: 0.5,
+        duration: 0.8,
+        ease: "power2.easeOut",
+      },
+      {
+        opacity: 1,
+        y: "0",
+        stagger: 0.5,
+        duration: 0.8,
+        ease: "power3.easeOut",
+
+        scrollTrigger: {
+          trigger: cardsRigTwo,
+          scroller: "[data-scroll-container]",
+        },
+      }
+    );
+  });
 
   return (
     <main>
@@ -121,7 +184,7 @@ function Investors() {
           </RoadmapRow2>
         </RoadmapSection>
         {/* ---- INNOVATION SECTION ---- */}
-        <Block data-scroll data-scroll-speed="2">
+        <Block data-scroll data-scroll-speed="2" ref={(el) => (cardsRef = el)}>
           <InnovationCol1>
             <InnovationHeadline>
               <Headline color="black" content="Innovation" />
@@ -162,7 +225,11 @@ function Investors() {
 
         {/* ---- SUBSIDARIES SECTION ---- */}
         <SubsidariesSection>
-          <Block data-scroll data-scroll-speed="1">
+          <Block
+            data-scroll
+            data-scroll-speed="1"
+            ref={(el) => (cardsRefTwo = el)}
+          >
             <SubsidariesCol1>
               <SubsidariesHeadline>
                 <Headline color="black" content="Subsidaries" />
@@ -211,6 +278,10 @@ export default Investors;
 const RoadmapSection = styled.div`
   height: 900px;
   margin: 0 0 50px 0;
+  img {
+    user-select: none;
+    user-drag: none;
+  }
 `;
 const RoadmapRow1 = styled.div`
   padding: 0 100px 50px 100px;
@@ -252,10 +323,11 @@ const Block = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 900px;
+  height: 1000px;
   flex-direction: row;
   column-gap: 20px;
   margin-right: 100px;
+  padding-bottom: 150px;
 `;
 
 const ValuesSection = styled.div``;
@@ -275,13 +347,13 @@ const CapabilitiesRow2 = styled.div`
 
 const CapabilitiesSection = styled.div`
   justify-content: center;
-  max-height: 100vh;
-  min-height: 1080px;
   width: 100%;
   background-color: ${(props) => props.theme.negativeColor};
   display: flex;
   flex-direction: column;
   margin: auto 0 0 0;
+  height: 1000px;
+  background-color: ${(props) => props.theme.mainColor};
   img {
     padding: 0 600px 0 0;
     width: 100%;

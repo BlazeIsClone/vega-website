@@ -304,7 +304,7 @@ function VegaEvx() {
               </ImageHandler>
             </div>
           </EntertainmnetCol1>
-          <EntertainmentCol2 data-scroll data-scroll-speed="2">
+          <EntertainmentCol2 data-scroll data-scroll-speed="1">
             <ImageHandler src={entertainmentHeroImg} placeholder={{}}>
               {(src) => <img src={src} alt="vega evx car" />}
             </ImageHandler>

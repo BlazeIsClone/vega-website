@@ -18,9 +18,16 @@ import { ReactComponent as NavLogoIcon } from "../common/svg/vegaLogo.svg";
 import Headline from "../common/Headline";
 import ContainedButton from "../common/ContainedButton";
 import Body from "../common/Body";
-import { Scene } from "three";
 
 function Reserve() {
+  const hostname = process.env.REACT_APP_HOSTNAME_URL;
+
+  useEffect(() => {
+    document
+      .querySelector(".reserve-order-btn")
+      .setAttribute("action", `${hostname}/signup`);
+  }, []);
+
   //Lottie animator
   const animationRef = createRef();
 
@@ -92,11 +99,13 @@ function Reserve() {
           <ScrollWrapper>
             <HeadWrapper>
               <Headline content="RESERVE VEGA EVX TODAY" color="white" />
-              <HamburgerIcon
-                hover
-                ref={animationRef}
-                src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
-              ></HamburgerIcon>
+              <div onClick={() => window.open("/", "_self")}>
+                <HamburgerIcon
+                  hover
+                  ref={animationRef}
+                  src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
+                ></HamburgerIcon>
+              </div>
             </HeadWrapper>
             <ContentBodyWrapper>
               {/* ---- OPTIONS SECTION ---- */}
@@ -107,7 +116,7 @@ function Reserve() {
                   </OptionsHeadWrapper>
                   <OptionsBodyWrapper>
                     <Body
-                      content="You will be able to complete your configuration as production nears in late 2022. "
+                      content="Maximum efficiency and power with weight distribution across the chassis."
                       color="white"
                     />
                   </OptionsBodyWrapper>
@@ -120,7 +129,7 @@ function Reserve() {
                   </OptionsHeadWrapper>
                   <OptionsBodyWrapper>
                     <Body
-                      content="You will be able to complete your configuration as production nears in late 2022. "
+                      content="All the power you need at any second like a sports car also efficient by design."
                       color="white"
                     />
                   </OptionsBodyWrapper>
@@ -158,11 +167,18 @@ function Reserve() {
               {/* ---- PRICE SECTION ---- */}
               <PriceSection>
                 <PriceCol1>
-                  <Body content="Due Today" color="white" />
-                  <Body content="$ 1,000 USD" color="white" />
+                  <p>Due Today</p>
+                  <h3>$ 1,000 USD</h3>
                 </PriceCol1>
                 <PriceCol2>
-                  <ContainedButton content="Reserve Now" text="white" />
+                  <form method="POST" className="reserve-order-btn">
+                    <ContainedButton
+                      content="Reserve Now"
+                      text="white"
+                      type="submit"
+                      value="submit"
+                    />
+                  </form>
                 </PriceCol2>
               </PriceSection>
               <NoticeSection>
@@ -235,7 +251,7 @@ const NavLogoContainer = styled.div`
   width: 400px;
   justify-content: center;
   align-items: center;
-  margin: 20px 0 0 20px;
+  margin: 20px 0 0 30px;
   cursor: pointer;
 `;
 const HeaderLogo = styled(NavLogoIcon)`
@@ -253,11 +269,14 @@ const HeaderLogoText = styled(NavLogoText)`
 `;
 
 const Col2 = styled.div`
+  position: relative;
+  overflow-y: scroll;
   width: 25%;
-  height: auto;
+  height: 100vh;
   transition: ease-out all 0.3s;
   background-color: #0a0a0a;
   padding: 0 20px 0 0;
+  overflow-y: scroll;
   @media (max-width: 1440px) {
     width: 40%;
   }
@@ -267,18 +286,22 @@ const ScrollWrapper = styled.div`
   overflow-y: show;
 `;
 const HeadWrapper = styled.div`
-  padding: 20px 0 0 48px;
-  margin: 0 0 0 0;
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 50px;
+  padding: 30px 50px 30px 50px;
+  h1 {
+    font-size: 32px;
+    padding-top: 4px;
+  }
 `;
 
 const HamburgerIcon = styled(Player)`
   height: 50px;
   cursor: pointer;
   width: 55px;
+  position: relative;
+  right: -5px;
   svg {
     path {
       fill: white;
@@ -329,6 +352,7 @@ const OptionsBodyWrapper = styled.div`
   p {
     font-size: 14px;
     line-height: 16px;
+    width: clamp(15rem, 80%, 55rem);
   }
 `;
 const OptionSectionRow2 = styled.div`
@@ -338,12 +362,13 @@ const OptionSectionRow2 = styled.div`
   padding: 0 0 0 10px;
 `;
 const AddonSection = styled.div`
-  margin: 10px 0 0 0;
+  margin: 15px 0 0 0;
   width: 80%;
-  height: 180px;
+  height: 160px;
   background: #252525;
   border-radius: 4px;
   padding: 10px;
+  justify-content: center;
   p {
     font-family: ${(props) => props.theme.secondaryFont};
     font-style: normal;
@@ -365,15 +390,15 @@ const AddonSectionRow2 = styled.div`
 const StatisticSection = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-  padding: 40px;
+  padding: 45px 50px 45px 50px;
 `;
 const StatisticSectionCol1 = styled.div``;
 const StatisticSectionCol2 = styled.div``;
 const StatisticSectionCol3 = styled.div``;
 const PriceSection = styled.div`
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -384,13 +409,27 @@ const PriceSection = styled.div`
 const PriceCol1 = styled.div`
   padding: 0 10px 0 50px;
   width: 50%;
+  color: white;
+  p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+  }
 `;
 const PriceCol2 = styled.div`
   padding: 0 0 0 40px;
   width: 50%;
 `;
 const NoticeSection = styled.div`
-  padding: 35px;
+  margin: 25px 35px 0 50px;
   p {
     font-size: 14px;
     line-height: 16px;

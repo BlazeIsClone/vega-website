@@ -92,9 +92,16 @@ const TypeBlock = styled.div`
   align-self: center;
   width: 800px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1600px) {
     width: 500px;
     margin: 0 50px 0 70px;
+  }
+  @media (max-width: 1200px) {
+    width: 300px;
+    margin: 0 50px 0 70px;
+    h1 {
+      font-size: 1.4rem;
+    }
   }
 `;
 

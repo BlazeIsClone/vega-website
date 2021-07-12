@@ -29,12 +29,13 @@ class ContainedButton extends Component {
         background-color: ${(props) => props.theme.accentColor};
         color: white;
       }
-    `;
-    const Value = styled.p`
+
       &:hover {
-        transform: scale(1.1);
+        background-color: red;
+        color: white;
       }
     `;
+    const Value = styled.p``;
     return (
       <Button
         type={this.props.type === "submit" ? "submit" : "button"}

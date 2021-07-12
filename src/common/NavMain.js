@@ -35,11 +35,13 @@ function NavMain() {
   useEffect(() => {
     const navBar = document.querySelector(".navbar-wrapper");
     const navBurger = document.querySelector(".navbar-hamburger");
+    const navHeadBtn = document.querySelector(".nav-header-btn");
     navBar.style.transform = `translateX(100px)`;
     navBurger.addEventListener("click", function () {
       navBar.style.transform = `none`;
       if (navBar.style.transform === `none`) {
         navBurger.style.visibility = `hidden`;
+        navHeadBtn.style.visibility = `hidden`;
       }
     });
   }, []);
@@ -99,6 +101,7 @@ function NavMain() {
 
   return (
     <Router>
+      {/* Top Nav Section */}
       <HeaderNav className="navbar-header">
         <a href="/">
           <NavLogoContainer>
@@ -106,27 +109,27 @@ function NavMain() {
             <HeaderLogoText modeDark={modeDark} />
           </NavLogoContainer>
         </a>
-
-        <HeaderNavItem>
-          <ContainedButtonWrapper btnState={btnState}>
-            <ContainedButton
-              content="reserve"
-              text="white"
-              height="nav"
-              onClick={() => window.open("/reserve", "_self")}
-              className="nav-header-contained-btn"
-            />
-          </ContainedButtonWrapper>
-          <HeaderItemHamburger className="navbar-hamburger">
-            <HamburgerIcon
-              hover
-              ref={animationRef}
-              src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
-              modeDark={modeDark}
-            ></HamburgerIcon>
-          </HeaderItemHamburger>
-        </HeaderNavItem>
+        <SpacerContainer></SpacerContainer>
+        <ContainedButtonWrapper btnState={btnState} className="nav-header-btn">
+          <ContainedButton
+            content="reserve"
+            text="white"
+            height="nav"
+            onClick={() => window.open("/reserve", "_self")}
+            className="nav-header-contained-btn"
+          />
+        </ContainedButtonWrapper>
+        <HeaderItemHamburger className="navbar-hamburger">
+          <HamburgerIcon
+            hover
+            ref={animationRef}
+            src="https://assets10.lottiefiles.com/private_files/lf30_10djsmqh.json"
+            modeDark={modeDark}
+          ></HamburgerIcon>
+        </HeaderItemHamburger>
       </HeaderNav>
+
+      {/* Side Nav Bar */}
       <NavWrapper>
         <NavStatic
           className="navbar-wrapper"
@@ -201,41 +204,35 @@ const HeaderNav = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  display: grid;
-  grid-template-columns: 10vw 70vw 20vw;
-  grid-template-rows: 1fr;
-  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
   text-align: center;
-  background-color: inherit;
   transition: all 0.5s ease-in-out;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  padding: 5px 0 0 5px;
-`;
-const HeaderNavItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  grid-column: 3/4;
-  margin-top: 10px;
-  margin-left: 40px;
+  padding: 20px 5px 0 5px;
 `;
 
+const SpacerContainer = styled.div`
+  display: flex;
+  width: 90vw;
+`;
 const ContainedButtonWrapper = styled.div`
-  padding: 0 50px 0 0;
   display: ${(props) => (props.btnState ? "flex" : "none")};
+  justify-self: flex-end;
 `;
 
 const HeaderItemHamburger = styled.div`
   justify-content: space-between;
   align-items: center;
-  margin: 0 70px 0 0;
+  align-items: flex-end;
+  width: 300px;
 `;
 const HamburgerIcon = styled(Player)`
   height: 50px;
   cursor: pointer;
-  width: 55px;
   path {
     fill: ${(props) => (props.modeDark ? "white" : "black")};
   }
@@ -246,8 +243,10 @@ const NavLogoContainer = styled.div`
   width: 400px;
   justify-content: center;
   align-items: center;
-  margin: 20px 0 0 20px;
+  margin: 0 0 0 20px;
   cursor: pointer;
+  align-items: center;
+  padding: 5px;
 `;
 const HeaderLogo = styled(NavLogoIcon)`
   cursor: pointer;

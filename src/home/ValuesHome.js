@@ -1,11 +1,16 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import TextButton from "../common/TextButton.js";
-import img from "./assets/homeValuesImg.png";
+import ProgressiveImage from "react-progressive-image";
+import gsap from "gsap";
+
+// Components
 import Headline from "../common/Headline.js";
 import Subtitle from "../common/Subtitle.js";
 import Body from "../common/Body.js";
-import gsap from "gsap";
+import TextButton from "../common/TextButton.js";
+
+// Images
+import valuesImg from "./assets/homeValuesImg.png";
 
 // or get other plugins:
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -58,7 +63,9 @@ function ValuesHome() {
       data-scroll-speed="2"
     >
       <ImgContainer ref={(el) => (images = el)}>
-        <Img src={img} />
+        <ProgressiveImage src={valuesImg} placeholder={{}}>
+          {(src) => <img src={src} alt="vega evx car" />}
+        </ProgressiveImage>
       </ImgContainer>
       <Container ref={(el) => (text = el)}>
         <TextWrapper value>

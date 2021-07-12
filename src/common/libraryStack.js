@@ -78,10 +78,12 @@ const Scroll = (callbacks) => {
     let heroText;
     let scrollBar;
     let overlayContainer;
+    let navHeadBtn;
 
     scrollBar = document.querySelector(".scroll-element");
     navBar = document.querySelector(".navbar-wrapper");
     navbarHeader = document.querySelector(".navbar-header");
+    navHeadBtn = document.querySelector(".nav-header-btn");
     selectNavBurger = document.querySelector(".navbar-hamburger");
     backgroundHero = document.querySelector(".hero-container");
     blurContainer = document.querySelector(".hero-section-blur-container");
@@ -105,6 +107,7 @@ const Scroll = (callbacks) => {
       }
 
       selectNavBurger.style.visibility = `visible`;
+      navHeadBtn.style.visibility = `visible`;
 
       //--Hero Background Video Optimization
       if (scroll.y > 935) {

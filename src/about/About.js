@@ -90,7 +90,7 @@ function About() {
               {(src) => <img src={src} alt="vega evx car" />}
             </ProgressiveImage>
           </ValuesCol1>
-          <ValuesCol2 data-scroll data-scroll-speed="-1">
+          <ValuesCol2 data-scroll data-scroll-speed="-2">
             <ProgressiveImage src={valuesImg02} placeholder={{}}>
               {(src) => <img src={src} alt="vega evx car" />}
             </ProgressiveImage>

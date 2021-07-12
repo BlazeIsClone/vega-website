@@ -67,7 +67,7 @@ function Footer() {
         </a>
       </FooterIcons>
       <FooterText>
-        <p>Copyright© 2021 PIXELS All Rights Reserved</p>
+        <p>2021 PIXELS All Rights Reserved</p>
       </FooterText>
     </FooterWrapper>
   );
@@ -122,6 +122,7 @@ const FooterNav = styled.div`
   }
 `;
 const FooterText = styled.p`
+  margin-top: 30px;
   p {
     font-family: ${(props) => props.theme.secondaryFont};
     font-style: normal;
@@ -130,7 +131,7 @@ const FooterText = styled.p`
     line-height: 16px;
     text-align: center;
     color: #666666;
-    width: 200px;
+    width: 300px;
     user-select: none;
   }
 `;

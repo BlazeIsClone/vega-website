@@ -131,7 +131,12 @@ function About() {
               content="A Team, A Family, A Journey With A Vision"
             />
           </ValuesHeroText>
-          <ProgressiveImage src={valuesHeroImg} placeholder={{}}>
+          <ProgressiveImage
+            src={valuesHeroImg}
+            placeholder={{}}
+            data-scroll
+            data-scroll-speed="-1"
+          >
             {(src) => <img src={src} alt="vega evx car" />}
           </ProgressiveImage>
         </ValuesHero>

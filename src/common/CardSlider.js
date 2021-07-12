@@ -92,6 +92,8 @@ function CardSlider(props) {
 export default CardSlider;
 
 const Section = styled.div`
+  position: relative;
+  overflow-x: scroll;
   height: 1000px;
   background-color: ${(props) => props.theme.pureColor};
   padding: 60px 0 0 100px;
@@ -115,8 +117,6 @@ const Row2 = styled.div`
   align-items: center;
   overflow-x: hidden;
   padding: 50px 200px 0 0;
-  position: relative;
-  left: -180px;
 `;
 const Cell = styled.div`
   padding-left: 8px;
@@ -124,7 +124,6 @@ const Cell = styled.div`
   img {
     user-select: none;
     -webkit-user-drag: none;
-    cursor: pointer;
     width: 100%;
     height: auto;
     min-width: 300px;

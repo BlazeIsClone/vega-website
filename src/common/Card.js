@@ -23,7 +23,11 @@ function Card(props) {
     body = (
       <CardWrapper>
         <ImgWrapper>
-          <img src={props.Img} alt="blog and news"></img>
+          <img
+            src={props.Img}
+            alt="blog and news"
+            onClick={() => window.open("/blog", "_self")}
+          ></img>
         </ImgWrapper>
         <TextWrapper>
           <Subtitle content={props.Subtitle} />

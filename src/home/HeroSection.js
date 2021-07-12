@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import videoSrc from "../common/mp4/heroMainVideo.mp4";
 import Container from "../common/HeroContainer.js";
+
+// Media
+import videoSrc from "../common/mp4/heroMainVideo.mp4";
+import ImgSrc from "../common/mp4/heroMainImg.png";
 
 function HeroSection() {
   return (
@@ -13,7 +16,7 @@ function HeroSection() {
       <Container
         getClass="hero-container-text"
         content={
-          <Player autoPlay loop muted data-keepplaying>
+          <Player autoPlay loop muted data-keepplaying poster={ImgSrc}>
             <source src={videoSrc} type="video/mp4" />
           </Player>
         }

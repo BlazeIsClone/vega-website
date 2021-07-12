@@ -26,6 +26,7 @@ import safetyImg1 from "./img/safetyImg1.png";
 import safetyImg2 from "./img/safetyImg2.png";
 import exteriorImg from "./img/exteriorImg.png";
 import autonomousVideo from "./img/autonomousVideo.mp4";
+import autonomousImg from "./img/autonomousImg.png";
 import dashbaordImg from "./img/dashboardImg.png";
 import dashboardSpeedoImg from "./img/dashboardSpeedoImg.mp4";
 import dashboardSpeedoLow from "./img/dashboardSpeedoLow.jpg";
@@ -217,6 +218,7 @@ function VegaEvx() {
                 muted
                 data-keepplaying
                 src={autonomousVideo}
+                poster={autonomousImg}
                 type="video/mp4"
               ></AutonomousVideo>
               <Body content="Full Self-Driving Capability introduces additional features and improves existing functionality to make your car more capable over time." />

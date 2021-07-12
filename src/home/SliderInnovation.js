@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import HeroMainBanner from "./assets/sliderImgInnovation.mp4";
 import Typeset from "../common/Typeset.js";
 import TextButton from "../common/TextButton";
+
+// Media
+import VideoSrc from "./assets/sliderImgInnovation.mp4";
+import ImgSrc from "./assets/autonomousImg.png";
 
 function SliderInnovation() {
   return (
@@ -10,10 +13,10 @@ function SliderInnovation() {
       <VideoWrapper>
         <AutoPlayVideo
           autoPlay
-          loop
           muted
           data-keepplaying
-          src={HeroMainBanner}
+          poster={ImgSrc}
+          src={VideoSrc}
           type="video/mp4"
         ></AutoPlayVideo>
       </VideoWrapper>

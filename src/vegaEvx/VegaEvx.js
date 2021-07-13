@@ -29,7 +29,6 @@ import autonomousVideo from "./img/autonomousVideo.mp4";
 import autonomousImg from "./img/autonomousImg.png";
 import dashbaordImg from "./img/dashboardImg.png";
 import dashboardSpeedoImg from "./img/dashboardSpeedoImg.mp4";
-import dashboardSpeedoLow from "./img/dashboardSpeedoLow.jpg";
 import dashboardHeroImg from "./img/dashboardHeroImg.png";
 import interiorHero from "./img/interiorHero.png";
 import interiorFeaturesScroll_img1 from "./img/interiorFeaturesScroll_img1.png";
@@ -62,7 +61,7 @@ function VegaEvx() {
           <PerformanceCol1>
             <LeftImg
               data-scroll
-              data-scroll-speed="-0.3"
+              data-scroll-speed="0.3"
               data-scroll-target=".target-performance"
             >
               <ImageHandler src={performanceImg} placeholder={{}}>
@@ -246,13 +245,7 @@ function VegaEvx() {
             </DashboardRow2>
           </DashboardTop>
           <DashboardBot data-scroll data-scroll-speed="2">
-            <video
-              poster={dashboardSpeedoLow}
-              autoPlay
-              loop
-              muted
-              data-keepplaying
-            >
+            <video poster={{}} autoPlay loop muted data-keepplaying>
               <source src={dashboardSpeedoImg} type="video/mp4" />
             </video>
           </DashboardBot>

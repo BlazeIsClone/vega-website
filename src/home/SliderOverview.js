@@ -83,7 +83,7 @@ const StatBars = styled.div`
 `;
 
 const LiLarge = styled.li`
-  font-size: 56px;
+  font-size: 46px;
   line-height: 78px;
 `;
 

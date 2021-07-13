@@ -1,6 +1,6 @@
-import React, { useEffect, lazy, Suspense } from "react";
+import React, { useEffect, lazy, Suspense, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import "./App.css";
 
 // Components
@@ -12,9 +12,57 @@ import Blog from "./blog/Blog.js";
 import About from "./about/About.js";
 import Careers from "./careers/Careers.js";
 import Support from "./support/Support.js";
+import Spinner from "./common/Spinner";
 
+// Lazy Load To reduce initial bundle load time
 const Reserve = lazy(() => import("./reserve/Reserve.js"));
 const NotFound = lazy(() => import("./NotFound.js"));
+
+// PreLoad Time
+const loadTime = 2500;
+
+// PreLoad App
+function AppOnLoad() {
+  const [load, setLoad] = useState(true);
+  useEffect(async () => {
+    const delayTick = setTimeout(() => {
+      setLoad(false);
+    }, loadTime);
+    return () => {
+      clearTimeout(delayTick);
+    };
+  }, []);
+
+  return (
+    <>
+      <div>
+        {load
+          ? load && (
+              <OnLoadContainer>
+                <Spinner />
+              </OnLoadContainer>
+            )
+          : AppContainer()}
+      </div>
+    </>
+  );
+}
+
+function AppContainer() {
+  return <App />;
+}
+
+const OnLoadContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0f0f0f;
+  cursor: progress;
+  z-index: 10;
+  position: fixed;
+`;
 
 function App() {
   useEffect(() => {
@@ -78,4 +126,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppOnLoad;
